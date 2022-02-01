@@ -14,10 +14,7 @@ Gem::Specification.new do |spec|
     f.match(%r!^(assets|_(includes|layouts|sass)/|(LICENSE|README)((\.(txt|md|markdown|html|xml)|$)))!i)
   end
 
-  spec.add_runtime_dependency 'github-pages', '>= 167'
-  #spec.add_runtime_dependency 'jekyll-include-cache'
+  spec.add_runtime_dependency "jekyll", ">= 3.5", "< 5.0"
 
-  spec.add_development_dependency 'html-proofer', '~> 3.0'
-  spec.add_development_dependency 'rake', '~> 11.0'
-  spec.add_development_dependency 'rubocop', '~> 0.40'
+  spec.add_development_dependency "bundler"
 end
