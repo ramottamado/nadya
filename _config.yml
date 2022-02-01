@@ -7,7 +7,6 @@ description: > # this means to ignore newlines until "baseurl:"
   Made with ❤️.
 logo: 'favicon.svg'
 icon: 'favicon.ico'
-github_username: ramottamado
 permalink: /:title/
 excerpt_separator: <!--more-->
 nav_pages:
@@ -39,3 +38,9 @@ markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
     default_lang: html
+
+remote_theme: ramottamado/nadya
+
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
