@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<script type="application/ld+json">
+{% include schema.liquid %}
+</script>
+<div class="blog">
+  <ul class="post-list">
+    {%- for post in site.posts limit: 20 -%}
+    <li>
+      {%- comment -%} <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> {%- endcomment -%}
+        <info class="post-meta" datetime="{{ page.date | date: "%Y-%m-%d" }}">
+          {{ post.date | date: "%b %d, %Y" }}
+        </info>
+      <article class="post-list-heading">
+        <a class="nontext post-link-heading" href="{{ post.url }}">{{ post.title | truncate: 50 }}</a>
+      </article>
+      <p>
+        {% if post.description %}
+          {{ post.description | markdownify | strip_html }}
+        {% else %}
+          {{ post.excerpt | strip_html | truncatewords: 35 }}
+        {% endif %}
+        <a class="read-more" href="{{ post.url }}"><small class="post-meta">[read more]</small></a>
+      </p>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

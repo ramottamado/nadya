@@ -1,0 +1,27 @@
+<header class="site-header">
+
+  <div class="wrapper">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+    <div class="site-title">
+      <a class="logo" rel="author" href="/" aria-label="logo">
+        <img alt="" src="{{ site.logo | relative_url }}" width="32" height="32" />
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          {% include menubar.svg %}
+        </span>
+      </label>
+
+      <div class="trigger">
+        <a class="nontext page-link" href="/categories/">Categories</a>
+        <a class="nontext page-link" href="/about/">About</a>
+      </div>
+    </nav>
+  </div>
+</header>

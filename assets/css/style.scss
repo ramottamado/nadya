@@ -1,0 +1,71 @@
+---
+---
+
+@charset "utf-8";
+
+// Define defaults for each variable.
+$base-font-family:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$base-font-size:        16px !default;
+$base-font-weight:      400 !default;
+$bold-font-weight:      500;
+$x-bold-font-weight:    600;
+$small-font-size:       $base-font-size * 0.875 !default;
+$base-line-height:      1.5 !default;
+
+$spacing-unit:          30px !default;
+
+$text-color:            #24292f !default;
+$background-color:      #ffffff !default;
+$brand-color:           #1b1f24 !default;
+$nav-color:             #1b1f24;
+$link-color:            #005CC5;
+
+$grey-color:            #6a737d !default;
+$grey-color-light:      #f6f8fa !default;
+$grey-color-dark:       $brand-color !default;
+$border-color:          #d1d5da;
+$selection-color:       #e4effb;
+$code-selection-color:  #ffffc5;
+$table-text-align:      left !default;
+
+// Heading
+$head-font-family:  $base-font-family;
+$code-font-family:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$title-font-family: $base-font-family;
+$meta-font-family:  $base-font-family !default;
+$bq-font-family:    $base-font-family;
+
+// Width of the content area
+$content-width:     800px !default;
+
+$on-palm:           600px !default;
+$on-laptop:         800px !default;
+
+$on-medium:         $on-palm !default;
+$on-large:          $on-laptop !default;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+// Notice the following mixin uses max-width, in a deprecated, desktop-first
+// approach, whereas media queries used elsewhere now use min-width.
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import
+  "base",
+  "layout",
+  "highlight"
+;
