@@ -10,10 +10,13 @@ icon: 'favicon.ico'
 github_username: ramottamado
 permalink: /:title/
 excerpt_separator: <!--more-->
+nav_pages:
+  - categories.html
+  - about.md
+
 sitemap:
   changefreq: monthly
 
-fb_app_id: 2815620495116640
 fb_page: 103250301049786
 fb_author: 100000091609630
 gravatar_author: "https://www.gravatar.com/avatar/90b290098c6a408c075ab0fd3b1f5783?s=300"
@@ -27,6 +30,9 @@ google_site_verification: 'zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ'
 
 fb_article: true
 disable_social: true
+
+feed:
+  excerpts_only: true
 
 # Build settings
 markdown: kramdown

@@ -1,0 +1,34 @@
+---
+layout:     page
+title:      Categories
+permalink:  /categories5/
+---
+{% if site.categories.size > 0 %}
+<div class="tags-list">
+  {% for cat in site.categories %}
+    <a href="#{{ cat[0] | slugify }}" class="post-tag">{{ cat[0] }}</a>
+  {% endfor %}
+</div>
+<hr class="tags-hor" />
+{% for cat in site.categories %}
+  <h3 class="post-link" id="{{ cat[0] | slugify }}">{{ cat[0] }}</h3>
+  <ul class="minimal">
+    {% for post in cat[1] %}
+      <li class="post-list">
+        <info>
+        {{ post.date | date: "%b %d, %Y" }}
+        </info>
+        <article class="post-list-heading">
+        <a class="nontext post-list-heading" href="{{ post.url }}">
+          {% if post.title != "" %}
+            {{ post.title }}
+          {% else %}
+            {{ post.slug }}
+          {% endif %}
+        </a>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+{% endif %}

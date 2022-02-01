@@ -6,7 +6,7 @@
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
     <div class="site-title">
       <a class="logo" rel="author" href="/" aria-label="logo">
-        <img alt="" src="{{ site.logo | relative_url }}" width="32" height="32" />
+        <img alt="" src="{{ site.logo | default: 'assets/images/favicon.svg' | relative_url }}" width="32" height="32" />
       </a>
     </div>
 
@@ -19,8 +19,12 @@
       </label>
 
       <div class="trigger">
-        <a class="nontext page-link" href="/categories/">Categories</a>
-        <a class="nontext page-link" href="/about/">About</a>
+        {%- for path in site.nav_pages %}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <a class="nontext page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        {%- endif %}
+        {%- endfor %}
       </div>
     </nav>
   </div>

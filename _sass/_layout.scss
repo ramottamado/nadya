@@ -118,30 +118,42 @@ img.emoji {
   }
 
   @media screen and (min-width: $on-medium) {
-    position: static;
-    float: right;
-    border: none;
-    background-color: inherit;
+    &:not(.overflown) {
+      float: right;
+      border: none;
+      background-color: inherit;
+      max-width: 0.6 * $content-width;
 
-    label[for="nav-trigger"] {
-      display: none;
+      label[for="nav-trigger"] {
+        display: none;
+      }
+
+      .menu-icon {
+        display: none;
+      }
+
+      input ~ .trigger {
+        display: block;
+      }
+
+      .page-link {
+        display: inline;
+        padding: 0;
+        margin-left: auto;
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
     }
 
-    .menu-icon {
-      display: none;
-    }
+    &.overflown {
+      .page-link {
+        border-bottom: 1px solid $text-color;
 
-    input ~ .trigger {
-      display: block;
-    }
-
-    .page-link {
-      display: inline;
-      padding: 0;
-      margin-left: auto;
-
-      &:not(:last-child) {
-        margin-right: 20px;
+        &:hover {
+          border-bottom: 1px solid $text-color;
+        }
       }
     }
   }
