@@ -31,7 +31,7 @@ excerpt_separator: <!--more-->
 disable_social: true
 
 # feed:
-  # excerpts_only: true
+  # excerpt_only: true
 
 # Build settings
 markdown: kramdown
