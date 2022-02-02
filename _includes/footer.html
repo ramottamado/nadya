@@ -1,16 +1,23 @@
 <footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <data class="u-url" href="{{ '/' | relative_url }}"></data>
   <div class="wrapper">
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>
             {%- if site.github_username %}
-            <a class="nontext footer-link" href="https://github.com/{{ site.github_username }}"><i class="fab fa-github fa-fw"></i> {{ site.github_username }}</a>
+            <a class="nontext footer-link"
+              href="{{ site.github_username | prepend: 'https://github.com/' | xml_escape }}">
+              <i class="fab fa-github fa-fw"></i>
+              {{ site.github_username }}
+            </a>
             {%- endif %}
           <li>
             {%- if site.email %}
-            <a class="nontext footer-link" href="mailto:{{ site.email }}"><i class="far fa-envelope fa-fw"></i> {{ site.email | replace: '@', '[at]' | replace: '.', '[dot]' }}</a>
+            <a class="nontext footer-link" href="{{ site.email | prepend: 'mailto:' }}">
+              <i class="far fa-envelope fa-fw"></i>
+              {{ site.email | replace: '@', '[at]' | replace: '.', '[dot]' }}
+            </a>
             {%- endif %}
           </li>
         </ul>
@@ -20,12 +27,18 @@
         <ul class="social-media-list">
           <li>
             {%- if site.fb_username %}
-            <a class="nontext footer-link" href="https://facebook.com/{{ site.fb_username }}"><i class="fab fa-facebook fa-fw"></i> {{ site.fb_username }}</a>
+            <a class="nontext footer-link"
+              href="{{ site.fb_username | prepend: 'https://facebook.com/' | xml_escape }}">
+              <i class="fab fa-facebook fa-fw"></i>
+              {{ site.fb_username }}</a>
             {%- endif %}
           </li>
           <li>
             {%- if site.twitter_username %}
-            <a class="nontext footer-link" href="https://twitter.com/{{ site.twitter_username }}"><i class="fab fa-twitter fa-fw"></i> {{ site.twitter_username }}</a>
+            <a class="nontext footer-link"
+              href="{{ site.twitter_username | prepend: 'https://twitter.com/' | xml_escape }}">
+              <i class="fab fa-twitter fa-fw"></i>
+              {{ site.twitter_username }}</a>
             {%- endif %}
           </li>
         </ul>
@@ -43,14 +56,19 @@
       </div>
       <div class="footer-col footer-col-6">
         <small class="post-meta post-foot-meta">
-        <a class="creative-common" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-          <img alt="Creative Commons Licence" style="border-width:0;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" />
-        </a>
+          <a class="creative-common" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <img alt="Creative Commons Licence" style="border-width:0;vertical-align:text-bottom;"
+              src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" />
+          </a>
         </small>
       </div>
       <div class="footer-col footer-col-7">
         <small class="post-meta post-foot-meta">
-          <i class="fab fa-creative-commons fa-fw"></i> {{ 'now' | date: "%Y" }} {{ site.author }}. Except where otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          <i class="fab fa-creative-commons fa-fw"></i>
+          {{ 'now' | date: "%Y" }} {{ site.author }}. Except where otherwise stated, this work is licensed under a
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+          </a>
         </small>
       </div>
     </div>

@@ -1,8 +1,3 @@
-
-// if (isOverflown(nav)) {
-  // nav.classList.add('overflown');
-// }
-
 document.addEventListener('readystatechange', (event) => {
   let nav = document.querySelector('nav');
 

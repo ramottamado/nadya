@@ -1,142 +1,142 @@
+{%- include constants.liquid -%}
+
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "{{ site.url | absolute_url }}#organization",
+      "@id": "{{ site_url }}#organization",
       "name": "{{ site.title }}",
-      "url": "{{ site.url | absolute_url }}",
+      "url": "{{ site_url }}",
       {% if site.fb_username or site.ig_username or site.twitter_username -%}
       "sameAs": [
       {%- if site.fb_username %}
-        "https://facebook.com/{{ site.fb_username }}"{% if site.ig_username or site.twitter_username %},{% endif %}
+        "{{ site.fb_username | prepend: 'https://facebook.com/' }}"{% if site.ig_username or site.twitter_username %},{% endif %}
       {%- endif %}
       {%- if site.ig_username %}
-        "https://instagram.com/{{ site.ig_username }}"{% if site.twitter_username %},{% endif %}
+        "{{ site.ig_username | prepend: 'https://instagram.com/' }}"{% if site.twitter_username %},{% endif %}
       {%- endif %}
       {%- if site.twitter_username %}
-        "https://twitter.com/{{ site.twitter_username }}"
+        "{{ site.twitter_username | prepend: 'https://twitter.com/' }}"
       {%- endif %}
       ],
-      {% endif -%}
+      {%- endif %}
       "logo": {
         "@type": "ImageObject",
-        "@id": "{{ site.url | absolute_url }}#logo",
+        "@id": "{{ site_url }}#logo",
         "inLanguage": "en-US",
-        "url": "{{ site.logo | absolute_url }}",
+        "url": "{{ logo }}",
         "width": 512,
         "height": 512,
         "caption": "{{ site.title }}"
       },
-      "image": { "@id": "{{ site.url | absolute_url }}#logo" }
-    },{
+      "image": { "@id": "{{ site_url }}#logo" }
+    },
+    {
       "@type": "WebSite",
-      "@id": "{{ site.url | absolute_url }}#website",
-      "url": "{{ site.url | absolute_url }}",
+      "@id": "{{ site_url }}#website",
+      "url": "{{ site_url }}",
       "name": "{{ site.title }}",
-      "description": "{{ site.description | strip_html }}",
-      "publisher": { "@id": "{{ site.url | absolute_url }}#organization" },
+      "description": "{{ site_description }}",
+      "publisher": { "@id": "{{ site_url }}#organization" },
       "inLanguage": "en-US"
-    }
-    {% if page.layout == "home" %},
+    }{%- if page.layout == "home" %},
     {
       "@type": "CollectionPage",
-      "@id": "{{ site.url | absolute_url }}#webpage",
-      "url": "{{ site.url | absolute_url }}",
+      "@id": "{{ site_url }}#webpage",
+      "url": "{{ site_url }}",
       "name": "{{ site.title }}",
-      "isPartOf": { "@id": "{{ site.url | absolute_url }}#website" },
-      "about": { "@id": "{{ site.url | absolute_url }}#organization" },
-      "description": "{{ site.description | strip_html }}",
+      "isPartOf": { "@id": "{{ site_url }}#website" },
+      "about": { "@id": "{{ site_url }}#organization" },
+      "description": "{{ site_description }}",
       "inLanguage": "en-US"
-    }
-    {% elsif page.layout == "page" %},
+    }{%- elsif page.layout == "page" %},
     {
       "@type": "ImageObject",
-      "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#primaryimage",
+      "@id": "{{ page_url }}#primaryimage",
       "inLanguage": "en-US",
-      "url": "{% if page.image %}{{ page.image }}{% else %}{{ site.logo | absolute_url }}{% endif %}"
+      "url": "{{ image }}"
     },
     {
       "@type": "WebPage",
-      "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#webpage",
-      "url": "{{ page.url | replace:'index.html','' | absolute_url }}",
+      "@id": "{{ page_url }}#webpage",
+      "url": "{{ page_url }}",
       "name": "{{ page.title }} &mdash; {{ site.title }}",
-      "isPartOf": { "@id": "{{ site.url | absolute_url }}#website" },
+      "isPartOf": { "@id": "{{ site_url }}#website" },
       "primaryImageOfPage": {
-        "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#primaryimage"
+        "@id": "{{ page_url }}#primaryimage"
       },
       "inLanguage": "en-US",
       "potentialAction": [
         {
           "@type": "ReadAction",
-          "target": ["{{ page.url | replace:'index.html','' | absolute_url }}"]
+          "target": ["{{ page_url }}"]
         }
       ]
-    }
-    {% elsif page.layout == "post" %},
+    }{%- elsif page.layout == "post" %},
     {
       "@type": "ImageObject",
-      "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#primaryimage",
+      "@id": "{{ page_url }}#primaryimage",
       "inLanguage": "en-US",
-      "url": "{% if page.image %}{{ page.image }}{% else %}{{ site.logo | absolute_url }}{% endif %}"
+      "url": "{{ image }}"
     },
     {
       "@type": "WebPage",
-      "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#webpage",
-      "url": "{{ page.url | replace:'index.html','' | absolute_url }}",
-      "name": "{%- if page.title -%}{{ page.title }}{% else %}{{ site.title }}{%- endif -%}",
-      "isPartOf": { "@id": "{{ site.url | absolute_url }}#website" },
-      "primaryImageOfPage": { "@id": "{{ page.url | absolute_url }}#primaryimage" },
+      "@id": "{{ page_url }}#webpage",
+      "url": "{{ page_url }}",
+      "name": "{{ title }}",
+      "isPartOf": { "@id": "{{ site_url }}#website" },
+      "primaryImageOfPage": { "@id": "{{ page_url }}#primaryimage" },
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{%- if page.modified -%}{{ page.modified | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{%- endif -%}",
-      "description": "{%- if page.description -%}{{ page.description | strip_html | normalize_whitespace }}{%- elsif page.excerpt -%}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{%- else -%}{{ site.description | strip_html | normalize_whitespace }}{%- endif -%}",
+      "description": "{{ description }}",
       "inLanguage": "en-US",
       "potentialAction": [
         {
           "@type": "ReadAction",
           "target": [
-            "{{ page.url | replace:'index.html','' | absolute_url }}"
+            "{{ page_url }}"
           ]
         }
       ]
     },
     {
       "@type": "NewsArticle",
-      "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#article",
-      "isPartOf": { "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#webpage" },
-      "author": { "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#author" },
-      "headline": "{%- if page.title -%}{{ page.title }}{% else %}{{ site.title }}{%- endif -%}",
+      "@id": "{{ page_url }}#article",
+      "isPartOf": { "@id": "{{ page_url }}#webpage" },
+      "author": { "@id": "{{ page_url }}#author" },
+      "headline": "{{ title }}",
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{%- if page.modified -%}{{ page.modified | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{%- endif -%}",
-      "mainEntityOfPage": { "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#webpage" },
-      "publisher": { "@id": "{{ site.url | absolute_url }}#organization" },
-      "image": { "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#primaryimage" },
+      "mainEntityOfPage": { "@id": "{{ page_url }}#webpage" },
+      "publisher": { "@id": "{{ site_url }}#organization" },
+      "image": { "@id": "{{ page_url }}#primaryimage" },
       "keywords": "{{ page.keywords }}",
       "articleSection": "News",
       "inLanguage": "en-US",
       "potentialAction": [
         {
           "@type": "ReadAction",
-          "target": ["{{ page.url | replace:'index.html','' | absolute_url }}"]
+          "target": ["{{ page_url }}"]
         }
       ],
       "copyrightYear": "{{ 'now' | date: "%Y" }}",
-      "copyrightHolder": { "@id": "{{ site.url | absolute_url }}#organization" }
+      "copyrightHolder": { "@id": "{{ site_url }}#organization" }
     },
     {
       "@type": ["Person"],
-      "@id": "{{ page.url | replace:'index.html','' | absolute_url }}#author",
-      "name": "{%- if page.author -%}{{ page.author }}{% else %}{{ site.author }}{%- endif -%}",
+      "@id": "{{ page_url }}#author",
+      "name": "{{ author }}",
       "image": {
         "@type": "ImageObject",
-        "@id": "{{ site.url | absolute_url }}#personlogo",
+        "@id": "{{ site_url }}#personlogo",
         "inLanguage": "en-US",
         "url": "{{ site.gravatar_author }}",
-        "caption": "{%- if page.author -%}{{ page.author }}{% else %}{{ site.author }}{%- endif -%}"
+        "caption": "{{ author }}"
       },
-      "description": "{%- if page.author -%}{{ page.author }}{% else %}{{ site.author }}{%- endif -%}",
+      "description": "{{ author }}",
       "sameAs": ["https://twitter.com/{{ site.twitter_username }}"]
     }
-    {% endif %}
+    {%- endif %}
   ]
 }

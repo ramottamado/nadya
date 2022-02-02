@@ -1,0 +1,20 @@
+{% include constants.liquid %}
+
+{% assign words = content | number_of_words %}
+{% assign time = '' %}
+{%- if words < 180 -%}
+{% assign time = 'less than a minute' %}
+{%- elsif words < 270 -%}
+{% assign time = '1 minute' %}
+{%- else -%}
+{%- assign words_float = words | divided_by: 180.0 -%}
+{%- assign words_sub = words | divided_by: 180 -%}
+{%- assign words_final = words_float | minus: words_sub -%}
+{%- if words_final <= 0.5 -%}
+{% assign fl_time = words_float | floor | append: ' minutes' %}
+{% assign time = fl_time %}
+{%- else -%}
+{% assign fl_time = words_float | ceil | append: ' minutes' %}
+{% assign time = fl_time %}
+{%- endif -%}
+{%- endif %}

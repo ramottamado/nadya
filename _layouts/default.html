@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  {%- include head.html -%}
 
-  <body>
+{% include head.html %}
 
-    {%- include header.html -%}
+<body>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+  {% include header.html %}
 
-    {%- include footer.html -%}
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
 
-    <script>twemoji.parse(document.body);</script>
+  {%- include footer.html -%}
 
-  </body>
+  <script>twemoji.parse(document.body);</script>
+
+</body>
 
 </html>
