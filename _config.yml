@@ -1,12 +1,13 @@
 # Site settings
-title: 'nadya'
-email: 'hello@ramottamado.dev'
-author: 'Tamado Ramot Sitohang'
+title: "nadya"
+email: "hello@ramottamado.dev"
+author: "Tamado Ramot Sitohang"
+url: "https://nadya.ramottamado.dev"
 description: > # this means to ignore newlines until "baseurl:"
   Nadya Jekyll theme.<br />
   Made with ❤️.
-logo: 'favicon.svg'
-icon: 'favicon.ico'
+logo: "favicon.svg"
+icon: "favicon.ico"
 permalink: /:title/
 excerpt_separator: <!--more-->
 nav_pages:
@@ -25,7 +26,7 @@ twitter_username: theramottamado
 ig_username: theramottamado
 fb_username: theramottamado
 
-google_site_verification: 'zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ'
+google_site_verification: "zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ"
 
 fb_article: true
 disable_social: true
