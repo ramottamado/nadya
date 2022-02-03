@@ -104,7 +104,33 @@
       "@type": "NewsArticle",
       "@id": "{{ page_url }}#article",
       "isPartOf": { "@id": "{{ page_url }}#webpage" },
-      "author": { "@id": "{{ page_url }}#author" },
+      "author": [
+        {% if author.first -%}
+        {% assign all_author = author | sort -%}
+        {% assign last_auth = all_author | last -%}
+        {% else -%}
+        {% assign all_author = author -%}
+        {% assign last_auth = all_author -%}
+        {% endif -%}
+        {% for auth in all_author -%}
+        {
+          "@type": ["Person"],
+          "name": "{{ auth }}",
+          "image": {
+            "@type": "ImageObject",
+            "@id": "{{ site_url }}#personlogo",
+            "inLanguage": "en-US",
+            {% if auth == site.author -%}
+            "url": "{{ site.gravatar_author }}",
+            {% endif -%}
+            "caption": "{{ auth }}"
+          },
+          "description": "{{ auth }}"{% if auth == site.author -%},
+          "sameAs": ["https://twitter.com/{{ site.twitter_username }}"]
+          {%- endif %}
+        }{% if auth != last_auth -%},{% endif -%}
+        {% endfor %}
+      ],
       "headline": "{{ title }}",
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{%- if page.modified -%}{{ page.modified | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{%- endif -%}",
@@ -122,20 +148,6 @@
       ],
       "copyrightYear": "{{ 'now' | date: "%Y" }}",
       "copyrightHolder": { "@id": "{{ site_url }}#organization" }
-    },
-    {
-      "@type": ["Person"],
-      "@id": "{{ page_url }}#author",
-      "name": "{{ author }}",
-      "image": {
-        "@type": "ImageObject",
-        "@id": "{{ site_url }}#personlogo",
-        "inLanguage": "en-US",
-        "url": "{{ site.gravatar_author }}",
-        "caption": "{{ author }}"
-      },
-      "description": "{{ author }}",
-      "sameAs": ["https://twitter.com/{{ site.twitter_username }}"]
     }
     {%- endif %}
   ]
