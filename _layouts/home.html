@@ -13,7 +13,7 @@ layout: default
         {{ post.date | date: "%b %d, %Y" }}
       </info>
       <article class="post-list-heading">
-        <a class="nontext post-link-heading" href="{{ post.url }}">{{ post.title | truncate: 50 }}</a>
+        <a class="nontext post-link-heading" href="{{ post.url }}">{{ post.title }}</a>
       </article>
       <p>
         {% if post.description %}
