@@ -1,8 +1,10 @@
 # Site settings
 title: "nadya"
 email: "hello@ramottamado.dev"
-author: "Tamado Ramot Sitohang"
-url: "https://nadya.ramottamado.dev"
+author:
+  name: "Tamado Ramot Sitohang"
+  twitter: "theramottamado"
+  url: "https://ramottamado.dev"
 description: >- # this means to ignore newlines and trim last newline
   Nadya Jekyll theme.<br />
   Made with ❤️.
@@ -18,18 +20,27 @@ icon: "favicon.ico"
 
 # Social
 disable_social: true
-fb_article: true
-fb_page: 103250301049786
-fb_author: 100000091609630
-gravatar_author: "https://www.gravatar.com/avatar/90b290098c6a408c075ab0fd3b1f5783?s=300"
-linkedin_username: ramottamado
-github_username: ramottamado
-twitter_username: theramottamado
-ig_username: theramottamado
-fb_username: theramottamado
 
 # SEO
-google_site_verification: "zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ"
+webmaster_verifications:
+  google: "zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ"
+github:
+  username: "ramottamado"
+# instagram:
+#   username: ""
+# linkedin:
+#   username: "ramottamado"
+twitter:
+  card: summary
+  username: "theramottamado"
+facebook:
+  publisher: 103250301049786
+  admins: 100000091609630
+social:
+  name: "Tamado Ramot Sitohang"
+  links:
+    - "https://ramottamado.dev"
+    - "https://twitter.com/theramottamado"
 
 # Plugin
 sitemap:
@@ -47,7 +58,7 @@ kramdown:
   syntax_highlighter_opts:
     default_lang: html
 
-remote_theme: ramottamado/nadya
+remote_theme: ramottamado/nadya@036c87f5
 
 plugins:
   - jekyll-feed

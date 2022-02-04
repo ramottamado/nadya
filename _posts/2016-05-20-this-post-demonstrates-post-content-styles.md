@@ -2,7 +2,7 @@
 layout: post
 title: "This post demonstrates post content styles"
 categories: junk
-author:
+authors:
 - Bart Simpson
 - Nelson Mandela Muntz
 meta: "Springfield"
