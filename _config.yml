@@ -1,10 +1,7 @@
 # Site settings
 title: "nadya"
 email: "hello@ramottamado.dev"
-author:
-  name: "Tamado Ramot Sitohang"
-  twitter: "theramottamado"
-  url: "https://ramottamado.dev"
+author: "Tamado Ramot Sitohang"
 description: >- # this means to ignore newlines and trim last newline
   Nadya Jekyll theme.<br />
   Made with ❤️.
@@ -22,8 +19,7 @@ icon: "favicon.ico"
 disable_social: true
 
 # SEO
-webmaster_verifications:
-  google: "zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ"
+google_site_verification: "zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ"
 github:
   username: "ramottamado"
 # instagram:
@@ -35,7 +31,7 @@ twitter:
   username: "theramottamado"
 facebook:
   publisher: 103250301049786
-  admins: 100000091609630
+  author: 100000091609630
 social:
   name: "Tamado Ramot Sitohang"
   links:
@@ -63,3 +59,4 @@ remote_theme: ramottamado/nadya
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - jemoji
