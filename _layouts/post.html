@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{% assign author = page.author | default: site.author -%}
 {% include timer.liquid %}
+{% assign zauthors = '' | split: ',' %}
 
 <script type="application/ld+json">
   {
@@ -35,10 +35,17 @@ layout: default
       </time>
       • <span>
         <span>
-          {% if author.name -%}
-          {{ author.name | join: ', ' }}
+          {% if page.authors -%}
+          {% for author in page.authors -%}
+          {% assign zauthors = zauthors | push: author -%}
+          {% endfor -%}
+          {{ zauthors | array_to_sentence_string }}
+          {% elsif page.author -%}
+          {{ page.author | join: ', ' }}
+          {% elsif site.author.name -%}
+          {{ site.author.name }}
           {% else -%}
-          {{ author | join: ', ' }}
+          {{ site.author }}
           {% endif -%}
         </span>
       </span>
