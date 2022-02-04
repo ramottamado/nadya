@@ -10,7 +10,10 @@
 {% assign image = page.image | default: logo -%}
 {% assign rel_icon = site.icon | relative_url -%}
 {% assign rel_logo = site.logo | relative_url -%}
-{% assign twitter_card = 'summary' -%}
+{% assign twitter_card = site.twitter.card | default: "summary" -%}
 {% if page.image -%}
 {% assign twitter_card = 'summary_large_image' -%}
+{% if page.twitter.card -%}
+{% assign twitter_card = page.twitter.card -%}
+{% endif -%}
 {% endif -%}

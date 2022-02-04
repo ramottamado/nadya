@@ -7,10 +7,10 @@
   <meta name="theme-color" content="#1b1f24" />
 
   <title>
-    {%- if page.layout == "page" -%}
-    {{ title | xml_escape }} &mdash; {{ site.title | xml_escape }}
+    {%- if page.layout == "page" or page.layout == "post" -%}
+    {{ title | xml_escape }} | {{ site.title | xml_escape }}
     {%- else -%}
-    {{ title | xml_escape }}
+    {{ title | xml_escape }} | {{ site_description }}
     {%- endif -%}
   </title>
 
@@ -19,9 +19,11 @@
   {% endif -%}
   <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ author | join: ', ' }}" />
-  {% if site.twitter_username -%}
-  <meta name="twitter:site" content="{{ site.twitter_username | prepend: '@' }}" />
-  <meta name="twitter:creator" content="{{ site.twitter_username | prepend: '@' }}" />
+  {% if site.twitter.username -%}
+  <meta name="twitter:site" content="{{ site.twitter.username | prepend: '@' }}" />
+  {% if author == site.author -%}
+  <meta name="twitter:creator" content="{{ site.twitter.username | prepend: '@' }}" />
+  {% endif -%}
   {% endif -%}
   <meta name="twitter:title" content="{{ title }}" />
   <meta name="twitter:description" content="{{ description }}" />
@@ -33,16 +35,14 @@
   <meta property="og:image" content="{{ image }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
-  {% if site.fb_article -%}
-  {% if site.fb_author and author == site.author -%}
-  <meta property="article:author" content="https://www.facebook.com/{{ site.fb_author }}" />
+  {% if site.facebook.author and author == site.author -%}
+  <meta property="article:author" content="https://www.facebook.com/{{ site.facebook.author }}" />
   {% endif -%}
   {% for tags in page.tags %}
   <meta property="article:tags" content="{{ tags }}" />{% endfor %}
-  {% if site.fb_pages -%}
-  <meta property="article:publisher" content="https://www.facebook.com/{{ site.fb_pages }}" />
-  <meta property="fb:pages" content="{{ site.fb_pages }}" />
-  {% endif -%}
+  {% if site.facebook.publisher -%}
+  <meta property="article:publisher" content="https://www.facebook.com/{{ site.facebook.publisher }}" />
+  <meta property="fb:pages" content="{{ site.facebook.publisher }}" />
   {% endif -%}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' }}" />
   {% if site.logo -%}
@@ -54,7 +54,7 @@
   <link rel="alternate icon" href="{{ rel_icon }}" />
   <link rel="shortcut icon" href="{{ rel_icon }}" />
   {% endif -%}
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}" />
 
   <script src="{{ '/assets/js/nav.js' }}"></script>

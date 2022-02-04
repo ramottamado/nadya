@@ -8,16 +8,16 @@
       "@id": "{{ site_url }}#organization",
       "name": "{{ site.title }}",
       "url": "{{ site_url }}",
-      {% if site.fb_username or site.ig_username or site.twitter_username -%}
+      {% if site.facebook.username or site.instagram.username or site.twitter.username -%}
       "sameAs": [
-      {%- if site.fb_username %}
-        "{{ site.fb_username | prepend: 'https://facebook.com/' }}"{% if site.ig_username or site.twitter_username %},{% endif %}
+      {%- if site.facebook.username %}
+        "{{ site.facebook.username | prepend: 'https://facebook.com/' }}"{% if site.instagram.username or site.twitter.username %},{% endif %}
       {%- endif %}
-      {%- if site.ig_username %}
-        "{{ site.ig_username | prepend: 'https://instagram.com/' }}"{% if site.twitter_username %},{% endif %}
+      {%- if site.instagram.username %}
+        "{{ site.instagram.username | prepend: 'https://instagram.com/' }}"{% if site.twitter.username %},{% endif %}
       {%- endif %}
-      {%- if site.twitter_username %}
-        "{{ site.twitter_username | prepend: 'https://twitter.com/' }}"
+      {%- if site.twitter.username %}
+        "{{ site.twitter.username | prepend: 'https://twitter.com/' }}"
       {%- endif %}
       ],
       {%- endif %}
@@ -45,7 +45,7 @@
       "@type": "CollectionPage",
       "@id": "{{ site_url }}#webpage",
       "url": "{{ site_url }}",
-      "name": "{{ site.title }}",
+      "name": "{{ site.title }} | {{ site_description }}",
       "isPartOf": { "@id": "{{ site_url }}#website" },
       "about": { "@id": "{{ site_url }}#organization" },
       "description": "{{ site_description }}",
@@ -61,7 +61,7 @@
       "@type": "WebPage",
       "@id": "{{ page_url }}#webpage",
       "url": "{{ page_url }}",
-      "name": "{{ page.title }} &mdash; {{ site.title }}",
+      "name": "{{ page.title }} | {{ site.title | xml_escape }}",
       "isPartOf": { "@id": "{{ site_url }}#website" },
       "primaryImageOfPage": {
         "@id": "{{ page_url }}#primaryimage"
@@ -74,6 +74,7 @@
         }
       ]
     }{%- elsif page.layout == "post" %},
+    {% assign lang = page.lang | default: "en-US" -%}
     {
       "@type": "ImageObject",
       "@id": "{{ page_url }}#primaryimage",
@@ -84,7 +85,7 @@
       "@type": "WebPage",
       "@id": "{{ page_url }}#webpage",
       "url": "{{ page_url }}",
-      "name": "{{ title }}",
+      "name": "{{ title }} | {{ site.title | xml_escape }}",
       "isPartOf": { "@id": "{{ site_url }}#website" },
       "primaryImageOfPage": { "@id": "{{ page_url }}#primaryimage" },
       "datePublished": "{{ page.date | date_to_xmlschema }}",
@@ -105,30 +106,34 @@
       "@id": "{{ page_url }}#article",
       "isPartOf": { "@id": "{{ page_url }}#webpage" },
       "author": [
-        {% if author.first -%}
-        {% assign all_author = author | sort -%}
-        {% assign last_auth = all_author | last -%}
-        {% else -%}
-        {% assign all_author = author -%}
-        {% assign last_auth = all_author -%}
-        {% endif -%}
-        {% for auth in all_author -%}
+        {% for auth in author -%}
         {
           "@type": ["Person"],
           "name": "{{ auth }}",
-          "image": {
-            "@type": "ImageObject",
-            "@id": "{{ site_url }}#personlogo",
-            "inLanguage": "en-US",
-            {% if auth == site.author -%}
-            "url": "{{ site.gravatar_author }}",
-            {% endif -%}
-            "caption": "{{ auth }}"
-          },
-          "description": "{{ auth }}"{% if auth == site.author -%},
-          "sameAs": ["https://twitter.com/{{ site.twitter_username }}"]
+          "url:" "{{ site_url }}",
+          {%- if auth == site.author and site.gravatar %}
+          "image": "{{ site.gravatar | prepend: "https://www.gravatar.com/avatar/" }}",
           {%- endif %}
-        }{% if auth != last_auth -%},{% endif -%}
+          "description": "{{ auth }}"
+          {%- if auth == site.author %}
+          {%- if site.facebook.username or site.instagram.username or site.twitter.username or site.social.links -%},
+          "sameAs": [
+          {%- for link in social.links %}
+            "{{ link }}"
+          {% if forloop.last != true -%},{% endif -%}
+          {%- endfor %}
+          {%- if site.facebook.username %}
+            "{{ site.facebook.username | prepend: 'https://facebook.com/' }}"{% if site.instagram.username or site.twitter.username %},{% endif %}
+          {%- endif %}
+          {%- if site.instagram.username %}
+            "{{ site.instagram.username | prepend: 'https://instagram.com/' }}"{% if site.twitter.username %},{% endif %}
+          {%- endif %}
+          {%- if site.twitter.username %}
+            "{{ site.twitter.username | prepend: 'https://twitter.com/' }}"
+          {%- endif %}
+          ]
+          {%- endif %}{%- endif %}
+        }{% if forloop.last != true -%},{% endif -%}
         {% endfor %}
       ],
       "headline": "{{ title }}",
@@ -139,7 +144,7 @@
       "image": { "@id": "{{ page_url }}#primaryimage" },
       "keywords": "{{ page.keywords }}",
       "articleSection": "News",
-      "inLanguage": "en-US",
+      "inLanguage": "{{ lang }}",
       "potentialAction": [
         {
           "@type": "ReadAction",

@@ -2,10 +2,22 @@
 title: "nadya"
 email: "hello@ramottamado.dev"
 author: "Tamado Ramot Sitohang"
-# url: ""
 description: >- # this means to ignore newlines and trim last newline
   Nadya Jekyll theme.<br />
   Made with ❤️.
+
+# Theme
+nadya:
+  date_format: "%b %d, %Y"
+
+# Default
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      image: /favicon.svg
+      twitter:
+        card: summary_large_image
 
 # Layout
 # nav_pages:
@@ -17,25 +29,34 @@ description: >- # this means to ignore newlines and trim last newline
 # icon: "favicon.ico"
 
 # Social
-# disable_social: true
-# fb_article: true
-# fb_page: ""
-# fb_author: ""
-# gravatar_author: ""
-# linkedin_username: ""
-# github_username: ""
-# twitter_username: ""
-# ig_username: ""
-# fb_username: ""
+disable_social: true
 
 # SEO
 # google_site_verification: ""
+# gravatar: ""
+github:
+  # username: ""
+instagram:
+  # username: ""
+linkedin:
+  # username: ""
+twitter:
+  card: summary
+  # username: ""
+facebook:
+  # publisher: ""
+  # author: ""
+  # username: ""
+social:
+  # name: "Tamado Ramot Sitohang"
+  # links:
+  #   - "https://ramottamado.dev"
 
-# Plugin
+# Plugin Settings
 # sitemap:
 #   changefreq: monthly
-# feed:
-#   excerpt_only: true
+feed:
+  excerpt_only: true
 
 # Jekyll
 excerpt_separator: <!--more-->
@@ -46,3 +67,7 @@ markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
     default_lang: html
+
+# Included Plugins
+plugins:
+  - jekyll-feed
