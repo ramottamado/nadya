@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:export-ydpi="256"
+   inkscape:export-xdpi="256"
+   inkscape:export-filename="/home/ramot/Documents/workspace/design/favicon.png"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="favicon.svg"
+   id="SVGRoot"
+   version="1.1"
+   viewBox="0 0 192 192"
+   height="192"
+   width="192"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs4908">
+    <inkscape:perspective
+       id="perspective34"
+       inkscape:persp3d-origin="96 : 64 : 1"
+       inkscape:vp_z="192 : 96 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 96 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <linearGradient
+       id="linearGradient5548"
+       inkscape:swatch="solid">
+      <stop
+         id="stop5546"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+    </linearGradient>
+    <clipPath
+       id="clipPath13265"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         style="fill:#5294ae;fill-opacity:1;stroke:none;stroke-width:0"
+         id="rect13267"
+         width="192"
+         height="192"
+         x="3.9999998e-07"
+         y="7.3652343e-05"
+         ry="23.999979" />
+    </clipPath>
+    <clipPath
+       id="clipPath13261"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         style="fill:#5294ae;fill-opacity:1;stroke:none;stroke-width:0"
+         id="rect13263"
+         width="192"
+         height="192"
+         x="3.9999998e-07"
+         y="7.3652343e-05"
+         ry="23.999979" />
+    </clipPath>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="96"
+       x2="138.27013"
+       y1="96"
+       x1="53.729866"
+       id="linearGradient5550"
+       xlink:href="#linearGradient5548"
+       inkscape:collect="always" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:snap-global="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox="false"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-center="true"
+     inkscape:snap-others="true"
+     inkscape:snap-nodes="false"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-midpoints="true"
+     inkscape:guide-bbox="true"
+     showguides="true"
+     inkscape:grid-bbox="true"
+     inkscape:window-maximized="1"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:window-height="1011"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="136.82516"
+     inkscape:cx="40.039921"
+     inkscape:zoom="1.8856181"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:pagecheckerboard="0"
+     scale-x="1.5">
+    <inkscape:grid
+       id="grid4935"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4911">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:inline"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <circle
+       cy="96"
+       cx="96"
+       id="path4953"
+       style="fill:#1b1f24;fill-opacity:1;stroke-width:1.02571"
+       r="96" />
+    <rect
+       ry="0"
+       y="48"
+       x="48"
+       height="96"
+       width="96"
+       id="rect166"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.28919" />
+    <rect
+       style="display:inline;fill:#1b1f24;fill-opacity:1;stroke-width:0.805745"
+       id="rect975"
+       width="60"
+       height="60"
+       x="66"
+       y="66"
+       ry="0" />
+  </g>
+</svg>

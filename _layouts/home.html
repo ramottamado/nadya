@@ -1,15 +1,11 @@
 ---
 layout: default
 ---
-<script type="application/ld+json">
-{% include schema.liquid %}
-</script>
-<div class="blog">
+<div class="blog" data-nosnippet>
   <ul class="post-list">
     {%- for post in site.posts limit: 20 -%}
     <li>
-      {%- comment -%} <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> {%- endcomment -%}
-      <info class="post-meta" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+      <info class="post-meta" datetime="{{ post.date | date: '%Y-%m-%d' }}">
         {{ post.date | date: "%b %d, %Y" }}
       </info>
       <article class="post-list-heading">

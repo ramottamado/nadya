@@ -20,12 +20,12 @@ defaults:
         card: summary_large_image
 
 # Layout
-# nav_pages:
-#   - categories.html
-#   - about.md
+nav_pages:
+  - categories.html
+  - about.md
 
 # Logo
-# logo: "favicon.svg"
+logo: "favicon.svg"
 # icon: "favicon.ico"
 
 # Social

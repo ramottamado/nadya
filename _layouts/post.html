@@ -1,53 +1,60 @@
 ---
 layout: default
 ---
-{% include constants.liquid %}
 {% include timer.liquid %}
+{% include breadcrumbs.html %}
+{% assign authors = page.author | default: site.author -%}
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "{{ site.title }} | {{ site_description }}",
-        "item": "{{ site.url | absolute_url }}"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "{{ page.title }} | {{ site.title }}"
-      }
-    ]
-  }
-</script>
-<script type="application/ld+json">
-  {% include schema.liquid %}
-</script>
-
-<article class="post h-entry">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name">{{ page.title | escape }}</h1>
+    <h1 class="post-title p-name" itemprop="name headline" {{ page.title | escape }}>
+      {{ page.title | escape }}
+    </h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        {%- assign date_format = site.nadya.date_format | default: "%b %d, %Y" -%}
+      {%- assign date_format = site.nadya.date_format | default: "%b %d, %Y" -%}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
       </time>
-      • <span>
-        <span>
-          {{ author | join: ', ' }}
+      {%- if page.modified_date -%}
+      ~
+      {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+      <time class="dt-published" datetime="{{ mdate }}" itemprop="dateModified">
+        {{ mdate | date: date_format }}
+      </time>
+      {%- endif -%}
+      • {% for author in authors %}
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">{{ author }}</span>
+        {%- if author == site.author %}
+        <span itemprop="url" hidden>{{ site.url }}</span>
+        {%- if site.gravatar %}
+        <span itemprop="image" hidden>
+          {{ site.gravatar | prepend: "https://www.gravatar.com/avatar/" }}
         </span>
+        {%- endif %}
+        {%- endif %}
       </span>
+      {%- if forloop.last == false %}, {% endif -%}
+      {% endfor %}
       • <span>
         {{ time | append: ' read'}}
       </span>
     </p>
   </header>
 
-  <div class="post-content e-content">
+  <div class="post-content e-content" itemprop="articleBody">
+    {%- if page.thumbnail %}
+    <figure class="image">
+      <img src="{{ page.thumbnail }}" alt="{{ page.description }}" style="max-width: 80%;" itemprop="image">
+    </figure>
+    {% elsif site.logo %}
+    <figure class="image" style="display: none !important;" hidden>
+      <img src="{{ site.logo | absolute_url }}" alt="{{ page.description }}" itemprop="image"
+        style="display: none !important;" hidden>
+    </figure>
+    {%- endif %}
+
     {{ content }}
   </div>
 
