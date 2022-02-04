@@ -1,0 +1,159 @@
+{%- include constants.liquid -%}
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site_url }}#organization",
+      "name": "{{ site.title }}",
+      "url": "{{ site_url }}",
+      {% if site.facebook.username or site.instagram.username or site.twitter.username -%}
+      "sameAs": [
+      {%- if site.facebook.username %}
+        "{{ site.facebook.username | prepend: 'https://facebook.com/' }}"{% if site.instagram.username or site.twitter.username %},{% endif %}
+      {%- endif %}
+      {%- if site.instagram.username %}
+        "{{ site.instagram.username | prepend: 'https://instagram.com/' }}"{% if site.twitter.username %},{% endif %}
+      {%- endif %}
+      {%- if site.twitter.username %}
+        "{{ site.twitter.username | prepend: 'https://twitter.com/' }}"
+      {%- endif %}
+      ],
+      {%- endif %}
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "{{ site_url }}#logo",
+        "inLanguage": "en-US",
+        "url": "{{ logo }}",
+        "width": 512,
+        "height": 512,
+        "caption": "{{ site.title }}"
+      },
+      "image": { "@id": "{{ site_url }}#logo" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site_url }}#website",
+      "url": "{{ site_url }}",
+      "name": "{{ site.title }}",
+      "description": "{{ site_description }}",
+      "publisher": { "@id": "{{ site_url }}#organization" },
+      "inLanguage": "en-US"
+    }{%- if page.layout == "home" %},
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ site_url }}#webpage",
+      "url": "{{ site_url }}",
+      "name": "{{ site.title }} | {{ site_description }}",
+      "isPartOf": { "@id": "{{ site_url }}#website" },
+      "about": { "@id": "{{ site_url }}#organization" },
+      "description": "{{ site_description }}",
+      "inLanguage": "en-US"
+    }{%- elsif page.layout == "page" %},
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page_url }}#primaryimage",
+      "inLanguage": "en-US",
+      "url": "{{ image }}"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ page_url }}#webpage",
+      "url": "{{ page_url }}",
+      "name": "{{ page.title }} | {{ site.title | xml_escape }}",
+      "isPartOf": { "@id": "{{ site_url }}#website" },
+      "primaryImageOfPage": {
+        "@id": "{{ page_url }}#primaryimage"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": ["{{ page_url }}"]
+        }
+      ]
+    }{%- elsif page.layout == "post" %},
+    {% assign lang = page.lang | default: "en-US" -%}
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page_url }}#primaryimage",
+      "inLanguage": "en-US",
+      "url": "{{ image }}"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ page_url }}#webpage",
+      "url": "{{ page_url }}",
+      "name": "{{ title }} | {{ site.title | xml_escape }}",
+      "isPartOf": { "@id": "{{ site_url }}#website" },
+      "primaryImageOfPage": { "@id": "{{ page_url }}#primaryimage" },
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{%- if page.modified -%}{{ page.modified | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{%- endif -%}",
+      "description": "{{ description }}",
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "{{ page_url }}"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "{{ page_url }}#article",
+      "isPartOf": { "@id": "{{ page_url }}#webpage" },
+      "author": [
+        {% for auth in author -%}
+        {
+          "@type": ["Person"],
+          "name": "{{ auth }}",
+          "url:" "{{ site_url }}",
+          {%- if auth == site.author and site.gravatar %}
+          "image": "{{ site.gravatar | prepend: "https://www.gravatar.com/avatar/" }}",
+          {%- endif %}
+          "description": "{{ auth }}"
+          {%- if auth == site.author %}
+          {%- if site.facebook.username or site.instagram.username or site.twitter.username or site.social.links -%},
+          "sameAs": [
+          {%- for link in social.links %}
+            "{{ link }}"
+          {% if forloop.last != true -%},{% endif -%}
+          {%- endfor %}
+          {%- if site.facebook.username %}
+            "{{ site.facebook.username | prepend: 'https://facebook.com/' }}"{% if site.instagram.username or site.twitter.username %},{% endif %}
+          {%- endif %}
+          {%- if site.instagram.username %}
+            "{{ site.instagram.username | prepend: 'https://instagram.com/' }}"{% if site.twitter.username %},{% endif %}
+          {%- endif %}
+          {%- if site.twitter.username %}
+            "{{ site.twitter.username | prepend: 'https://twitter.com/' }}"
+          {%- endif %}
+          ]
+          {%- endif %}{%- endif %}
+        }{% if forloop.last != true -%},{% endif -%}
+        {% endfor %}
+      ],
+      "headline": "{{ title }}",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{%- if page.modified -%}{{ page.modified | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{%- endif -%}",
+      "mainEntityOfPage": { "@id": "{{ page_url }}#webpage" },
+      "publisher": { "@id": "{{ site_url }}#organization" },
+      "image": { "@id": "{{ page_url }}#primaryimage" },
+      "keywords": "{{ page.keywords }}",
+      "articleSection": "News",
+      "inLanguage": "{{ lang }}",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": ["{{ page_url }}"]
+        }
+      ],
+      "copyrightYear": "{{ 'now' | date: "%Y" }}",
+      "copyrightHolder": { "@id": "{{ site_url }}#organization" }
+    }
+    {%- endif %}
+  ]
+}
