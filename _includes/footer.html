@@ -5,18 +5,28 @@
       <div class="footer-col footer-col-40">
         <ul class="contact-list">
           <li>
-            {%- if site.github_username %}
+            {%- if site.github.username %}
             <a class="nontext footer-link"
-              href="{{ site.github_username | prepend: 'https://github.com/' | xml_escape }}">
+              href="{{ site.github.username | prepend: 'https://github.com/' | xml_escape }}">
               <i class="fab fa-github fa-fw"></i>
-              {{ site.github_username }}
+              {{ site.github.username }}
             </a>
             {%- endif %}
+          </li>
           <li>
             {%- if site.email %}
             <a class="nontext footer-link" href="{{ site.email | prepend: 'mailto:' }}">
               <i class="far fa-envelope fa-fw"></i>
               {{ site.email | replace: '@', '[at]' | replace: '.', '[dot]' }}
+            </a>
+            {%- endif %}
+          </li>
+          <li>
+            {%- if site.linkedin.username %}
+            <a class="nontext footer-link"
+              href="{{ site.linkedin.username | prepend: 'https://linkedin.com/li/' | xml_escape }}">
+              <i class="fab fa-linkedin fa-fw"></i>
+              {{ site.linkedin.username }}
             </a>
             {%- endif %}
           </li>
@@ -26,19 +36,19 @@
       <div class="footer-col footer-col-25">
         <ul class="social-media-list">
           <li>
-            {%- if site.fb_username %}
+            {%- if site.facebook.username %}
             <a class="nontext footer-link"
-              href="{{ site.fb_username | prepend: 'https://facebook.com/' | xml_escape }}">
+              href="{{ site.facebook.username | prepend: 'https://facebook.com/' | xml_escape }}">
               <i class="fab fa-facebook fa-fw"></i>
-              {{ site.fb_username }}</a>
+              {{ site.facebook.username }}</a>
             {%- endif %}
           </li>
           <li>
-            {%- if site.twitter_username %}
+            {%- if site.twitter.username %}
             <a class="nontext footer-link"
-              href="{{ site.twitter_username | prepend: 'https://twitter.com/' | xml_escape }}">
+              href="{{ site.twitter.username | prepend: 'https://twitter.com/' | xml_escape }}">
               <i class="fab fa-twitter fa-fw"></i>
-              {{ site.twitter_username }}</a>
+              {{ site.twitter.username }}</a>
             {%- endif %}
           </li>
         </ul>
