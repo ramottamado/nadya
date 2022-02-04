@@ -2,9 +2,9 @@
 title: "nadya"
 email: "hello@ramottamado.dev"
 author:
-  name: "Tamado Ramot Sitohang"
+  # name: "Tamado Ramot Sitohang"
   # twitter: ""
-  url: "https://ramottamado.dev"
+  # url: "https://ramottamado.dev"
 description: >- # this means to ignore newlines and trim last newline
   Nadya Jekyll theme.<br />
   Made with ❤️.
@@ -51,9 +51,9 @@ facebook:
   admins: ""
   # username: ""
 social:
-  name: "Tamado Ramot Sitohang"
-  links:
-    - "https://ramottamado.dev"
+  # name: "Tamado Ramot Sitohang"
+  # links:
+  #   - "https://ramottamado.dev"
 
 # Plugin Settings
 # sitemap:
@@ -74,3 +74,4 @@ kramdown:
 # Included Plugins
 plugins:
   - jekyll-seo-tag
+  - jekyll-feed
