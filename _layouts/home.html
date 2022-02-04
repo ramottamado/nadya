@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+<script type="application/ld+json">
+{% include schema.liquid %}
+</script>
 <div class="blog">
   <ul class="post-list">
     {%- for post in site.posts limit: 20 -%}
