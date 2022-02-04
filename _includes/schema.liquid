@@ -110,9 +110,11 @@
         {
           "@type": ["Person"],
           "name": "{{ auth }}",
-          "url:" "{{ site_url }}",
-          {%- if auth == site.author and site.gravatar %}
+          {%- if auth == site.author %}
+          "url": "{{ site_url }}",
+          {%- if site.gravatar %}
           "image": "{{ site.gravatar | prepend: "https://www.gravatar.com/avatar/" }}",
+          {%- endif %}
           {%- endif %}
           "description": "{{ auth }}"
           {%- if auth == site.author %}
