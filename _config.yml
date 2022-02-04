@@ -11,13 +11,12 @@ nadya:
   date_format: "%b %d, %Y"
 
 # Default
-defaults:
-  - scope:
-      path: "_posts"
-    values:
-      image: /favicon.svg
-      twitter:
-        card: summary_large_image
+# defaults:
+#   - scope:
+#       path: "_posts"
+#     values:
+#       twitter:
+#         card: summary_large_image
 
 # Layout
 nav_pages:
