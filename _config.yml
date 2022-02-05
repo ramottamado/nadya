@@ -9,12 +9,13 @@ description: >- # this means to ignore newlines and trim last newline
 
 # Layout
 nav_pages:
-  - categories.html
+  - categories.md
   - about.md
 
 # Logo
 logo: "favicon.svg"
 icon: "favicon.ico"
+png_logo: "favicon.png"
 
 # Social
 disable_social: true
