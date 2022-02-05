@@ -119,6 +119,7 @@ figure > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  // border: 1px dashed black; // debug
 
   &.thumbnail {
     width: 100%;
@@ -137,7 +138,6 @@ figcaption {
   font-family: $base-font-family;
   font-style: normal;
   line-height: 2rem;
-  margin-top: -0.5rem;
   text-align: right;
 
   &:not(.thumbnail) {
