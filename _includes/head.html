@@ -5,7 +5,7 @@
   {% assign author = page.author | default: site.author -%}
   {% assign page_description = page.description | strip_html | normalize_whitespace -%}
   {% assign page_excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 -%}
-  {% assign site_description = site.description | strip_html | normalize_whitespace -%}
+  {% assign site_description = site.tagline | default: site.description | strip_html | normalize_whitespace -%}
   {% assign description = page_description | default: page_excerpt | default: site_description -%}
   {% assign png_logo = site.png_logo | absolute_url -%}
   {% assign image = page.image | default: png_logo -%}

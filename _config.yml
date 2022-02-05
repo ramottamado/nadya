@@ -2,6 +2,7 @@
 title: "nadya"
 email: "hello@ramottamado.dev"
 author: "Tamado Ramot Sitohang"
+# tagline: ""
 description: >- # this means to ignore newlines and trim last newline
   Nadya Jekyll theme.<br />
   Made with ❤️.
@@ -26,6 +27,7 @@ nav_pages:
 # Logo
 logo: "favicon.svg"
 # icon: "favicon.ico"
+png_logo: "favicon.png"
 
 # Social
 disable_social: true
