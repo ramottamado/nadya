@@ -7,8 +7,8 @@
   {% assign page_excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 -%}
   {% assign site_description = site.tagline | default: site.description | strip_html | normalize_whitespace -%}
   {% assign description = page_description | default: page_excerpt | default: site_description -%}
-  {% assign site_logo = site.logo | absolute_url -%}
-  {% assign image = page.image | default: site_logo -%}
+  {% assign site_icon = site.icon | absolute_url -%}
+  {% assign image = page.image | default: site_icon -%}
   {% assign rel_icon = site.icon | relative_url -%}
   {% assign rel_alt_icon = site.alt_icon | relative_url -%}
   {% assign rel_favicon = site.favicon | relative_url -%}
