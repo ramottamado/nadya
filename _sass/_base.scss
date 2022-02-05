@@ -174,18 +174,14 @@ a {
     color: $link-color;
     text-decoration: none;
 
-    &:not(.nontext, .post-tag, .logo, .creative-common) {
+    &:not(.nontext, .post-tag, .logo) {
       &, &:visited {
         color: $link-color;
-        border-bottom: 1px solid transparent;
-        transition: border 300ms linear;
-        -webkit-transition: border 300ms linear;
-        -moz-transition: border 300ms linear;
       }
 
       &:hover {
         color: $link-color;
-        border-bottom: 1px solid $link-color;
+        text-decoration: underline $link-color;
       }
     }
   }

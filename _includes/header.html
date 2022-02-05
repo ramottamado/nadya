@@ -5,13 +5,15 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
     <div class="site-title">
+      {%- if site.logo -%}
       <a class="logo" rel="author" href="/" aria-label="logo">
-        {%- if site.logo -%}
         <img alt="" src="{{ site.logo | relative_url }}" width="32" height="32" />
-        {%- else -%}
-        <img alt="" width="32" height="32" />
-        {%- endif -%}
       </a>
+      {%- else -%}
+      <a class="nontext" href="/" aria-label="logo">
+        {{ site.title }}
+      </a>
+      {%- endif -%}
     </div>
 
     <nav class="site-nav">

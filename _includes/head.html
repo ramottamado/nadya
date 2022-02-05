@@ -7,12 +7,13 @@
   {% assign page_excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 -%}
   {% assign site_description = site.tagline | default: site.description | strip_html | normalize_whitespace -%}
   {% assign description = page_description | default: page_excerpt | default: site_description -%}
-  {% assign png_logo = site.png_logo | absolute_url -%}
-  {% assign image = page.thumbnail | page.image | default: png_logo -%}
+  {% assign site_logo = site.logo | absolute_url -%}
+  {% assign image = page.image | default: site_logo -%}
   {% assign rel_icon = site.icon | relative_url -%}
-  {% assign rel_logo = site.logo | relative_url -%}
+  {% assign rel_alt_icon = site.alt_icon | relative_url -%}
+  {% assign rel_favicon = site.favicon | relative_url -%}
   {% assign twitter_card = site.twitter.card | default: "summary" -%}
-  {% if page.image or page.thumbnail -%}
+  {% if page.image -%}
   {% assign twitter_card = 'summary_large_image' -%}
   {% if page.twitter.card -%}
   {% assign twitter_card = page.twitter.card -%}
@@ -63,14 +64,15 @@
   <meta property="fb:pages" content="{{ site.facebook.publisher }}" />
   {% endif -%}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' }}" />
-  {% if site.logo -%}
-  <link rel="icon" sizes="192x192" href="{{ rel_logo }}" />
-  {% elsif site.icon -%}
+  {% if site.icon -%}
   <link rel="icon" href="{{ rel_icon }}" />
   {% endif -%}
-  {% if site.icon -%}
-  <link rel="alternate icon" href="{{ rel_icon }}" />
-  <link rel="shortcut icon" href="{{ rel_icon }}" />
+  {% if site.favicon -%}
+  <link rel="icon" href="{{ rel_favicon }}" />
+  {% endif -%}
+  {% if site.alt_icon -%}
+  <link rel="alternate icon" href="{{ rel_alt_icon }}" />
+  <link rel="shortcut icon" href="{{ rel_alt_icon }}" />
   {% endif -%}
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}" />

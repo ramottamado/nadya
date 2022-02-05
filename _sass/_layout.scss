@@ -27,12 +27,17 @@ img.emoji {
 }
 
 .site-title {
+  color: $brand-color;
   font-weight: $bold-font-weight;
   margin-bottom: 0;
   float: left;
   font-family: $title-font-family;
   line-height: $base-line-height * $base-font-size * 2.25;
   cursor: default;
+
+  > .nontext {
+    @include relative-font-size(2.625);
+  }
 
   @include media-query($on-palm) {
     padding-right: 45px;
@@ -329,15 +334,12 @@ a {
   &.nontext, &.nontext:visited {
     color: $brand-color;
     text-decoration: none;
-    border-bottom: none;
     transition: background-color 750ms ease;
     -webkit-transition: background-color 750ms ease;
   }
 
   &.nontext:hover {
-    color: $brand-color;
     background-color: darken($code-selection-color, 10%);
-    border-bottom: none;
   }
 }
 
@@ -397,12 +399,6 @@ a {
   font-size: $small-font-size;
   color: $grey-color;
   font-family: $meta-font-family;
-}
-
-.read-more:hover {
-  color: $grey-color;
-  background-color: unset;
-  border-bottom: 1px solid $grey-color !important;
 }
 
 .post-link {

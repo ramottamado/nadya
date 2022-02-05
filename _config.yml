@@ -25,9 +25,10 @@ nav_pages:
   - about.md
 
 # Logo
+favicon: "favicon.svg"
 logo: "favicon.svg"
-# icon: "favicon.ico"
-png_logo: "favicon.png"
+icon: "favicon.png"
+alt_icon: "favicon.ico"
 
 # Social
 disable_social: true
