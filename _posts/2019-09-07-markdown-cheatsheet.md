@@ -4,7 +4,6 @@ title: "Markdown Cheatsheet"
 description: "Markdown Cheatsheet"
 keywords: "markdown, typography components, dummy content"
 image: https://octodex.github.com/images/minion.png
-thumbnail: https://octodex.github.com/images/minion.png
 categories:
   - cheatsheet
 tags:
