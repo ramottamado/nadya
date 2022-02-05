@@ -139,7 +139,7 @@ ___
 
 ### Image
 
-{% include image.html src="https://octodex.github.com/images/minion.png" width="60%" alt="Octocat" %}
+{% include image.html src="https://octodex.github.com/images/minion.png" width="600" height="600" maxwidth="60%" objectfit="contain" alt="Octocat" %}
 
 ---
 Footnote:

@@ -1,5 +1,6 @@
 <figure class="image">
-  <img src="{{ include.src }}" alt="{{ include.alt }}" style="max-width:{{ include.width }}">
+  <img src="{{ include.src }}" alt="{{ include.alt }}" width="{{ include.width }}" height="{{ include.height }}"
+    style="max-width: {{ include.maxwidth | default: '100%' }}; object-fit: {{ include.objectfit | default: 'contain' }}">
   <figcaption>
     <i class="fas fa-camera"></i>
     {{ include.alt }}
