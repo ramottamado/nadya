@@ -73,7 +73,7 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {%- if page.thumbnail %}
     <figure class="image">
-      <img src="{{ page.thumbnail }}" alt="{{ page.description }}" itemprop="image">
+      <img class="thumbnail" src="{{ page.thumbnail }}" alt="{{ page.description }}" itemprop="image">
     </figure>
     {% elsif site.logo %}
     <figure class="image" style="display: none !important;" hidden>

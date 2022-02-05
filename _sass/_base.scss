@@ -117,6 +117,11 @@ figure > img {
   margin-right: auto;
   padding-bottom: 1em;
 
+  .thumbnail {
+    width: 100%;
+    mix-blend-mode: multiply;
+  }
+
   @include media-query($on-palm) {
     max-width: 100% !important;
   }
