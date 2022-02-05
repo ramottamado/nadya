@@ -123,7 +123,10 @@ figure > img {
 
   &.thumbnail {
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     mix-blend-mode: multiply;
+    object-fit: contain;
   }
 
   @include media-query($on-palm) {

@@ -74,7 +74,7 @@ layout: default
     {%- if page.image %}
     <figure class="image thumbnail">
       {%- assign caption = page.meta | default: "Illustration" %}
-      <img class="thumbnail" src="{{ page.image }}" alt="{{ caption }}" itemprop="image">
+      <img class="thumbnail" src="{{ page.image }}" alt="{{ caption }}" height="450" width="800" itemprop="image">
       <figcaption class="thumbnail">
         {{ caption }}
         <i class="fas fa-camera"></i>
