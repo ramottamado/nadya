@@ -20,7 +20,7 @@ nadya:
 
 # Layout
 nav_pages:
-  - categories.html
+  - categories.md
   - about.md
 
 # Logo
