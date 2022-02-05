@@ -7,7 +7,7 @@
   {% assign page_excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 -%}
   {% assign site_description = site.tagline | default: site.description | strip_html | normalize_whitespace -%}
   {% if page.layout == "page" %}
-  {% assign page_content = page.content | strip_html | strip_newlines | truncate: 160 -%}
+  {% assign page_content = page.content | markdownify | strip_html | strip_newlines | truncate: 160 -%}
   {% assign description = page_description | default: page_content | default: site.description -%}
   {% else %}
   {% assign description = page_description | default: page_excerpt | default: site_description -%}
