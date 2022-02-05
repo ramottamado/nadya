@@ -76,9 +76,8 @@ layout: default
       <img class="thumbnail" src="{{ page.thumbnail }}" alt="{{ page.description }}" itemprop="image">
     </figure>
     {% elsif site.logo %}
-    <figure class="image" style="display: none !important;" hidden>
-      <img src="{{ site.logo | absolute_url }}" alt="{{ page.description }}" itemprop="image"
-        style="display: none !important;" hidden>
+    <figure class="image" hidden>
+      <img src="{{ site.logo | absolute_url }}" alt="{{ page.description }}" itemprop="image" hidden>
     </figure>
     {%- endif %}
 
