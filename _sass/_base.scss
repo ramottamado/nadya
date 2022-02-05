@@ -111,13 +111,16 @@ p > img {
 /**
  * Figures
  */
+figure {
+  padding-bottom: 1em;
+}
+
 figure > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 1em;
 
-  .thumbnail {
+  &.thumbnail {
     width: 100%;
     mix-blend-mode: multiply;
   }
@@ -128,10 +131,18 @@ figure > img {
 }
 
 figcaption {
+  border-bottom: 1px solid $grey-color;
+  color: $grey-color;
   font-size: $small-font-size;
-  text-align: center;
   font-family: $base-font-family;
-  font-style: italic;
+  font-style: normal;
+  line-height: 2rem;
+  margin-top: -0.5rem;
+  text-align: right;
+
+  &:not(.thumbnail) {
+    text-align: left;
+  }
 }
 
 /**
