@@ -36,7 +36,7 @@ img.emoji {
   cursor: default;
 
   > .nontext {
-    @include relative-font-size(2.625);
+    @include relative-font-size(1.25);
   }
 
   @include media-query($on-palm) {
@@ -47,6 +47,7 @@ img.emoji {
 .logo {
   cursor: default;
   border: none;
+  @include relative-font-size(1.25);
 
   > img {
     transform: translate3d(0,0,0) rotate(0); -webkit-transform: translate3d(0,0,0) rotate(0);

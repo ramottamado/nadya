@@ -177,15 +177,8 @@ a {
     color: $link-color;
     text-decoration: none;
 
-    &:not(.nontext, .post-tag, .logo) {
-      &, &:visited {
-        color: $link-color;
-      }
-
-      &:hover {
-        color: $link-color;
-        text-decoration: underline $link-color;
-      }
+    &:not(.nontext, .post-tag, .logo):hover {
+      text-decoration: underline $link-color;
     }
   }
 
