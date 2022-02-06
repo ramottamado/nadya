@@ -5,23 +5,25 @@
     Subscribe <a href="/feed.xml">via RSS</a>.
   </small>
 </div>
-<div class="footer-col footer-col-20">
+<div class="footer-col footer-col-10 footer-col-justify">
   <small class="post-meta post-foot-meta">
     <a class="logo" style="font-size: 1.75rem; color: unset; cursor: pointer;" rel="license"
-      href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-      <i class="fab fa-creative-commons"></i>
-      <i class="fab fa-creative-commons-by"></i>
-      <i class="fab fa-creative-commons-nc"></i>
-      <i class="fab fa-creative-commons-sa"></i>
+      href="https://creativecommons.org/licenses/by/4.0/">
+      <p class="fa-fw">
+        {% include fontawesome/creative-commons.svg %}
+        {% include fontawesome/creative-commons-by.svg %}
+      </p>
     </a>
   </small>
 </div>
-<div class="footer-col footer-col-80 footer-col-justify">
+<div class="footer-col footer-col-90 footer-col-justify">
   <small class="post-meta post-foot-meta">
-    <i class="fab fa-creative-commons fa-fw"></i>
+    <p class="fa-fw">
+      {% include fontawesome/creative-commons.svg %}
+    </p>
     {{ 'now' | date: "%Y" }} {{ site.author }}. Except where otherwise stated, this work is licensed under a
-    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-      Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      Creative Commons Attribution 4.0 International License.
     </a>
   </small>
 </div>
