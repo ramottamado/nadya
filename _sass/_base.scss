@@ -119,11 +119,11 @@ figure > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  height: auto;
   // border: 1px dashed black; // debug
 
   &.thumbnail {
-    width: 100%;
-    height: auto;
     aspect-ratio: 16 / 9;
     mix-blend-mode: multiply;
     object-fit: contain;
