@@ -3,9 +3,9 @@
     height="{{ include.height | default: '450' }}"
     style="max-width: {{ include.maxwidth | default: '100%' }}; object-fit: {{ include.objectfit | default: 'contain' }}; aspect-ratio: {{ include.width | default: '800' }}/{{ include.height | default: '450' }}">
   <figcaption>
-    <span>
+    <div>
       <i class="fas fa-camera"></i>
       {{ include.alt }}
-    </span>
+    </div>
   </figcaption>
 </figure>

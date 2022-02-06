@@ -33,6 +33,7 @@ img.emoji {
   float: left;
   font-family: $title-font-family;
   line-height: $base-line-height * $base-font-size * 2.25;
+  height: $base-line-height * $base-font-size * 2.25;
   cursor: default;
 
   > .nontext {
@@ -65,7 +66,16 @@ img.emoji {
   }
 }
 
+header > .wrapper-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
 .site-nav {
+  margin-top: -($base-line-height * $base-font-size * 2.25);
+  grid-column: span 2;
+  white-space: nowrap;
+  overflow-x: hidden;
   position: static;
   right: $spacing-unit / 2;
   background-color: $background-color;
@@ -128,7 +138,8 @@ img.emoji {
       float: right;
       border: none;
       background-color: inherit;
-      max-width: 0.6 * $content-width;
+      margin-left: ($base-line-height * $base-font-size * 2.25) + 45px;
+      // max-width: 0.6 * $content-width;
 
       label[for="nav-trigger"] {
         display: none;
@@ -139,7 +150,7 @@ img.emoji {
       }
 
       input ~ .trigger {
-        display: block;
+        display: inline;
       }
 
       .page-link {

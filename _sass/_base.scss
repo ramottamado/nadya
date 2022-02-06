@@ -140,15 +140,11 @@ figcaption {
   font-size: $small-font-size;
   font-family: $base-font-family;
   font-style: normal;
-  text-align: right;
-  line-height: 2rem;
+  text-align: left;
+  padding: (0.5 * $small-font-size) 0;
 
-  & > span {
-    line-height: 1rem;
-  }
-
-  &:not(.thumbnail) {
-    text-align: left;
+  &.thumbnail {
+    text-align: right;
   }
 }
 
