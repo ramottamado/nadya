@@ -4,7 +4,9 @@
     style="max-width: {{ include.maxwidth | default: '100%' }}; object-fit: {{ include.objectfit | default: 'contain' }}; aspect-ratio: {{ include.width | default: '800' }}/{{ include.height | default: '450' }}">
   <figcaption>
     <div>
-      <i class="fas fa-camera"></i>
+      <p class="fa-fw">
+        {% include fontawesome/images.svg %}
+      </p>
       {{ include.alt }}
     </div>
   </figcaption>

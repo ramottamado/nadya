@@ -72,20 +72,9 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {%- if page.image %}
-    <figure class="image thumbnail">
-      {%- assign caption = page.meta | default: "Illustration" %}
-      <img class="thumbnail" src="{{ page.image }}" alt="{{ caption }}" height="450" width="800" itemprop="image">
-      <figcaption class="thumbnail">
-        <div class="figcaption-text">
-          {{ caption }}
-          <i class="fas fa-camera"></i>
-        </div>
-      </figcaption>
-    </figure>
-    {%- elsif site.logo %}
-    <figure class="image" hidden>
-      <img src="{{ site.logo | absolute_url }}" alt="{{ caption }}" itemprop="image" hidden>
-    </figure>
+    {%- include thumbnail.html %}
+    {%- elsif site.icon or site.logo %}
+    {%- include default-thumbnail.html %}
     {%- endif %}
 
     {{ content }}

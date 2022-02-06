@@ -8,7 +8,9 @@
             {%- if site.github.username %}
             <a class="nontext footer-link"
               href="{{ site.github.username | prepend: 'https://github.com/' | xml_escape }}">
-              <i class="fab fa-github fa-fw"></i>
+              <p class="fa-fw">
+                {% include fontawesome/github.svg %}
+              </p>
               {{ site.github.username }}
             </a>
             {%- endif %}
@@ -16,7 +18,9 @@
           <li>
             {%- if site.email %}
             <a class="nontext footer-link" href="{{ site.email | prepend: 'mailto:' }}">
-              <i class="far fa-envelope fa-fw"></i>
+              <p class="fa-fw">
+                {% include fontawesome/envelope.svg %}
+              </p>
               {{ site.email | replace: '@', '[at]' | replace: '.', '[dot]' }}
             </a>
             {%- endif %}
@@ -25,7 +29,9 @@
             {%- if site.linkedin.username %}
             <a class="nontext footer-link"
               href="{{ site.linkedin.username | prepend: 'https://linkedin.com/li/' | xml_escape }}">
-              <i class="fab fa-linkedin fa-fw"></i>
+              <p class="fa-fw">
+                {% include fontawesome/linkedin.svg %}
+              </p>
               {{ site.linkedin.username }}
             </a>
             {%- endif %}
@@ -39,16 +45,22 @@
             {%- if site.facebook.username %}
             <a class="nontext footer-link"
               href="{{ site.facebook.username | prepend: 'https://facebook.com/' | xml_escape }}">
-              <i class="fab fa-facebook fa-fw"></i>
-              {{ site.facebook.username }}</a>
+              <p class="fa-fw">
+                {% include fontawesome/facebook.svg %}
+              </p>
+              {{ site.facebook.username }}
+            </a>
             {%- endif %}
           </li>
           <li>
             {%- if site.twitter.username %}
             <a class="nontext footer-link"
               href="{{ site.twitter.username | prepend: 'https://twitter.com/' | xml_escape }}">
-              <i class="fab fa-twitter fa-fw"></i>
-              {{ site.twitter.username }}</a>
+              <p class="fa-fw">
+                {% include fontawesome/twitter.svg %}
+              </p>
+              {{ site.twitter.username }}
+            </a>
             {%- endif %}
           </li>
         </ul>
