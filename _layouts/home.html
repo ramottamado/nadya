@@ -17,13 +17,13 @@ layout: default
 <div class="divider"></div>
 {%- endif %}
 
-<div class="blog" data-nosnippet>
+<div class="blog">
   <ul class="post-list">
     {%- for post in site.posts limit: 20 -%}
-    <li>
-      <info class="post-meta" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+    <li class="post-list">
+      <span class="post-meta" datetime="{{ post.date | date: '%Y-%m-%d' }} data-nosnippet">
         {{ post.date | date: "%b %d, %Y" }}
-      </info>
+      </span>
       <article class="post-list-heading">
         <a class="nontext post-link-heading" href="{{ post.url }}">{{ post.title }}</a>
       </article>

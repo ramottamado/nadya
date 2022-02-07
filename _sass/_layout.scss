@@ -1,15 +1,6 @@
 /**
- * Emoji
+ * Fontawesome
  */
-img.emoji {
-    height: 1em;
-    width: 1em;
-    margin: 0 .05em 0 .1em !important;
-    vertical-align: -0.1em;
-    display: inline !important;
-    padding: 0 !important;
-}
-
 .fa-fw {
   width: 1em !important;
   height: 1em !important;
@@ -57,7 +48,7 @@ img.emoji {
   border: none;
   @include relative-font-size(1.25);
 
-  > img {
+  > .logo-image {
     transform: translate3d(0,0,0) rotate(0); -webkit-transform: translate3d(0,0,0) rotate(0);
     transition: 1s transform ease-out; -webkit-transition: 1s transform ease-out;
 
@@ -71,11 +62,6 @@ img.emoji {
     background: none;
     border: none;
   }
-}
-
-header > .wrapper-grid {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
 }
 
 .site-nav {
@@ -404,7 +390,6 @@ a {
     margin-bottom: $spacing-unit;
   }
 
-  > info,
   > span {
     color: $grey-color;
     font-size: $small-font-size;
@@ -414,6 +399,15 @@ a {
 
     @media screen and (max-width: $on-palm) {
       float: inherit;
+    }
+
+    &.post-meta {
+      padding-top: ($base-font-size * 1.25) - $small-font-size !important;
+      float: right;
+
+      @media screen and (max-width: $on-palm) {
+        float: inherit;
+      }
     }
   }
 }
@@ -500,7 +494,7 @@ a {
 /**
  * Archive
  */
-ul.minimal {
+.post-list-minimal {
     list-style: none;
     margin-left: 0;
 }

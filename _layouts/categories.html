@@ -21,13 +21,11 @@ layout: page
 <hr class="tags-hor" />
 {% for cat in cats %}
 <h3 class="post-link" id="{{ cat[0] | slugify }}">{{ cat[0] }}</h3>
-<ul class="minimal">
+<ul class="post-list-minimal">
   {% for post in cat[1] %}
   <li class="post-list">
-    <span data-nosnippet>
-      <info>
-        {{ post.date | date: "%b %d, %Y" }}
-      </info>
+    <span class="info" data-nosnippet>
+      {{ post.date | date: "%b %d, %Y" }}
     </span>
     <article class="post-list-heading">
       <a class="nontext post-list-heading" href="{{ post.url }}">
@@ -44,14 +42,12 @@ layout: page
 {% endfor %}
 {% if uncategorized_exists %}
 <h3 class="post-link" id="uncategorized">uncategorized</h3>
-<ul class="minimal">
+<ul class="post-list-minimal">
   {% for post in site.posts %}
   {%- if post.categories.size == 0 %}
   <li class="post-list">
     <span data-nosnippet>
-      <info>
-        {{ post.date | date: "%b %d, %Y" }}
-      </info>
+      {{ post.date | date: "%b %d, %Y" }}
     </span>
     <article class="post-list-heading">
       <a class="nontext post-list-heading" href="{{ post.url }}">

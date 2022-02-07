@@ -34,21 +34,6 @@ body {
   flex-direction: column;
 }
 
-info {
-  color: $grey-color;
-  font-size: $small-font-size;
-  font-family: $meta-font-family;
-
-  &.post-meta {
-    padding-top: ($base-font-size * 1.25) - $small-font-size;
-    float: right;
-
-    @media screen and (max-width: $on-palm) {
-      float: inherit;
-    }
-  }
-}
-
 hr {
   border-top: none;
   border-left: none;
@@ -255,6 +240,11 @@ pre {
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
   }
+}
+
+.wrapper-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 }
 
 /**

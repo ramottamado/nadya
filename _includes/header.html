@@ -5,7 +5,7 @@
     default_paths -%} {%- assign titles_size=site.pages | map: 'title' | join: '' | size -%} <div class="site-title">
       {%- if site.logo -%}
       <a class="logo" rel="author" href="/" aria-label="logo">
-        <img alt="" src="{{ site.logo | relative_url }}" width="32" height="32" />
+        <img alt="" class="logo-image" src="{{ site.logo | relative_url }}" width="32" height="32" />
       </a>
       {%- else -%}
       <a class="nontext" href="/" aria-label="logo">
