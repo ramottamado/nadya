@@ -2,13 +2,18 @@
 layout: post
 title: "Markdown Cheatsheet"
 description: "Markdown Cheatsheet"
-keywords: "markdown, typography components, dummy content"
-image: https://octodex.github.com/images/minion.png
+keywords:
+  - markdown
+  - typography
+  - components
+  - dummy content
+preview: https://octodex.github.com/images/minion.png
 meta: Minion Octocat
 categories:
   - cheatsheet
 tags:
   - markdown
+lastmod: '2022-02-07 23:36 +0700'
 ---
 
 ## Typography Elements in One
