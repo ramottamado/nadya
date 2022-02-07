@@ -9,8 +9,9 @@ layout: page
 {% break %}
 {% endif -%}
 {% endfor %}
+{% assign cats = site.categories | sort %}
 <div class="tags-list" data-nosnippet>
-  {% for cat in site.categories %}
+  {% for cat in cats %}
   <a href="#{{ cat[0] | slugify }}" class="post-tag">{{ cat[0] }}</a>
   {% endfor %}
   {% if uncategorized_exists %}
@@ -18,7 +19,7 @@ layout: page
   {% endif %}
 </div>
 <hr class="tags-hor" />
-{% for cat in site.categories %}
+{% for cat in cats %}
 <h3 class="post-link" id="{{ cat[0] | slugify }}">{{ cat[0] }}</h3>
 <ul class="minimal">
   {% for post in cat[1] %}
