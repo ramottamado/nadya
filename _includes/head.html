@@ -13,12 +13,13 @@
   {% assign description = page_description | default: page_excerpt | default: site_description -%}
   {% endif %}
   {% assign site_icon = site.icon | absolute_url -%}
-  {% assign image = page.image | default: site_icon -%}
+  {% assign preview = page.preview | absolute_url -%}
+  {% assign image = preview | default: site_icon -%}
   {% assign rel_icon = site.icon | relative_url -%}
   {% assign rel_alt_icon = site.alt_icon | relative_url -%}
   {% assign rel_favicon = site.favicon | relative_url -%}
   {% assign twitter_card = site.twitter.card | default: "summary" -%}
-  {% if page.image -%}
+  {% if page.preview -%}
   {% assign twitter_card = 'summary_large_image' -%}
   {% if page.twitter.card -%}
   {% assign twitter_card = page.twitter.card -%}

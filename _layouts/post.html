@@ -71,10 +71,10 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {%- if page.image %}
-    {%- include thumbnail.html %}
+    {%- if page.preview %}
+    {%- include preview.html %}
     {%- elsif site.icon or site.logo %}
-    {%- include default-thumbnail.html %}
+    {%- include default-preview.html %}
     {%- endif %}
 
     {{ content }}
