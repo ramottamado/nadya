@@ -404,7 +404,11 @@ a {
     margin-bottom: $spacing-unit;
   }
 
-  > info {
+  > info,
+  > span {
+    color: $grey-color;
+    font-size: $small-font-size;
+    font-family: $meta-font-family;
     float: right;
     padding-top: $base-font-size - $small-font-size;
 
