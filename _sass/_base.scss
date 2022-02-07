@@ -107,7 +107,7 @@ figure > img {
   height: auto;
   // border: 1px dashed black; // debug
 
-  &.thumbnail {
+  &.preview {
     width: 100%;
     aspect-ratio: 16 / 9;
     mix-blend-mode: multiply;

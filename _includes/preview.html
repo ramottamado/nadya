@@ -1,8 +1,8 @@
-<figure class="image thumbnail">
+<figure class="image preview">
   {%- assign caption = page.meta | default: "Illustration" %}
   {%- assign preview = page.preview | relative_url %}
-  <img class="thumbnail" src="{{ preview }}" alt="{{ caption }}" height="450" width="800" itemprop="image">
-  <figcaption class="thumbnail">
+  <img class="preview" src="{{ preview }}" alt="{{ caption }}" height="450" width="800" itemprop="image">
+  <figcaption class="preview">
     <div class="figcaption-text" data-nosnippet>
       {{ caption }}
       <p class="fa-fw">
