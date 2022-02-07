@@ -12,15 +12,15 @@ layout: page
 {% assign cats = site.categories | sort %}
 <div class="tags-list" data-nosnippet>
   {% for cat in cats %}
-  <a href="#{{ cat[0] | slugify }}" class="post-tag">{{ cat[0] }}</a>
+  <a href="#{{ cat[0] | slugify }}" class="post-tag">{{ cat[0] | capitalize }}</a>
   {% endfor %}
   {% if uncategorized_exists %}
-  <a href="#uncategorized" class="post-tag">uncategorized</a>
+  <a href="#uncategorized" class="post-tag">Uncategorized</a>
   {% endif %}
 </div>
 <hr class="tags-hor" />
 {% for cat in cats %}
-<h3 class="post-link" id="{{ cat[0] | slugify }}">{{ cat[0] }}</h3>
+<h3 class="post-link" id="{{ cat[0] | slugify }}">{{ cat[0] | capitalize }}</h3>
 <ul class="post-list-minimal">
   {% for post in cat[1] %}
   <li class="post-list">
@@ -41,7 +41,7 @@ layout: page
 </ul>
 {% endfor %}
 {% if uncategorized_exists %}
-<h3 class="post-link" id="uncategorized">uncategorized</h3>
+<h3 class="post-link" id="uncategorized">Uncategorized</h3>
 <ul class="post-list-minimal">
   {% for post in site.posts %}
   {%- if post.categories.size == 0 %}

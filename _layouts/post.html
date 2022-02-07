@@ -38,14 +38,24 @@ layout: default
     <h1 class="post-title p-name" itemprop="name headline" {{ page.title | escape }}>
       {{ page.title | escape }}
     </h1>
+    {%- if page.keywords.size > 0 %}
+    <meta itemprop="keywords" content="{{ page.keywords | join: ', ' }}" />
+    {%- endif %}
+    {%- if page.categories.size > 0 %}
+    {%- for cat in page.categories %}
+    <meta itemprop="articleSection" content="{{ cat | capitalize }}" />
+    {%- endfor %}
+    {%- else %}
+    <meta itemprop="articleSection" content="Uncategorized" />
+    {%- endif %}
     <p class="post-meta">
       {%- assign date_format = site.nadya.date_format | default: "%b %d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
       </time>
-      {%- if page.modified_date -%}
+      {%- if page.lastmod -%}
       ~
-      {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+      {%- assign mdate = page.lastmod | date_to_xmlschema -%}
       <time class="dt-published" datetime="{{ mdate }}" itemprop="dateModified">
         {{ mdate | date: date_format }}
       </time>
@@ -54,11 +64,14 @@ layout: default
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">{{ author }}</span>
         {%- if author == site.author %}
-        <span itemprop="url" hidden>{{ site.url }}</span>
+        <meta itemprop="url" content="{{ site.url }}" />
         {%- if site.gravatar %}
-        <span itemprop="image" hidden>
-          {{ site.gravatar | prepend: "https://www.gravatar.com/avatar/" }}
-        </span>
+        <meta itemprop="image" content="{{ site.gravatar | prepend: 'https://www.gravatar.com/avatar/' }}" />
+        {%- endif %}
+        {%- if site.social.links.size > 0 %}
+        {%- for link in site.social.links %}
+        <link itemprop="sameAs" href="{{ link }}" />
+        {%- endfor %}
         {%- endif %}
         {%- endif %}
       </span>
@@ -74,11 +87,10 @@ layout: default
     {%- if page.preview %}
     {%- include preview.html %}
     {%- elsif site.icon or site.logo %}
-    {%- include default-preview.html %}
+    {% assign icon = site.icon | default: site.logo %}
+    <link href="{{ icon | absolute_url }}" itemprop="image" />
     {%- endif %}
 
     {{ content }}
   </div>
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
