@@ -1,0 +1,15 @@
+<figure class="table-wrapper">
+  <div class="table-wrapper">
+    {{ include.content | markdownify }}
+  </div>
+  {% if include.caption %}
+  <figcaption class="table-caption">
+    <div data-nosnippet>
+      {{ include.caption }}
+      <p class="fa-fw">
+        {% include fontawesome/table.svg %}
+      </p>
+    </div>
+  </figcaption>
+  {% endif %}
+</figure>

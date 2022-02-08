@@ -1,0 +1,14 @@
+<!-- Google Maps -->
+<figure class="media-container">
+  {{ include.content | markdownify }}
+  {% if include.caption %}
+  <figcaption class="media-caption">
+    <div data-nosnippet>
+      {{ include.caption }}
+      <p class="fa-fw">
+        {% include fontawesome/map-marker-alt.svg %}
+      </p>
+    </div>
+  </figcaption>
+  {% endif %}
+</figure>
