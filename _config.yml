@@ -7,6 +7,9 @@ description: >- # this means to ignore newlines and trim last newline
   Nadya Jekyll theme.<br />
   Made with ❤️.
 
+nadya:
+  attribution: true
+
 # Layout
 nav_pages:
   - categories.md
