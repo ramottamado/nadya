@@ -69,6 +69,14 @@
         <p>{{ site.description }}</p>
       </div>
       {% include custom-footer.html %}
+      {% if site.nadya.attribution %}
+      <div class="footer-col footer-col-center">
+        <small class="post-meta post-foot-meta attribution-meta">
+          &lt;/&gt; powered by <a href="https://github.com/ramottamado/nadya">nadya</a> &mdash; theme by <a
+            href="https://ramottamado.dev">ramottamado</a>
+        </small>
+      </div>
+      {% endif %}
     </div>
   </div>
 </footer>

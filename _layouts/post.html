@@ -20,7 +20,7 @@ layout: default
         "@type": "ListItem",
         "position": 2,
         "name": "{{ this_category | capitalize }}",
-        "item": "{{ this_category | prepend: 'categories/#' | absolute_url }}"
+        "item": "{{ this_category | slugify | prepend: 'categories/#' | absolute_url }}"
       },
       {
         "@type": "ListItem",

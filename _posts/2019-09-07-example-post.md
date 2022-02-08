@@ -178,7 +178,7 @@ ___
 ### Spotify Playlist
 
 {% capture spot_1 %}
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/119RwhTmhNelp6IqJpt0K4?utm_source=generator" width="100%" height="800" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/119RwhTmhNelp6IqJpt0K4?utm_source=generator" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 {% endcapture %}
 {% include media.html content=spot_1 caption="Non-Stop-Pop FM" %}
 

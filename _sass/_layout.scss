@@ -330,6 +330,10 @@
     float: right;
   }
 
+  .footer-col-center {
+    text-align: center;
+  }
+
   .footer-col-justify {
     text-align: justify;
   }
@@ -433,20 +437,6 @@ a {
   font-weight: $bold-font-weight;
   color: $nav-color;
   @include relative-font-size(1.25);
-}
-
-.LI-profile-badge {
-  margin-right: $spacing-unit / 2;
-  margin-bottom: $spacing-unit / 2;
-  float: left;
-
-  @include media-query($on-laptop) {
-    float: left;
-  }
-
-  @include media-query($on-palm) {
-    float: none;
-  }
 }
 
 /**
@@ -564,4 +554,20 @@ hr.tags-hor {
   border-top: 2px solid $grey-color;
   margin-bottom: 3rem;
   margin-top: 3rem;
+}
+
+/**
+ *Attribution
+ */
+.attribution-meta {
+  font-size: 0.75 * $base-font-size;
+  color: lighten($grey-color, 20%);
+  font-family: $meta-font-family;
+
+  > a {
+    &,
+    &:visited {
+      color: darken($link-color, 5%) !important;
+    }
+  }
 }

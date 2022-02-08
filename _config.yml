@@ -10,6 +10,7 @@ description: >- # this means to ignore newlines and trim last newline
 # Theme
 nadya:
   date_format: "%b %d, %Y"
+  attribution: true
 
 # Default
 # defaults:
