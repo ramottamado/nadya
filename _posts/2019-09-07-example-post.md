@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Markdown Cheatsheet"
-description: "Markdown Cheatsheet"
+title: "Example Post"
+description: "Example Post"
 keywords:
   - markdown
   - typography
@@ -10,10 +10,10 @@ keywords:
 preview: https://octodex.github.com/images/minion.png
 meta: Minion Octocat
 categories:
-  - cheatsheet
+  - example
 tags:
   - markdown
-lastmod: '2022-02-07 23:36 +0700'
+lastmod: '2022-02-09 01:53 +0700'
 ---
 
 ## Typography Elements in One
@@ -116,6 +116,18 @@ Markdown | Less | Pretty
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 
+### Table 3: Super Long and With Caption
+
+{% capture table_1 %}
+Title 1 | Title 2 | Title 3 | Title 4 | Title 5 | Title 6 | Title 7 | Title 8
+--- | --- | --- | --- | --- | --- | --- | ---
+lorem | lorem ipsum | lorem ipsum dolor | lorem ipsum dolor sit | lorem | lorem ipsum | lorem ipsum dolor | lorem ipsum dolor sit |
+lorem ipsum dolor sit amet | lorem ipsum dolor sit amet consectetur | lorem ipsum dolor sit amet | lorem ipsum dolor sit | lorem | lorem ipsum | lorem ipsum dolor | lorem ipsum dolor sit |
+lorem ipsum dolor | lorem ipsum | lorem | lorem ipsum | lorem | lorem ipsum | lorem ipsum dolor | lorem ipsum dolor sit |
+lorem ipsum dolor | lorem ipsum dolor sit | lorem ipsum dolor sit amet | lorem ipsum dolor sit amet consectetur | lorem | lorem ipsum | lorem ipsum dolor | lorem ipsum dolor sit |
+{% endcapture %}
+{% include table.html content=table_1 caption='Some Long Table' %}
+
 <div class="divider"></div>
 
 ## Horizontal Line
@@ -140,11 +152,35 @@ ___
 
 ### YouTube Embedded Iframe
 
-<div class="video-container"><iframe src="https://www.youtube.com/embed/n1a7o44WxNo" frameborder="0" allowfullscreen></iframe></div>
+{% capture video_1 %}
+<iframe src="https://www.youtube.com/embed/n1a7o44WxNo" frameborder="0" allowfullscreen></iframe>
+{% endcapture %}
+{% include media.html content=video_1 caption='Zedd - Beautiful Now ft. Jon Bellion' %}
 
 ### Image
 
 {% include image.html src="https://octodex.github.com/images/minion.png" width="600" height="600" maxwidth="60%" objectfit="contain" alt="Octocat" %}
+
+### Maps
+
+{% capture map_1 %}
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.701735658459!2d107.61506721538433!3d-6.926211569720651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e62a4719e4a1%3A0xd475d26f7e9e047e!2sRumah%20Lezat%20Simplisio!5e0!3m2!1sen!2sid!4v1644343998841!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+{% endcapture %}
+{% include maps.html content=map_1 caption="Google Maps" %}
+
+### Soundcloud
+
+{% capture cit_1 %}
+<iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/349882264&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+{% endcapture %}
+{% include media.html content=cit_1 caption="Crystal Dolphin" %}
+
+### Spotify Playlist
+
+{% capture spot_1 %}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/119RwhTmhNelp6IqJpt0K4?utm_source=generator" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+{% endcapture %}
+{% include media.html content=spot_1 caption="Non-Stop-Pop FM" %}
 
 ---
 Footnote:
