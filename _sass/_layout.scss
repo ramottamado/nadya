@@ -211,11 +211,6 @@
 .footer-col-attribution {
   margin-bottom: 0 !important;
   text-align: center !important;
-
-  > .footer-meta-attribution {
-    color: $grey-color;
-    font-family: $meta-font-family;
-  }
 }
 
 .footer-col {
@@ -352,6 +347,11 @@
     text-align: right;
     float: right;
   }
+}
+
+.footer-meta-attribution {
+  color: $grey-color;
+  font-family: $meta-font-family;
 }
 
 /**
