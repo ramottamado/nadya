@@ -4,7 +4,7 @@ layout: default
 {% include timer.liquid %}
 {% assign authors = page.author | default: site.author -%}
 {% assign this_category = page.categories[0] | default: 'uncategorized' %}
-{% assign this_title = this_title | markdownify | strip_html %}
+{% assign this_title = this_title | markdownify | escape %}
 
 <script type="application/ld+json">
   {
