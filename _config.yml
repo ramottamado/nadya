@@ -10,7 +10,8 @@ description: >- # this means to ignore newlines and trim last newline
 # Theme
 nadya:
   date_format: "%b %d, %Y"
-  attribution: true
+  disable_attribution: false
+  disable_social: true
 
 # Default
 # defaults:
@@ -30,9 +31,6 @@ favicon: "favicon.svg"
 logo: "favicon.svg"
 icon: "favicon.png"
 alt_icon: "favicon.ico"
-
-# Social
-disable_social: true
 
 # SEO
 # google_site_verification: ""

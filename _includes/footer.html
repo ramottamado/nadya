@@ -37,7 +37,7 @@
           </li>
         </ul>
       </div>
-      {%- unless site.disable_social %}
+      {%- unless site.nadya.disable_social %}
       <div class="footer-col footer-col-25">
         <ul class="social-media-list">
           <li>
@@ -69,7 +69,7 @@
         <p>{{ site.description }}</p>
       </div>
       {%- include custom-footer.html %}
-      {%- if site.nadya.attribution %}
+      {%- unless site.nadya.disable_attribution %}
       {%- include attribution.html %}
       {%- endif %}
     </div>
