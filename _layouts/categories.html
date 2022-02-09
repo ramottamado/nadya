@@ -30,7 +30,7 @@ layout: page
     <article class="post-list-heading">
       <a class="nontext post-list-heading" href="{{ post.url }}">
         {% if post.title != "" %}
-        {{ post.title }}
+        {{ post.title | markdownify | strip_html }}
         {% else %}
         {{ post.slug }}
         {% endif %}
@@ -52,7 +52,7 @@ layout: page
     <article class="post-list-heading">
       <a class="nontext post-list-heading" href="{{ post.url }}">
         {% if post.title != "" %}
-        {{ post.title }}
+        {{ post.title | markdownify | strip_html }}
         {% else %}
         {{ post.slug }}
         {% endif %}
