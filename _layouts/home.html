@@ -25,7 +25,9 @@ layout: default
         {{ post.date | date: "%b %d, %Y" }}
       </span>
       <article class="post-list-heading">
-        <a class="nontext post-link-heading" href="{{ post.url }}">{{ post.title }}</a>
+        <a class="nontext post-link-heading" href="{{ post.url }}">
+          {{ post.title | markdownify | strip_html }}
+        </a>
       </article>
       <p class="post-meta">
         {% if post.description %}
