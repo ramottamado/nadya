@@ -8,7 +8,8 @@ description: >- # this means to ignore newlines and trim last newline
   Made with ❤️.
 
 nadya:
-  attribution: true
+  disable_social: true
+#   disable_attribution: true
 
 # Layout
 nav_pages:
@@ -20,9 +21,6 @@ favicon: "favicon.svg"
 logo: "favicon.svg"
 alt_iconicon: "favicon.ico"
 icon: "favicon.png"
-
-# Social
-disable_social: true
 
 # SEO
 google_site_verification: "zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ"
