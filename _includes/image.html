@@ -4,11 +4,9 @@
     height="{{ include.height | default: '450' }}"
     style="max-width: {{ include.maxwidth | default: '100%' }}; object-fit: {{ include.objectfit | default: 'contain' }}; aspect-ratio: {{ include.width | default: '800' }}/{{ include.height | default: '450' }}">
   <figcaption>
-    <div data-nosnippet>
-      {{ caption }}
-      <p class="fa-fw">
-        {% include fontawesome/image.svg %}
-      </p>
-    </div>
+    <p class="fa-fw">
+      {% include fontawesome/image.svg %}
+    </p>
+    {{ caption | markdownify }}
   </figcaption>
 </figure>

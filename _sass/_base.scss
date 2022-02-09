@@ -126,7 +126,7 @@ p > img {
 figure {
   padding-bottom: 1em;
 
-  > * {
+  > *:not(figure) {
     margin-bottom: 0.5em !important;
   }
 }
@@ -156,8 +156,12 @@ figcaption {
   font-size: $small-font-size;
   font-family: $base-font-family;
   font-style: normal;
-  text-align: right;
+  text-align: left;
   padding: (0.5 * $small-font-size) 0;
+
+  > * {
+    display: inline !important;
+  }
 }
 
 /**
@@ -340,6 +344,26 @@ table {
 
   td {
     border-bottom: 1px solid $grey-color;
+  }
+}
+
+figure.highlight > pre {
+  padding: 0;
+}
+
+code > .rouge-table {
+  pre {
+    border: unset !important;
+    // padding: 0 !important;
+  }
+
+  td {
+    border-bottom: unset !important;
+    padding: unset;
+
+    &.gutter {
+      border-right: 1px dashed $border-color;
+    }
   }
 }
 

@@ -4,7 +4,7 @@
 .fa-fw {
   width: 1em !important;
   height: 1em !important;
-  margin: 0 0.05em 0 0em !important;
+  margin: 0 0.05em !important;
   vertical-align: -10%;
   display: inline-block !important;
   padding: 0 !important;
@@ -555,6 +555,11 @@ hr.tags-hor {
     display: block;
     width: 100%;
   }
+}
+
+.code-container > figure {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /**

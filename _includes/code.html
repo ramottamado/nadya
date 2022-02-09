@@ -1,9 +1,9 @@
-<figure class="media-container">
+<figure class="code-container">
   {{ include.content | markdownify }}
   {% if include.caption %}
-  <figcaption class="media-caption">
+  <figcaption class="code-caption">
     <p class="fa-fw">
-      {% include fontawesome/video.svg %}
+      {% include fontawesome/code.svg %}
     </p>
     {{ include.caption | markdownify }}
   </figcaption>
