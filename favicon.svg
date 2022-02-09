@@ -2,9 +2,9 @@
 <svg
    inkscape:export-ydpi="256"
    inkscape:export-xdpi="256"
-   inkscape:export-filename="/home/ramot/Documents/workspace/design/favicon.png"
+   inkscape:export-filename="/home/ramot/Documents/workspace/design/nadya.png"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="favicon.svg"
+   sodipodi:docname="nadya.svg"
    id="SVGRoot"
    version="1.1"
    viewBox="0 0 192 192"
@@ -96,9 +96,9 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="136.82516"
-     inkscape:cx="40.039921"
-     inkscape:zoom="1.8856181"
+     inkscape:cy="113.47883"
+     inkscape:cx="0.1910418"
+     inkscape:zoom="2.6172283"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -135,19 +135,29 @@
        r="96" />
     <rect
        ry="0"
-       y="48"
-       x="48"
+       y="-183.76451"
+       x="-47.999996"
        height="96"
        width="96"
        id="rect166"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:1.28919" />
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.28919"
+       transform="rotate(135)" />
+    <text
+       xml:space="preserve"
+       style="font-size:64px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell"
+       x="-120.30206"
+       y="83.442055"
+       id="text41428"><tspan
+         sodipodi:role="line"
+         id="tspan41426"
+         x="-120.30206"
+         y="83.442055" /></text>
     <rect
-       style="display:inline;fill:#1b1f24;fill-opacity:1;stroke-width:0.805745"
-       id="rect975"
-       width="60"
-       height="60"
-       x="66"
-       y="66"
-       ry="0" />
+       style="fill:#1b1f24;stroke-width:1.33111"
+       id="rect1037"
+       width="48"
+       height="48"
+       x="72"
+       y="72.000008" />
   </g>
 </svg>
