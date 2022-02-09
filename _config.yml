@@ -26,10 +26,6 @@ icon: "favicon.png"
 google_site_verification: "zaJj36ddah20RkBG1RrQqWm-IlXepNuw8ch6SYXeBPQ"
 github:
   username: "ramottamado"
-# instagram:
-#   username: ""
-# linkedin:
-#   username: "ramottamado"
 twitter:
   card: summary
   username: "theramottamado"
@@ -50,7 +46,6 @@ feed:
 
 # Jekyll
 excerpt_separator: <!--more-->
-permalink: /:title/
 
 # Build settings
 markdown: kramdown
