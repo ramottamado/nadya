@@ -153,7 +153,7 @@ ___
 ### YouTube Embedded Iframe
 
 {% capture video_1 %}
-<iframe src="https://www.youtube.com/embed/n1a7o44WxNo" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/n1a7o44WxNo" frameborder="0" allowfullscreen loading="lazy"></iframe>
 {% endcapture %}
 {% include media.html content=video_1 caption='Zedd - Beautiful Now ft. Jon Bellion' %}
 
@@ -171,14 +171,14 @@ ___
 ### Soundcloud
 
 {% capture cit_1 %}
-<iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/349882264&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+<iframe loading="lazy" width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/349882264&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 {% endcapture %}
 {% include media.html content=cit_1 caption="Crystal Dolphin" %}
 
 ### Spotify Playlist
 
 {% capture spot_1 %}
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/119RwhTmhNelp6IqJpt0K4?utm_source=generator" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/119RwhTmhNelp6IqJpt0K4?utm_source=generator" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 {% endcapture %}
 {% include media.html content=spot_1 caption="Non-Stop-Pop FM" %}
 
