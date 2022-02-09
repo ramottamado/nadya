@@ -208,6 +208,16 @@
   }
 }
 
+.footer-col-attribution {
+  margin-bottom: 0 !important;
+  text-align: center !important;
+
+  > .footer-meta-attribution {
+    color: $grey-color;
+    font-family: $meta-font-family;
+  }
+}
+
 .footer-col {
   width: -webkit-calc(100% - (#{$spacing-unit} / 2));
   width: calc(100% - (#{$spacing-unit} / 2));
@@ -554,20 +564,4 @@ hr.tags-hor {
   border-top: 2px solid $grey-color;
   margin-bottom: 3rem;
   margin-top: 3rem;
-}
-
-/**
- *Attribution
- */
-.attribution-meta {
-  font-size: 0.75 * $base-font-size;
-  color: lighten($grey-color, 20%);
-  font-family: $meta-font-family;
-
-  > a {
-    &,
-    &:visited {
-      color: darken($link-color, 5%) !important;
-    }
-  }
 }
