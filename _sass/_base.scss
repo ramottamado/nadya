@@ -124,9 +124,11 @@ p > img {
  * Figures
  */
 figure {
-  padding-bottom: 1em;
+  // &:not(.highlight) {
+  //   padding-bottom: 1em;
+  // }
 
-  > *:not(figure) {
+  > * {
     margin-bottom: 0.5em !important;
   }
 }
@@ -347,48 +349,11 @@ table {
   }
 }
 
-figure.highlight > pre {
-  padding: 0;
-}
-
-code > .rouge-table {
-  pre {
-    border: unset !important;
-    // padding: 0 !important;
-  }
-
-  td {
-    border-bottom: unset !important;
-    padding: unset;
-
-    &.gutter {
-      border-right: 1px dashed $border-color;
-    }
-  }
-}
-
 .post-content > table {
   margin-bottom: $spacing-unit;
   width: 100%;
   max-width: 100%;
   table-layout: fixed;
-}
-
-.table-wrapper {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  margin-bottom: $spacing-unit;
-
-  > div {
-    margin-top: 1em;
-  }
-
-  table {
-    white-space: nowrap;
-    width: 100%;
-    word-break: normal;
-  }
 }
 
 /**
