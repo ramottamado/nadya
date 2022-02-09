@@ -108,6 +108,8 @@ But let's throw in a <b>tag</b>.
 </nav><!-- /.pagination -->{% endraw %}
 {% endhighlight %}
 
+See? The code is now line numbered with `linenos`.
+
 {% capture code_1 %}
 {% highlight html linenos %}
 {% raw %}<nav class="pagination" role="navigation">
@@ -121,6 +123,8 @@ But let's throw in a <b>tag</b>.
 {% endhighlight %}
 {% endcapture %}
 {% include code.html content=code_1 caption='*Pagination*' %}
+
+And with code like this, we can add caption to our codes.
 
 <div class="divider"></div>
 
@@ -206,6 +210,8 @@ ___
 <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/119RwhTmhNelp6IqJpt0K4?utm_source=generator" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 {% endcapture %}
 {% include media.html content=spot_1 caption="Non-Stop-Pop FM" %}
+
+That's it! Happy blogging!
 
 ---
 Footnote:
