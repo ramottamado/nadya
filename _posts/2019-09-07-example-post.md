@@ -97,6 +97,31 @@ No language indicated, so defaulting to HTML.
 But let's throw in a <b>tag</b>.
 ```
 
+{% highlight html linenos %}
+{% raw %}<nav class="pagination" role="navigation">
+  {% if page.previous %}
+    <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
+  {% endif %}
+  {% if page.next %}
+    <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
+  {% endif %}
+</nav><!-- /.pagination -->{% endraw %}
+{% endhighlight %}
+
+{% capture code_1 %}
+{% highlight html linenos %}
+{% raw %}<nav class="pagination" role="navigation">
+  {% if page.previous %}
+    <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
+  {% endif %}
+  {% if page.next %}
+    <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
+  {% endif %}
+</nav><!-- /.pagination -->{% endraw %}
+{% endhighlight %}
+{% endcapture %}
+{% include code.html content=code_1 caption='*Pagination*' %}
+
 <div class="divider"></div>
 
 ## Table
