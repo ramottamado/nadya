@@ -1,19 +1,22 @@
 <header class="site-header">
 
   <div class="wrapper wrapper-grid">
-    {%- assign default_paths = site.pages | map: " path" -%} {%- assign page_paths=site.header_pages | default:
-    default_paths -%} {%- assign titles_size=site.pages | map: 'title' | join: '' | size -%} <div class="site-title">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths=site.nav_pages | default: default_paths -%}
+    {%- assign titles_size=site.pages | map: 'title' | join: '' | size -%}
+    <div class="site-title">
       {%- if site.logo -%}
       <a class="logo" rel="author" href="/" aria-label="logo">
         <img alt="" class="logo-image" src="{{ site.logo | relative_url }}" width="32" height="32" />
       </a>
       {%- else -%}
       <a class="nontext" href="/" aria-label="logo">
-        {{ site.title }}
+        {{ site.title | markdownify | strip_html }}
       </a>
       {%- endif -%}
     </div>
 
+    {%- if titles_size > 0 %}
     <nav class="site-nav">
       <input type="checkbox" id="nav-trigger" class="nav-trigger" />
       <label for="nav-trigger">
@@ -23,13 +26,14 @@
       </label>
 
       <div class="trigger">
-        {%- for path in site.nav_pages %}
+        {%- for path in page_paths %}
         {%- assign site_page = site.pages | where: "path", path | first %}
-        {%- if site_page.title %}
+        {%- if site_page.title and site_page.layout != 404 and site_page.layout != '404' %}
         <a class="nontext page-link" href="{{ site_page.url | relative_url }}">{{ site_page.title | escape }}</a>
         {%- endif %}
         {%- endfor %}
       </div>
     </nav>
+    {% endif %}
   </div>
 </header>

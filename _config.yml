@@ -22,9 +22,9 @@ nadya:
 #         card: summary_large_image
 
 # Layout
-nav_pages:
-  - categories.md
-  - about.md
+# nav_pages:
+#   - categories.md
+#   - about.md
 
 # Logo
 favicon: "favicon.svg"
