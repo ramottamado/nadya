@@ -33,10 +33,10 @@
   <meta name="theme-color" content="#1b1f24" />
 
   <title>
-    {%- if page.layout == "page" or page.layout == "post" -%}
-    {{ title | escape }} | {{ site.title | escape }}
-    {%- else -%}
+    {%- if page.layout == "home" -%}
     {{ title | escape }} | {{ site_description }}
+    {%- else -%}
+    {{ title | escape }} | {{ site.title | escape }}
     {%- endif -%}
   </title>
 
