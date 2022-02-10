@@ -5,8 +5,7 @@
         <ul class="contact-list">
           <li>
             {%- if site.github.username %}
-            <a class="nontext footer-link"
-              href="{{ site.github.username | prepend: 'https://github.com/' | xml_escape }}">
+            <a class="nontext footer-link" href="{{ site.github.username | prepend: 'https://github.com/' | escape }}">
               <p class="fa-fw">
                 {% include fontawesome/github.svg %}
               </p>
@@ -27,7 +26,7 @@
           <li>
             {%- if site.linkedin.username %}
             <a class="nontext footer-link"
-              href="{{ site.linkedin.username | prepend: 'https://linkedin.com/li/' | xml_escape }}">
+              href="{{ site.linkedin.username | prepend: 'https://linkedin.com/in/' | escape }}">
               <p class="fa-fw">
                 {% include fontawesome/linkedin.svg %}
               </p>
@@ -43,7 +42,7 @@
           <li>
             {%- if site.facebook.username %}
             <a class="nontext footer-link"
-              href="{{ site.facebook.username | prepend: 'https://facebook.com/' | xml_escape }}">
+              href="{{ site.facebook.username | prepend: 'https://facebook.com/' | escape }}">
               <p class="fa-fw">
                 {% include fontawesome/facebook.svg %}
               </p>
@@ -54,7 +53,7 @@
           <li>
             {%- if site.twitter.username %}
             <a class="nontext footer-link"
-              href="{{ site.twitter.username | prepend: 'https://twitter.com/' | xml_escape }}">
+              href="{{ site.twitter.username | prepend: 'https://twitter.com/' | escape }}">
               <p class="fa-fw">
                 {% include fontawesome/twitter.svg %}
               </p>
