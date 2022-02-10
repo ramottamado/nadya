@@ -123,14 +123,8 @@ p > img {
 /**
  * Figures
  */
-figure {
-  // &:not(.highlight) {
-  //   padding-bottom: 1em;
-  // }
-
-  > * {
-    margin-bottom: 0.5em !important;
-  }
+figure > * {
+  margin-bottom: 0.5em !important;
 }
 
 figure > img {
@@ -282,11 +276,6 @@ pre {
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
   }
-}
-
-.wrapper-grid {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
 }
 
 /**
