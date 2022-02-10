@@ -20,6 +20,21 @@ lastmod: '2022-02-09 01:53 +0700'
 
 Let's start with a informative paragraph. **This text is bolded.** But not this one! _How about italic text?_ Cool right? Ok, let's **_combine_** them together. Yeah, that's right! I have code to highlight, so `<p>This is my code</p>`. What a nice! Good people will hyperlink away, so [here we go](#) or [http://www.example.com](http://www.example.com).
 
+### This Wall of Text is Right-aligned
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et interdum dignissim. Nulla elementum pulvinar facilisis. Phasellus eget ultricies orci. Aenean ultrices mollis lorem, imperdiet imperdiet nisi. In at nibh elit. Nullam pulvinar tincidunt nisl, et tempus justo maximus sit amet. Integer ac molestie ante. Vestibulum nec lorem efficitur, laoreet tortor id, vestibulum neque. Sed in semper turpis. Maecenas mattis tempor massa. In volutpat ligula ligula, vitae semper nisi maximus a. Cras sit amet efficitur justo. Vestibulum pulvinar feugiat enim sed efficitur.
+{: .text-right }
+
+### But Check This Out, This Wall of Text is Centered
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et interdum dignissim. Nulla elementum pulvinar facilisis. Phasellus eget ultricies orci. Aenean ultrices mollis lorem, imperdiet imperdiet nisi. In at nibh elit. Nullam pulvinar tincidunt nisl, et tempus justo maximus sit amet. Integer ac molestie ante. Vestibulum nec lorem efficitur, laoreet tortor id, vestibulum neque. Sed in semper turpis. Maecenas mattis tempor massa. In volutpat ligula ligula, vitae semper nisi maximus a. Cras sit amet efficitur justo. Vestibulum pulvinar feugiat enim sed efficitur.
+{: .text-center }
+
+### Finally, This Wall of Text is Justified
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et interdum dignissim. Nulla elementum pulvinar facilisis. Phasellus eget ultricies orci. Aenean ultrices mollis lorem, imperdiet imperdiet nisi. In at nibh elit. Nullam pulvinar tincidunt nisl, et tempus justo maximus sit amet. Integer ac molestie ante. Vestibulum nec lorem efficitur, laoreet tortor id, vestibulum neque. Sed in semper turpis. Maecenas mattis tempor massa. In volutpat ligula ligula, vitae semper nisi maximus a. Cras sit amet efficitur justo. Vestibulum pulvinar feugiat enim sed efficitur.
+{: .text-justify }
+
 <div class="divider"></div>
 
 ## Headings H1 to H6
@@ -40,18 +55,22 @@ Let's start with a informative paragraph. **This text is bolded.** But not this 
 
 ## Footnote
 
-Let's say you have text that you want to refer with a footnote, you can do that too! This is an example for the footnote number one [^1]. You can even add more footnotes, with link! [^2]
+Let's say you have text that you want to refer with a footnote, you can do that too! This is an example for the footnote number one.[^1] You can even add more footnotes, with link![^2]
 
 <div class="divider"></div>
 
 ## Blockquote
 
+This theme supports nested blockquotes, like this,
+
 > Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.
 >
 > -- Francis of Assisi
+>
 > > Ok, boomer.
 > >
 > > -- Someone on the Internet
+> >
 > > > You're canceled.
 > > >
 > > > -- Someone on Twitter, most probably
@@ -62,6 +81,9 @@ Let's say you have text that you want to refer with a footnote, you can do that 
 
 1. First order list item
 2. Second item
+3. Ordered list can also contains list
+   - Like this
+   - And this one
 
 * Unordered list can use asterisks
 - Or minuses
@@ -76,11 +98,11 @@ case class User(name: String, age: Int)
 
 val users: Seq[User] = Seq(User("Hilman", 24), User("Tamado", 23))
 
-val user_list: Seq[String] =
+val userList: Seq[String] =
   for (user <- users)
     yield s"${user.name} is ${user.age} years old"
 
-user_list.foreach(println)
+userList.foreach(println)
 ```
 
 ```python
@@ -97,18 +119,24 @@ No language indicated, so defaulting to HTML.
 But let's throw in a <b>tag</b>.
 ```
 
-{% highlight html linenos %}
-{% raw %}<nav class="pagination" role="navigation">
-  {% if page.previous %}
-    <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
-  {% endif %}
-  {% if page.next %}
-    <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
-  {% endif %}
-</nav><!-- /.pagination -->{% endraw %}
+{% highlight text linenos %}
+{% raw %}{% highlight html linenos %}
+...
+{% endhighlight %}{% endraw %}
 {% endhighlight %}
 
 See? The code is now line numbered with `linenos`.
+
+And with code like this, we can add caption to our codes.
+{% raw %}
+```liquid
+{% capture code_1 %}
+{% endcapture %}
+{% include code.html content=code_1 caption='This is *pagination*' %}
+```
+{% endraw %}
+
+Example:
 
 {% capture code_1 %}
 {% highlight html linenos %}
@@ -122,9 +150,7 @@ See? The code is now line numbered with `linenos`.
 </nav><!-- /.pagination -->{% endraw %}
 {% endhighlight %}
 {% endcapture %}
-{% include code.html content=code_1 caption='*Pagination*' %}
-
-And with code like this, we can add caption to our codes.
+{% include code.html content=code_1 caption='This is  *pagination*' %}
 
 <div class="divider"></div>
 
