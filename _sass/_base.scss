@@ -235,7 +235,6 @@ blockquote {
 pre,
 code {
   font-family: $code-font-family;
-  @include relative-font-size(0.875);
 }
 
 code {
@@ -250,6 +249,7 @@ pre {
   border: 1px dashed $border-color;
 
   > code {
+    @include relative-font-size(0.875);
     border: 0;
     padding-right: 0;
     padding-left: 0;
