@@ -91,7 +91,7 @@ This theme supports nested blockquotes, like this,
 
 <div class="divider"></div>
 
-## Code Blocks
+## `Code` Blocks, or Block of Codes
 
 ```scala
 case class User(name: String, age: Int)
@@ -131,6 +131,7 @@ And with code like this, we can add caption to our codes.
 {% raw %}
 ```liquid
 {% capture code_1 %}
+...
 {% endcapture %}
 {% include code.html content=code_1 caption='This is *pagination*' %}
 ```
