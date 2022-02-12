@@ -241,10 +241,6 @@ code {
   font-family: $code-font-family;
 }
 
-code {
-  font-size: 0.875em !important;
-}
-
 pre {
   padding: 8px 12px;
   overflow-x: auto;
@@ -252,7 +248,7 @@ pre {
   border: 1px dashed $border-color;
 
   > code {
-    // @include relative-font-size(0.875);
+    @include relative-font-size(0.875);
     border: 0;
     padding-right: 0;
     padding-left: 0;
