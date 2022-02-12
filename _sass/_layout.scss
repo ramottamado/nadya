@@ -206,7 +206,7 @@
 }
 
 .footer-col-wrapper {
-  @include relative-font-size(0.875);
+  // @include relative-font-size(0.875);
   color: $grey-color-dark;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
