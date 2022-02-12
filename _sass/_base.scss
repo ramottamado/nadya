@@ -89,6 +89,10 @@ strong {
   font-weight: $x-bold-font-weight;
 }
 
+small {
+  @include relative-font-size(0.75);
+}
+
 /**
  * Header
  */
@@ -221,7 +225,7 @@ blockquote {
   font-style: italic;
 
   > p {
-    @include relative-font-size(1.125);
+    @include relative-font-size(1.25);
   }
 
   > :last-child {
@@ -237,6 +241,10 @@ code {
   font-family: $code-font-family;
 }
 
+code {
+  font-size: 0.875em !important;
+}
+
 pre {
   padding: 8px 12px;
   overflow-x: auto;
@@ -244,10 +252,28 @@ pre {
   border: 1px dashed $border-color;
 
   > code {
-    @include relative-font-size(0.875);
+    // @include relative-font-size(0.875);
     border: 0;
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul,
+ol,
+li,
+dl,
+td:not(.code) {
+  > code {
+    color: $code-color;
   }
 }
 

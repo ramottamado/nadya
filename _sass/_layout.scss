@@ -5,7 +5,7 @@
   width: 1em !important;
   height: 1em !important;
   margin: 0 0.05em !important;
-  vertical-align: -10%;
+  vertical-align: -0.1em;
   display: inline-block !important;
   padding: 0 !important;
   font-size: inherit;
@@ -199,11 +199,6 @@
   font-family: $meta-font-family;
 }
 
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
-
 .contact-list,
 .social-media-list {
   list-style: none;
@@ -211,7 +206,7 @@
 }
 
 .footer-col-wrapper {
-  @include relative-font-size(0.9375);
+  @include relative-font-size(0.875);
   color: $grey-color-dark;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
@@ -414,7 +409,7 @@ a {
 
 .post-list-heading {
   text-align: left !important;
-  margin-bottom: 0.35em;
+  margin-bottom: 0.25em;
 
   article & {
     margin-bottom: unset;
@@ -426,10 +421,10 @@ a {
   font-family: $head-font-family;
   font-weight: $bold-font-weight;
   line-height: 1.15;
-  @include relative-font-size(1.625);
+  @include relative-font-size(1.5);
 
   @media screen and (min-width: $on-large) {
-    @include relative-font-size(1.625);
+    @include relative-font-size(1.5);
   }
 }
 
@@ -492,11 +487,11 @@ a {
 
 .post-title,
 .post-content h1 {
-  @include relative-font-size(2.625);
+  @include relative-font-size(2.5);
   line-height: 1;
 
   @media screen and (min-width: $on-large) {
-    @include relative-font-size(2.625);
+    @include relative-font-size(2.5);
   }
 }
 
@@ -524,10 +519,10 @@ a {
   }
 
   h3 {
-    @include relative-font-size(1.625);
+    @include relative-font-size(1.5);
 
     @media screen and (min-width: $on-large) {
-      @include relative-font-size(1.625);
+      @include relative-font-size(1.5);
     }
   }
 
@@ -618,7 +613,7 @@ code > .rouge-table {
     }
 
     &.code {
-      width: 800px;
+      width: $content-width;
     }
   }
 }
