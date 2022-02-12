@@ -69,7 +69,12 @@
       </div>
       {%- include custom-footer.html %}
       {%- unless site.nadya.disable_attribution %}
-      {%- include attribution.html %}
+      <div class="footer-col footer-col-center footer-col-attribution">
+        <small class="footer-meta-attribution">
+          <a class="nontext" href="https://github.com/ramottamado/nadya">nadya</a> &mdash; theme by
+          <a class="nontext" href="https://ramottamado.dev">ramottamado</a>
+        </small>
+      </div>
       {%- endunless %}
     </div>
   </div>

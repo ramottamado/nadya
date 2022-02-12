@@ -3,19 +3,9 @@
   {% assign page_url = page.url | absolute_url -%}
   {% assign title = page.title | default: site.title | xml_escape -%}
   {% assign author = page.author | default: site.author | xml_escape -%}
-  {% assign page_description = page.description | markdownify | strip_html | normalize_whitespace -%}
-  {% assign page_excerpt = page.excerpt | markdownify | strip_html | strip_newlines | truncate: 160 -%}
-  {% assign site_tagline = site.tagline | default: site.description | markdownify | strip_html -%}
-  {% assign site_description = site_tagline | normalize_whitespace %}
-  {% if page.layout == "page" %}
-  {% assign page_content = page.content | markdownify | strip_html | strip_newlines | truncate: 160 -%}
-  {% assign description = page_description | default: page_content | default: site.description -%}
-  {% else %}
-  {% assign description = page_description | default: page_excerpt | default: site_description -%}
-  {% endif %}
-  {% assign site_icon = site.icon | absolute_url -%}
-  {% assign preview = page.preview | absolute_url -%}
-  {% assign image = preview | default: site_icon -%}
+  {% assign excerpt = page.excerpt | markdownify | strip_html | strip_newlines | truncate: 160 -%}
+  {% assign description = page.description | default: excerpt | default: site.description -%}
+  {% assign preview = page.preview | default: site.icon | absolute_url -%}
   {% assign rel_icon = site.icon | relative_url -%}
   {% assign rel_alt_icon = site.alt_icon | relative_url -%}
   {% assign rel_favicon = site.favicon | relative_url -%}
@@ -34,7 +24,7 @@
 
   <title>
     {%- if page.layout == "home" -%}
-    {{ title | xml_escape }} | {{ site_description }}
+    {{ title | xml_escape }} | {{ site.description }}
     {%- else -%}
     {{ title | xml_escape }} | {{ site.title | xml_escape }}
     {%- endif -%}
@@ -54,11 +44,11 @@
   <meta name="twitter:title" content="{{ title }}" />
   <meta name="twitter:description" content="{{ description }}" />
   <meta name="twitter:card" content="{{ twitter_card }}" />
-  <meta name="twitter:image" content="{{ image }}" />
+  <meta name="twitter:image" content="{{ preview}}" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{ title }}" />
   <meta property="og:description" content="{{ description }}" />
-  <meta property="og:image" content="{{ image }}" />
+  <meta property="og:image" content="{{ preview }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
   {% if site.facebook.author and author == site.author -%}

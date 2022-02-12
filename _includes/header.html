@@ -1,32 +1,36 @@
 <header class="site-header">
 
   <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths=site.nav_pages | default: default_paths -%}
-    {%- assign titles_size=site.pages | map: 'title' | join: '' | size -%}
-    <div class="site-title">
-      {%- if site.logo -%}
+    {%- assign default_paths = site.pages | map: "path" %}
+    {%- assign page_paths = site.nav_pages | default: default_paths %}
+    {%- assign titles_size = site.pages | map: 'title' | join: '' | size %}
+    <div class="site-title site-title-flex">
+      {%- if site.logo %}
       <a class="logo" rel="author" href="/" aria-label="logo">
-        <img alt="" class="logo-image" src="{{ site.logo | relative_url }}" width="32" height="32" />
+        <img alt="logo" class="logo-image" src="{{ site.logo | relative_url }}" />
       </a>
-      {%- else -%}
-      <a class="nontext" href="/" aria-label="logo">
-        {{ site.title | markdownify | strip_html }}
+      {%- else %}
+      <a class="nontext logo-text" href="/" aria-label="logo">
+        {{ site.title | xml_escape }}
       </a>
-      {%- endif -%}
+      {%- endif %}
     </div>
 
     {%- if titles_size > 0 %}
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="hamburger menu">
       <label for="nav-trigger">
         <span class="menu-icon">
-          {% include menubar.svg %}
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </span>
       </label>
     </nav>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="navigation">
       <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-      <div class="trigger">
+      <div class="nav-drawer">
         {%- for path in page_paths %}
         {%- assign site_page = site.pages | where: "path", path | first %}
         {%- if site_page.title and site_page.layout != 404 and site_page.layout != '404' %}
