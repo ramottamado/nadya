@@ -18,7 +18,7 @@ lastmod: '2022-02-09 01:53 +0700'
 
 ## Typography Elements in One
 
-Let's start with a informative paragraph. **This text is bolded.** But not this one! _How about italic text?_ Cool right? Ok, let's **_combine_** them together. Yeah, that's right! I have code to highlight, so `<p>This is my code</p>`. What a nice! Good people will hyperlink away, so [here we go](#) or [http://www.example.com](http://www.example.com).
+Let's start with a informative paragraph. **This text is bolded.** But not this one! _How about italic text?_ Cool right? Ok, let's **_combine_** them together. Yeah, that's right! I have code to highlight, so `<p>This is my code</p>`. What a nice! Good people will hyperlink away, so [`here we go`](#) or [http://www.example.com](http://www.example.com).
 
 ### This Wall of Text is Right-aligned
 
@@ -69,7 +69,7 @@ This theme supports nested blockquotes, like this,
 >
 > > Ok, boomer.
 > >
-> > -- Someone on the Internet
+> > -- Someone on the `Internet`
 > >
 > > > You're canceled.
 > > >
@@ -83,7 +83,7 @@ This theme supports nested blockquotes, like this,
 2. Second item
 3. Ordered list can also contains list
    - Like this
-   - And this one
+   - `And this one`
 
 * Unordered list can use asterisks
 - Or minuses
