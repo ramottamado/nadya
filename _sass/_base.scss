@@ -239,36 +239,20 @@ blockquote {
 pre,
 code {
   font-family: $code-font-family;
+  background: $grey-color-light;
+  padding: 0.05em 0.1em;
+  border-radius: 3px;
 }
 
 pre {
   padding: 8px 12px;
   overflow-x: auto;
   margin-bottom: unset;
-  border: 1px dashed $border-color;
 
   > code {
     border: 0;
     padding-right: 0;
     padding-left: 0;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-ul,
-ol,
-li,
-dl,
-td:not(.code) {
-  > code {
-    color: $code-color;
   }
 }
 
