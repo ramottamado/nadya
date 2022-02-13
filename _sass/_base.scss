@@ -159,8 +159,8 @@ figcaption {
   text-align: left;
   padding: (0.5 * $small-font-size) 0;
 
-  > * {
-    display: inline !important;
+  > span {
+    display: inline-block !important;
   }
 }
 

@@ -196,6 +196,12 @@
   margin-left: 0;
 }
 
+.footer-link {
+  > span {
+    display: inline-block;
+  }
+}
+
 .footer-col-wrapper {
   // @include relative-font-size(0.875);
   color: $grey-color-dark;

@@ -4,10 +4,12 @@
   </div>
   {% if include.caption %}
   <figcaption class="table-caption">
-    <p class="fa-fw">
+    <span class="fa-fw">
       {% include fontawesome/table.svg %}
-    </p>
-    {{ include.caption | markdownify }}
+    </span>
+    <span>
+      {{ include.caption | markdownify | strip_html }}
+    </span>
   </figcaption>
   {% endif %}
 </figure>
