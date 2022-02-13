@@ -6,7 +6,9 @@
           <li>
             {%- if site.github.username %}
             <a class="nontext footer-link" href="{{ site.github.username | prepend: 'https://github.com/' | escape }}">
-              <span class="fa-brands fa-github"></span>
+              <span class="fa-fw">
+                {% include fontawesome/github.svg %}
+              </span>
               <span>
                 {{ site.github.username }}
               </span>
@@ -16,7 +18,9 @@
           <li>
             {%- if site.email %}
             <a class="nontext footer-link" href="{{ site.email | prepend: 'mailto:' }}">
-              <span class="fa-regular fa-envelope"></span>
+              <span class="fa-fw">
+                {% include fontawesome/envelope.svg %}
+              </span>
               <span>
                 {{ site.email | replace: '@', '[at]' | replace: '.', '[dot]' }}
               </span>
@@ -27,7 +31,9 @@
             {%- if site.linkedin.username %}
             <a class="nontext footer-link"
               href="{{ site.linkedin.username | prepend: 'https://linkedin.com/in/' | escape }}">
-              <span class="fa-brands fa-linkedin"></span>
+              <span class="fa-fw">
+                {% include fontawesome/linkedin.svg %}
+              </span>
               <span>
                 {{ site.linkedin.username }}
               </span>
@@ -43,7 +49,9 @@
             {%- if site.facebook.username %}
             <a class="nontext footer-link"
               href="{{ site.facebook.username | prepend: 'https://facebook.com/' | escape }}">
-              <span class="fa-brands fa-facebook"></span>
+              <span class="fa-fw">
+                {% include fontawesome/facebook.svg %}
+              </span>
               <span>
                 {{ site.facebook.username }}
               </span>
@@ -54,7 +62,9 @@
             {%- if site.twitter.username %}
             <a class="nontext footer-link"
               href="{{ site.twitter.username | prepend: 'https://twitter.com/' | escape }}">
-              <span class="fa-brands fa-twitter"></span>
+              <span class="fa-fw">
+                {% include fontawesome/twitter.svg %}
+              </span>
               <span>
                 {{ site.twitter.username }}
               </span>

@@ -2,7 +2,9 @@
   {{ include.content | markdownify }}
   {% if include.caption %}
   <figcaption class="code-caption">
-    <span class="fa-solid fa-code"></span>
+    <span class="fa-fw">
+      {% include fontawesome/code.svg %}
+    </span>
     <span>
       {{ include.caption | markdownify | strip_html }}
     </span>
