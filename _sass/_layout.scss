@@ -23,7 +23,7 @@
  */
 .site-header {
   border-top: 5px solid $nav-color;
-  min-height: $spacing-unit * 1.865;
+  min-height: $spacing-unit * 1.8;
   position: relative;
 }
 
@@ -49,6 +49,7 @@
     cursor: default;
     display: grid;
     border: none;
+    z-index: 2;
     @include relative-font-size(1.25);
 
     > .logo-image {
@@ -154,7 +155,7 @@
   }
 
   @media screen and (min-width: $on-medium) {
-    &:not(.overflown) {
+    & {
       float: right;
       border: none;
       background-color: inherit;
@@ -174,16 +175,6 @@
 
         &:not(:last-child) {
           margin-right: 20px;
-        }
-      }
-    }
-
-    &.overflown {
-      .page-link {
-        border-bottom: 1px solid $text-color;
-
-        &:hover {
-          border-bottom: 1px solid $text-color;
         }
       }
     }
