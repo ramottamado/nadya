@@ -248,7 +248,6 @@ pre {
   border: 1px dashed $border-color;
 
   > code {
-    @include relative-font-size(0.875);
     border: 0;
     padding-right: 0;
     padding-left: 0;
