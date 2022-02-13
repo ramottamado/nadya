@@ -586,7 +586,7 @@ hr.tags-hor {
 /**
  * Codes
  */
-figure.highlight > pre {
+figure.highlight > pre.highlight {
   padding: 0;
 }
 
@@ -599,12 +599,26 @@ code > .rouge-table {
     border-bottom: unset !important;
     padding: unset;
 
+    > pre.lineno {
+      padding-top: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-right: 12px;
+    }
+
     &.gutter {
       border-right: 1px dashed $border-color;
     }
 
     &.code {
       width: $content-width;
+
+      > pre {
+        padding-top: 0;
+        padding-left: 12px;
+        padding-bottom: 0;
+        padding-right: 0;
+      }
     }
   }
 }
