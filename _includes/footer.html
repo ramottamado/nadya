@@ -2,12 +2,18 @@
   <div class="wrapper">
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-50">
-        <h2>{{ site.title }}</h2>
+        <h2 class="footer-logo">
+          {%- if site.logo %}
+          <img alt="logo" class="footer-logo-image" src="{{ site.logo | relative_url }}" />
+          {%- else %}
+          {%- endif %}
+          {{ site.title | xml_escape }}
+        </h2>
         <span>{{ site.description }}</span>
       </div>
-      <div class="footer-col footer-col-wrapper footer-col-wrapper-reverse footer-col-30">
-        <div class="footer-col footer-col-50 footer-col-no-margin">
-          <h3><b>Contact</b></h3>
+      <div class="footer-col footer-col-wrapper footer-col-wrapper-gap footer-col-wrapper-reverse footer-col-30">
+        <div class="footer-col footer-col-40 footer-col-no-margin">
+          <h3>Contact</h3>
           <ul class="contact-list">
             <li>
               {%- if site.github.username %}
@@ -35,8 +41,8 @@
           </ul>
         </div>
         {%- unless site.nadya.disable_social %}
-        <div class="footer-col footer-col-50 footer-col-no-margin">
-          <h3><b>Social</b></h3>
+        <div class="footer-col footer-col-40 footer-col-no-margin">
+          <h3>Social</h3>
           <ul class="social-media-list">
             <li>
               {%- if site.facebook.username %}

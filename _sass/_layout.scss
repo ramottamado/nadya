@@ -192,6 +192,25 @@
   border-top: 1px solid $grey-color;
   padding: $spacing-unit 0;
   font-family: $meta-font-family;
+  font-size: 0.875em;
+
+  h2.footer-logo > .footer-logo-image {
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.15em;
+  }
+
+  h2 {
+    @include relative-font-size(2 * 0.875);
+  }
+
+  h3 {
+    @include relative-font-size(1.5 * 0.875);
+  }
+
+  h4 {
+    @include relative-font-size(1.25 * 0.875);
+  }
 }
 
 .contact-list,
@@ -216,6 +235,10 @@
 
   .footer-col-wrapper-reverse {
     flex-direction: row-reverse;
+  }
+
+  .footer-col-wrapper-gap {
+    gap: 10%;
   }
 
   @media screen and (max-width: $on-large) {
@@ -480,26 +503,14 @@ a {
 
   h2 {
     @include relative-font-size(2);
-
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(2);
-    }
   }
 
   h3 {
     @include relative-font-size(1.5);
-
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(1.5);
-    }
   }
 
   h4 {
     @include relative-font-size(1.25);
-
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(1.25);
-    }
   }
 }
 
