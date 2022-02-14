@@ -278,11 +278,11 @@
   margin-bottom: unset;
 }
 
-.footer-col-no-margin-mobile {
-  margin-bottom: unset;
+.footer-col-divider-desktop {
+  display: none;
 
   @media screen and (min-width: $on-medium) {
-    margin-bottom: $spacing-unit / 2;
+    display: flex;
   }
 }
 

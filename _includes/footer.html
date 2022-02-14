@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="wrapper">
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-wrapper footer-col-no-margin-mobile">
+      <div class="footer-col footer-col-wrapper footer-col-no-margin">
         <div class="footer-col footer-col-50">
           <h2 class="footer-logo">
             {%- if site.logo %}
@@ -79,6 +79,7 @@
           {%- endunless %}
         </div>
       </div>
+      <div class="footer-col footer-col-wrapper footer-col-divider-desktop"></div>
       {%- include custom-footer.html %}
       {%- unless site.nadya.disable_attribution %}
       <div class="footer-col footer-col-100 footer-col-center footer-col-attribution">
