@@ -11,38 +11,42 @@
         </h2>
         <span>{{ site.description }}</span>
       </div>
-      <div class="footer-col footer-col-wrapper-social footer-col-wrapper footer-col-wrapper-reverse footer-col-40">
-        <div class="footer-col footer-col-40 footer-col-no-margin">
-          <h4>Contact</h4>
+      <div
+        class="footer-col footer-col-wrapper-social footer-col-wrapper footer-col-wrapper-reverse footer-col-50 footer-col-no-margin">
+        {%- if site.github.username or site.email or site.linkedin.username %}
+        <div class="footer-col footer-col-25">
+          <h4 class="social-list">Contact</h4>
           <ul class="contact-list">
+            {%- if site.github.username %}
             <li>
-              {%- if site.github.username %}
               <a class="nontext footer-link"
                 href="{{ site.github.username | prepend: 'https://github.com/' | escape }}">
                 <span>GitHub</span>
               </a>
-              {%- endif %}
             </li>
+            {%- endif %}
+            {%- if site.email %}
             <li>
-              {%- if site.email %}
               <a class="nontext footer-link" href="{{ site.email | prepend: 'mailto:' }}">
                 <span>Email</span>
               </a>
-              {%- endif %}
             </li>
+            {%- endif %}
+            {%- if site.linkedin.username %}
             <li>
-              {%- if site.linkedin.username %}
               <a class="nontext footer-link"
                 href="{{ site.linkedin.username | prepend: 'https://linkedin.com/in/' | escape }}">
                 <span>LinkedIn</span>
               </a>
-              {%- endif %}
             </li>
+            {%- endif %}
           </ul>
         </div>
+        {%- endif %}
         {%- unless site.nadya.disable_social %}
-        <div class="footer-col footer-col-40 footer-col-no-margin">
-          <h4>Social</h4>
+        {%- if site.facebook.username or site.twitter.username or site.instagram.username %}
+        <div class="footer-col footer-col-25">
+          <h4 class="social-list">Social</h4>
           <ul class="social-media-list">
             <li>
               {%- if site.facebook.username %}
@@ -70,6 +74,7 @@
             </li>
           </ul>
         </div>
+        {%- endif %}
         {%- endunless %}
       </div>
       {%- include custom-footer.html %}

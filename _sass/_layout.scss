@@ -216,6 +216,12 @@
   h4 {
     font-size: 1.25em;
   }
+
+  .social-list {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: $spacing-unit / 2;
+  }
 }
 
 .contact-list,
@@ -223,6 +229,10 @@
   list-style: none;
   margin-left: 0;
   margin-bottom: 0;
+
+  > li:not(:last-child) {
+    margin-bottom: $spacing-unit / 2;
+  }
 }
 
 .footer-link {
@@ -245,16 +255,7 @@
 
   .footer-col-wrapper-social {
     gap: 10%;
-
-    @media screen and (min-width: $on-medium) {
-      .footer-col {
-        margin-top: unset !important;
-      }
-    }
-
-    .footer-col:not(:first-child) {
-      margin-top: $spacing-unit;
-    }
+    justify-content: stretch;
   }
 }
 
