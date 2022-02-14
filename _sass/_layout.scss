@@ -194,10 +194,14 @@
   font-family: $meta-font-family;
   font-size: 0.875em;
 
-  h2.footer-logo > .footer-logo-image {
-    height: 1em;
-    width: 1em;
-    vertical-align: -0.15em;
+  h2.footer-logo {
+    line-height: 2rem;
+
+    > .footer-logo-image {
+      height: 1em;
+      width: 1em;
+      vertical-align: -0.15em;
+    }
   }
 
   h2 {
