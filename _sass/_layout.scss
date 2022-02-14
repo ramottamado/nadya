@@ -194,7 +194,7 @@
   font-family: $meta-font-family;
   font-size: 0.875em;
 
-  h2.footer-logo > .footer-logo-image {
+  .footer-logo > .footer-logo-image {
     height: 1em;
     width: 1em;
     vertical-align: -0.15em;
@@ -217,6 +217,7 @@
 .social-media-list {
   list-style: none;
   margin-left: 0;
+  margin-bottom: 0;
 }
 
 .footer-link {
@@ -237,8 +238,14 @@
     flex-direction: row-reverse;
   }
 
-  .footer-col-wrapper-gap {
+  .footer-col-wrapper-social {
     gap: 10%;
+
+    @media screen and (max-width: $on-large) {
+      .footer-col:not(:first-child) {
+        margin-top: $spacing-unit;
+      }
+    }
   }
 
   @media screen and (max-width: $on-large) {
@@ -253,12 +260,16 @@
 }
 
 .footer-col {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: $spacing-unit;
   width: 100%;
+
+  @media screen and (min-width: $on-large) {
+    margin-bottom: $spacing-unit / 2;
+  }
 }
 
 .footer-col-no-margin {
-  margin-bottom: unset !important;
+  margin-bottom: unset;
 }
 
 @media screen and (min-width: $on-large) {
