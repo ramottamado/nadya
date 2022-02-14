@@ -10,7 +10,7 @@ description: >- # this means to ignore newlines and trim last newline
 nadya:
   date_format: "%b %d, %Y"
   disable_attribution: false
-  disable_social: true
+  disable_social: false
 
 # Default
 # defaults:
@@ -42,7 +42,7 @@ linkedin:
   # username: ""
 twitter:
   card: summary
-  # username: ""
+  username: "asd"
 facebook:
   # publisher: ""
   # author: ""

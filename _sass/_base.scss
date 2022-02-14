@@ -136,6 +136,7 @@ figure > img {
   margin-left: auto;
   margin-right: auto;
   height: auto;
+  max-width: 100%;
   // border: 1px dashed black; // debug
 
   &.preview {
@@ -143,10 +144,6 @@ figure > img {
     aspect-ratio: 16 / 9;
     mix-blend-mode: multiply;
     object-fit: contain;
-  }
-
-  @include media-query($on-palm) {
-    max-width: 100% !important;
   }
 }
 
@@ -225,7 +222,7 @@ blockquote {
   font-style: italic;
 
   > p {
-    @include relative-font-size(1.25);
+    font-size: 1.25rem;
   }
 
   > :last-child {
