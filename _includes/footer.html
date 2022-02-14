@@ -1,75 +1,74 @@
 <footer class="site-footer">
   <div class="wrapper">
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-40">
-        <ul class="contact-list">
-          <li>
-            {%- if site.github.username %}
-            <a class="nontext footer-link" href="{{ site.github.username | prepend: 'https://github.com/' | escape }}">
-              <span class="fa-brands fa-github"></span>
-              <span>
-                {{ site.github.username }}
-              </span>
-            </a>
-            {%- endif %}
-          </li>
-          <li>
-            {%- if site.email %}
-            <a class="nontext footer-link" href="{{ site.email | prepend: 'mailto:' }}">
-              <span class="fa-regular fa-envelope"></span>
-              <span>
-                {{ site.email | replace: '@', '[at]' | replace: '.', '[dot]' }}
-              </span>
-            </a>
-            {%- endif %}
-          </li>
-          <li>
-            {%- if site.linkedin.username %}
-            <a class="nontext footer-link"
-              href="{{ site.linkedin.username | prepend: 'https://linkedin.com/in/' | escape }}">
-              <span class="fa-brands fa-linkedin"></span>
-              <span>
-                {{ site.linkedin.username }}
-              </span>
-            </a>
-            {%- endif %}
-          </li>
-        </ul>
+      <div class="footer-col footer-col-50">
+        <h2>{{ site.title }}</h2>
+        <span>{{ site.description }}</span>
       </div>
-      {%- unless site.nadya.disable_social %}
-      <div class="footer-col footer-col-25">
-        <ul class="social-media-list">
-          <li>
-            {%- if site.facebook.username %}
-            <a class="nontext footer-link"
-              href="{{ site.facebook.username | prepend: 'https://facebook.com/' | escape }}">
-              <span class="fa-brands fa-facebook"></span>
-              <span>
-                {{ site.facebook.username }}
-              </span>
-            </a>
-            {%- endif %}
-          </li>
-          <li>
-            {%- if site.twitter.username %}
-            <a class="nontext footer-link"
-              href="{{ site.twitter.username | prepend: 'https://twitter.com/' | escape }}">
-              <span class="fa-brands fa-twitter"></span>
-              <span>
-                {{ site.twitter.username }}
-              </span>
-            </a>
-            {%- endif %}
-          </li>
-        </ul>
-      </div>
-      {%- endunless %}
-      <div class="footer-col footer-col-35 footer-col-right">
-        <p>{{ site.description }}</p>
+      <div class="footer-col footer-col-wrapper footer-col-wrapper-reverse footer-col-30 footer-col-no-margin">
+        <div class="footer-col footer-col-50 footer-col-no-margin">
+          <h3><b>Contact</b></h3>
+          <ul class="contact-list">
+            <li>
+              {%- if site.github.username %}
+              <a class="nontext footer-link"
+                href="{{ site.github.username | prepend: 'https://github.com/' | escape }}">
+                <span>GitHub</span>
+              </a>
+              {%- endif %}
+            </li>
+            <li>
+              {%- if site.email %}
+              <a class="nontext footer-link" href="{{ site.email | prepend: 'mailto:' }}">
+                <span>Email</span>
+              </a>
+              {%- endif %}
+            </li>
+            <li>
+              {%- if site.linkedin.username %}
+              <a class="nontext footer-link"
+                href="{{ site.linkedin.username | prepend: 'https://linkedin.com/in/' | escape }}">
+                <span>LinkedIn</span>
+              </a>
+              {%- endif %}
+            </li>
+          </ul>
+        </div>
+        {%- unless site.nadya.disable_social %}
+        <div class="footer-col footer-col-50 footer-col-no-margin">
+          <h3><b>Social</b></h3>
+          <ul class="social-media-list">
+            <li>
+              {%- if site.facebook.username %}
+              <a class="nontext footer-link"
+                href="{{ site.facebook.username | prepend: 'https://facebook.com/' | escape }}">
+                <span>Facebook</span>
+              </a>
+              {%- endif %}
+            </li>
+            <li>
+              {%- if site.twitter.username %}
+              <a class="nontext footer-link"
+                href="{{ site.twitter.username | prepend: 'https://twitter.com/' | escape }}">
+                <span>Twitter</span>
+              </a>
+              {%- endif %}
+            </li>
+            <li>
+              {%- if site.instagram.username %}
+              <a class="nontext footer-link"
+                href="{{ site.instagram.username | prepend: 'https://instagram.com/' | escape }}">
+                <span>Instagram</span>
+              </a>
+              {%- endif %}
+            </li>
+          </ul>
+        </div>
+        {%- endunless %}
       </div>
       {%- include custom-footer.html %}
       {%- unless site.nadya.disable_attribution %}
-      <div class="footer-col footer-col-center footer-col-attribution">
+      <div class="footer-col footer-col-100 footer-col-center footer-col-attribution">
         <small class="footer-meta-attribution">
           <a class="nontext" href="https://github.com/ramottamado/nadya">nadya</a> &mdash; theme by
           <a class="nontext" href="https://ramottamado.dev">ramottamado</a>

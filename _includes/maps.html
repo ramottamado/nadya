@@ -3,7 +3,8 @@
   {{ include.content | markdownify }}
   {% if include.caption %}
   <figcaption class="media-caption">
-    <span class="fa-solid fa-location-dot"></span>
+    <span><b>Maps</b></span>
+    <span>/</span>
     <span>
       {{ include.caption | markdownify | strip_html }}
     </span>
