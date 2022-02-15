@@ -1,8 +1,8 @@
-<figure class="code-container">
+<figure class="media-container">
   {{ include.content | markdownify }}
   {% if include.caption %}
   <figcaption class="code-caption">
-    <span><b>Code</b></span>
+    <span class="media-type">Code</span>
     <span>/</span>
     <span>
       {{ include.caption | markdownify | strip_html }}

@@ -3,7 +3,7 @@
   {{ include.content | markdownify }}
   {% if include.caption %}
   <figcaption class="media-caption">
-    <span><b>Maps</b></span>
+    <span class="media-type">Map</span>
     <span>/</span>
     <span>
       {{ include.caption | markdownify | strip_html }}

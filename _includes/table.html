@@ -1,10 +1,10 @@
-<figure>
+<figure class="media-container">
   <div class="table-wrapper">
     {{ include.content | markdownify }}
   </div>
   {% if include.caption %}
   <figcaption class="table-caption">
-    <span><b>Table</b></span>
+    <span class="media-type">Table</span>
     <span>/</span>
     <span>
       {{ include.caption | markdownify | strip_html }}

@@ -1,10 +1,10 @@
-<figure>
+<figure class="media-container">
   {% assign caption = include.caption | default: include.alt %}
   <img src="{{ include.src }}" alt="{{ include.alt }}" width="{{ include.width | default: '800' }}"
     height="{{ include.height | default: '450' }}"
     style="max-width: {{ include.maxwidth | default: '100%' }}; object-fit: {{ include.objectfit | default: 'contain' }}; aspect-ratio: {{ include.width | default: '800' }}/{{ include.height | default: '450' }}">
   <figcaption>
-    <span><b>Image</b></span>
+    <span class="media-type">Image</span>
     <span>/</span>
     <span>
       {{ caption | markdownify | strip_html }}

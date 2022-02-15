@@ -127,23 +127,18 @@ p > img {
 /**
  * Figures
  */
-figure > * {
-  margin-bottom: 0.5em !important;
-}
+figure {
+  figure {
+    margin-bottom: unset !important;
+  }
 
-figure > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  max-width: 100%;
-  // border: 1px dashed black; // debug
-
-  &.preview {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    mix-blend-mode: multiply;
-    object-fit: contain;
+  > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    max-width: 100%;
+    // border: 1px dashed black; // debug
   }
 }
 
@@ -155,10 +150,7 @@ figcaption {
   font-style: normal;
   text-align: left;
   padding: (0.5 * $small-font-size) 0;
-
-  > span {
-    display: inline-block !important;
-  }
+  // margin-top: $spacing-unit / 3;
 }
 
 /**
@@ -257,8 +249,8 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-  max-width: calc(#{$content-width} - (#{$spacing-unit}));
+  max-width: -webkit-calc(#{$content-width} + 2 * (#{$spacing-unit}));
+  max-width: calc(#{$content-width} + 2 * (#{$spacing-unit}));
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit / 2;
@@ -266,10 +258,6 @@ pre {
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
   }
@@ -282,25 +270,6 @@ pre {
   content: "";
   display: table;
   clear: both;
-}
-
-/**
- * Icons
- */
-.icon {
-  > svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    fill: currentColor;
-    padding: 5px 3px 2px 5px;
-    vertical-align: text-bottom;
-
-    path {
-      fill: $grey-color;
-    }
-  }
 }
 
 /**

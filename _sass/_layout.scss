@@ -94,7 +94,7 @@
       clear: both;
       display: none;
 
-      @media screen and (min-width: $on-medium) {
+      @media (min-width: $on-medium) {
         display: inline !important;
       }
     }
@@ -117,16 +117,21 @@
     > div {
       margin: auto;
 
-      > span {
+      > hr {
         display: block;
         width: 1.5 * $base-font-size;
         height: 0.25 * $base-font-size;
         background: $brand-color;
         border-radius: 3px;
+        border: none !important;
+
+        &:not(:nth-last-child(2)) {
+          margin: 0 !important;
+        }
 
         &:nth-last-child(2) {
-          margin-top: 0.25 * $base-font-size;
-          margin-bottom: 0.25 * $base-font-size;
+          margin-top: 0.25 * $base-font-size !important;
+          margin-bottom: 0.25 * $base-font-size !important;
         }
       }
     }
@@ -135,7 +140,6 @@
   label[for="nav-trigger"] {
     position: absolute;
     right: 0;
-    background-color: $background-color;
     padding-left: 0.5 * $base-font-size;
     display: block;
     float: right;
@@ -154,7 +158,7 @@
       border-bottom: 1px solid $text-color;
     }
 
-    @media screen and (min-width: $on-medium) {
+    @media (min-width: $on-medium) {
       border-bottom: none;
 
       &:hover {
@@ -163,7 +167,7 @@
     }
   }
 
-  @media screen and (min-width: $on-medium) {
+  @media (min-width: $on-medium) {
     & {
       float: right;
       border: none;
@@ -199,28 +203,19 @@
   font-family: $meta-font-family;
   font-size: 0.875em;
 
-  .footer-logo > .footer-logo-image {
-    height: 1em;
-    width: 1em;
-    vertical-align: -0.15em;
-  }
-
-  h2 {
+  .footer-logo {
     font-size: 2em;
-  }
-
-  h3 {
-    font-size: 1.5em;
-  }
-
-  h4 {
-    font-size: 1.25em;
+    > .footer-logo-image {
+      height: 1em;
+      width: 1em;
+      vertical-align: -0.15em;
+    }
   }
 
   .social-list {
     font-size: 1em;
     font-weight: 600;
-    margin-bottom: $spacing-unit / 2;
+    @extend %vertical-rhythm;
   }
 }
 
@@ -231,7 +226,7 @@
   margin-bottom: 0;
 
   > li:not(:last-child) {
-    margin-bottom: $spacing-unit / 2;
+    @extend %vertical-rhythm;
   }
 }
 
@@ -269,7 +264,7 @@
   margin-bottom: $spacing-unit;
   width: 100%;
 
-  @media screen and (min-width: $on-medium) {
+  @media (min-width: $on-medium) {
     margin-bottom: $spacing-unit / 2;
   }
 }
@@ -281,12 +276,12 @@
 .footer-col-divider-desktop {
   display: none;
 
-  @media screen and (min-width: $on-medium) {
+  @media (min-width: $on-medium) {
     display: flex;
   }
 }
 
-@media screen and (min-width: $on-medium) {
+@media (min-width: $on-medium) {
   .footer-col-10 {
     width: 10%;
   }
@@ -455,7 +450,7 @@ a {
     float: inherit;
     padding-top: $base-font-size - $small-font-size;
 
-    @media screen and (min-width: $on-medium) {
+    @media (min-width: $on-medium) {
       float: right;
     }
 
@@ -463,7 +458,7 @@ a {
       padding-top: ($base-font-size * 1.25) - $small-font-size !important;
       float: inherit;
 
-      @media screen and (min-width: $on-medium) {
+      @media (min-width: $on-medium) {
         float: right;
       }
     }
@@ -586,6 +581,18 @@ hr.tags-hor {
     display: block;
     width: 100%;
   }
+
+  .media-type {
+    font-weight: 600;
+    color: $brand-color;
+  }
+
+  .preview {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+  }
 }
 
 /**
@@ -609,6 +616,10 @@ code > .rouge-table {
       padding-left: 0;
       padding-bottom: 0;
       padding-right: 12px;
+    }
+
+    &.gutter {
+      width: 0;
     }
 
     &.code {
