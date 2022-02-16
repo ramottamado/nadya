@@ -18,7 +18,7 @@ layout: page
   <a href="#uncategorized" class="post-tag">Uncategorized</a>
   {% endif %}
 </div>
-<hr class="tags-hor" />
+<hr />
 {% for cat in cats %}
 <h3 class="post-link" id="{{ cat[0] | slugify }}">{{ cat[0] | capitalize }}</h3>
 <ul class="post-list-minimal">
