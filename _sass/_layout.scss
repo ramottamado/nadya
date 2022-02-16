@@ -549,13 +549,13 @@ a {
 .post-tag {
   display: inline-block;
   padding: 0 0.5rem;
-  background: var(--color-border-default);
-  border-radius: 3px;
+  background: var(--color-canvas-subtle);
+  border: 1.5px solid var(--color-border-muted);
+  border-radius: 6px;
 
   &,
   &:visited {
     color: var(--color-fg-default);
-    border-bottom: 1px solid transparent;
     transition: background-color 300ms linear;
     -webkit-transition: background-color 300ms linear;
     -moz-transition: background-color 300ms linear;
@@ -597,6 +597,10 @@ pre {
   padding: var(--spacing-spacer-2) var(--spacing-spacer-2);
   overflow-x: auto;
   margin-bottom: unset;
+
+  > p {
+    margin: 0;
+  }
 }
 
 .highlight code {
@@ -646,4 +650,19 @@ pre {
     width: 100%;
     word-break: normal;
   }
+}
+
+/**
+ * Images
+ */
+.align-left {
+  float: left;
+  padding: var(--spacing-spacer-1) 0;
+  margin-right: var(--spacing-spacer-2);
+}
+
+.align-right {
+  float: right;
+  padding: var(--spacing-spacer-1) 0;
+  margin-left: var(--spacing-spacer-2);
 }

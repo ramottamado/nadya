@@ -128,6 +128,7 @@ But let's throw in a <b>tag</b>.
 See? The code is now line numbered with `linenos`.
 
 And with code like this, we can add caption to our codes.
+
 {% raw %}
 ```liquid
 {% capture code_1 %}
@@ -214,6 +215,18 @@ ___
 {% include media.html content=video_1 caption='Zedd - Beautiful Now ft. Jon Bellion' %}
 
 ### Image
+
+#### Left aligned
+
+!["Test Image"](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACHCAAAAAANGYs3AAADvElEQVR4Ae3ZhVbj7BrF8XPVuyl2iru7u4z74FRwKxGa7Mv5Vt6URTNaZkmQ/cf1ya8S/R9fWAILLLDAAgsssMACCyywwAILLPATTWCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggd8g3jUfUhNmHjlY4GLBVIfxgqnE33e0cfuUwbHqsci/tQk4zwEssJPdOSqxXDG7mb8KqgL7R/suw+ydXJF3BTfHlwErcvLHRZ/xaUmCd5oAoGEjMEszjrDMGjmOcue/AI/g2h5OA6k+m5utALBoTM67DgtAesRm1NVoPQBY/Z9/npYMeBFIt3emgbUIAqurNY2Rv4JXmtHUZQHjX1Pp9o408JYk+0NNJgU0Gz+/1AKWMXb9PC0RcBZYdEl3DKljsgjM+GSwnyOd4ifgrFgsBr8Eo+6A9HoAdF6R161oNs+CmX2P9NeAryR5bqEp69Mr9BtwfFoy4B4Mm49uHd6bBTqqYqVlwO/LAuRJ8iNgx35vMfq1+ug/zBpwfFoi4Atgj6YhzJkvP1YJbjN3fAnoZ9gxcMb7hjBJ8hrYYAU4Pi0R8B5QODeNod+ArFWnKvAQTbVYNx8vgRzvG8RUdP8fV4Lj0xIBf8R9IyQLdYA1cVo9+P9l8PXdneduvlmZm8uY3/sM2JXg+LREwOtA/11vzGN82gIwF1QLzsTBN0MWoubNf7dYCY5NS+we9hjv5m0GWPg38HUzrKnPe/lcG5ZIvgO8SnBsWmLP4TP+mDeIGv+fwG+QOmJYL1ajf3BRATbTEgafA+/4U1mgEC2v/TDwEHpp6jbfzgMfaeo3YDMtWTB7kbnljx1Fa9d94Pxh4EHUeQylKfPtUgM6fYbSlAGbaQmD94DWI5LemxWSx8uh8HoEtSWSp8ByQKdYPXgNmDnn7YdaYJkkV4Exm7dbbTDg2LSEwFwCUNvVDFg2uQjUdjaj/Ej0M0BTu7VUPdhpBNAAtH3CtFkBtgBoTcNqNeDYtKTA3GoCgNTICcnNHoRlvtK0mQZQt149mJfDAOoWPdeKgN54GkAmu2jAsWkJnrV0c7vnpbvPT/Z2L3yWs/d3Tnw+KO/40g8/eIzyT/auyRl0xaY9+9O0Qxh7Ueel7Vqsvgxw/tQ8wYeAwssA96Cuo6fJAhb5IsDBoIWwzOfgRYDNWv9gK3sV6GKawAILLPDzSWCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFvg/grmeGCDEU1MAAAAASUVORK5CYII= "Test Image"){: .align-left}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et interdum dignissim. Nulla elementum pulvinar facilisis. Phasellus eget ultricies orci. Aenean ultrices mollis lorem, imperdiet imperdiet nisi. In at nibh elit. Nullam pulvinar tincidunt nisl, et tempus justo maximus sit amet. Integer ac molestie ante. Vestibulum nec lorem efficitur, laoreet tortor id, vestibulum neque. Sed in semper turpis. Maecenas mattis tempor massa. In volutpat ligula ligula, vitae semper nisi maximus a. Cras sit amet efficitur justo. Vestibulum pulvinar feugiat enim sed efficitur.
+
+#### Right aligned
+
+!["Test Image"](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACHCAAAAAANGYs3AAADvElEQVR4Ae3ZhVbj7BrF8XPVuyl2iru7u4z74FRwKxGa7Mv5Vt6URTNaZkmQ/cf1ya8S/R9fWAILLLDAAgsssMACCyywwAILLPATTWCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggd8g3jUfUhNmHjlY4GLBVIfxgqnE33e0cfuUwbHqsci/tQk4zwEssJPdOSqxXDG7mb8KqgL7R/suw+ydXJF3BTfHlwErcvLHRZ/xaUmCd5oAoGEjMEszjrDMGjmOcue/AI/g2h5OA6k+m5utALBoTM67DgtAesRm1NVoPQBY/Z9/npYMeBFIt3emgbUIAqurNY2Rv4JXmtHUZQHjX1Pp9o408JYk+0NNJgU0Gz+/1AKWMXb9PC0RcBZYdEl3DKljsgjM+GSwnyOd4ifgrFgsBr8Eo+6A9HoAdF6R161oNs+CmX2P9NeAryR5bqEp69Mr9BtwfFoy4B4Mm49uHd6bBTqqYqVlwO/LAuRJ8iNgx35vMfq1+ug/zBpwfFoi4Atgj6YhzJkvP1YJbjN3fAnoZ9gxcMb7hjBJ8hrYYAU4Pi0R8B5QODeNod+ArFWnKvAQTbVYNx8vgRzvG8RUdP8fV4Lj0xIBf8R9IyQLdYA1cVo9+P9l8PXdneduvlmZm8uY3/sM2JXg+LREwOtA/11vzGN82gIwF1QLzsTBN0MWoubNf7dYCY5NS+we9hjv5m0GWPg38HUzrKnPe/lcG5ZIvgO8SnBsWmLP4TP+mDeIGv+fwG+QOmJYL1ajf3BRATbTEgafA+/4U1mgEC2v/TDwEHpp6jbfzgMfaeo3YDMtWTB7kbnljx1Fa9d94Pxh4EHUeQylKfPtUgM6fYbSlAGbaQmD94DWI5LemxWSx8uh8HoEtSWSp8ByQKdYPXgNmDnn7YdaYJkkV4Exm7dbbTDg2LSEwFwCUNvVDFg2uQjUdjaj/Ej0M0BTu7VUPdhpBNAAtH3CtFkBtgBoTcNqNeDYtKTA3GoCgNTICcnNHoRlvtK0mQZQt149mJfDAOoWPdeKgN54GkAmu2jAsWkJnrV0c7vnpbvPT/Z2L3yWs/d3Tnw+KO/40g8/eIzyT/auyRl0xaY9+9O0Qxh7Ueel7Vqsvgxw/tQ8wYeAwssA96Cuo6fJAhb5IsDBoIWwzOfgRYDNWv9gK3sV6GKawAILLPDzSWCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFlhggQUWWGCBBRZYYIEFFvg/grmeGCDEU1MAAAAASUVORK5CYII= "Test Image"){: .align-right}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et interdum dignissim. Nulla elementum pulvinar facilisis. Phasellus eget ultricies orci. Aenean ultrices mollis lorem, imperdiet imperdiet nisi. In at nibh elit. Nullam pulvinar tincidunt nisl, et tempus justo maximus sit amet. Integer ac molestie ante. Vestibulum nec lorem efficitur, laoreet tortor id, vestibulum neque. Sed in semper turpis. Maecenas mattis tempor massa. In volutpat ligula ligula, vitae semper nisi maximus a. Cras sit amet efficitur justo. Vestibulum pulvinar feugiat enim sed efficitur.
+
+Figure template:
 
 {% include image.html src="https://octodex.github.com/images/minion.png" width="600" height="600" maxwidth="60%" objectfit="contain" alt="Octocat" %}
 
