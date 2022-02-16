@@ -15,6 +15,7 @@ nadya:
 nav_pages:
   - categories.md
   - about.md
+  - style-guide.html
 
 # Logo
 favicon: "favicon.svg"
