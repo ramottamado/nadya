@@ -8,7 +8,6 @@ description: >- # this means to ignore newlines and trim last newline
 
 # Theme
 nadya:
-  brand_color: "#1b1f24"
   date_format: "%b %d, %Y"
   disable_attribution: false
   disable_social: false
