@@ -35,7 +35,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et int
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et interdum dignissim. Nulla elementum pulvinar facilisis. Phasellus eget ultricies orci. Aenean ultrices mollis lorem, imperdiet imperdiet nisi. In at nibh elit. Nullam pulvinar tincidunt nisl, et tempus justo maximus sit amet. Integer ac molestie ante. Vestibulum nec lorem efficitur, laoreet tortor id, vestibulum neque. Sed in semper turpis. Maecenas mattis tempor massa. In volutpat ligula ligula, vitae semper nisi maximus a. Cras sit amet efficitur justo. Vestibulum pulvinar feugiat enim sed efficitur.
 {: .text-justify }
 
-<div class="divider"></div>
+---
 
 ## Headings H1 to H6
 
@@ -51,13 +51,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus quam et int
 
 ###### H6 Heading
 
-<div class="divider"></div>
+---
 
 ## Footnote
 
 Let's say you have text that you want to refer with a footnote, you can do that too! This is an example for the footnote number one.[^1] You can even add more footnotes, with link![^2]
 
-<div class="divider"></div>
+---
 
 ## Blockquote
 
@@ -75,7 +75,7 @@ This theme supports nested blockquotes, like this,
 > > >
 > > > -- Someone on Twitter, most probably
 
-<div class="divider"></div>
+---
 
 ## List Items
 
@@ -89,7 +89,7 @@ This theme supports nested blockquotes, like this,
 - Or minuses
 + Or pluses
 
-<div class="divider"></div>
+---
 
 ## `Code` Blocks, or Block of Codes
 
@@ -153,7 +153,7 @@ Example:
 {% endcapture %}
 {% include code.html content=code_1 caption='This is  *pagination*' %}
 
-<div class="divider"></div>
+---
 
 ## Table
 
@@ -184,7 +184,7 @@ lorem ipsum dolor | lorem ipsum dolor sit | lorem ipsum dolor sit amet | lorem i
 {% endcapture %}
 {% include table.html content=table_1 caption='Some Long Table' %}
 
-<div class="divider"></div>
+---
 
 ## Horizontal Line
 
@@ -202,7 +202,7 @@ ___
 
 ***
 
-<div class="divider"></div>
+---
 
 ## Media
 
@@ -239,9 +239,6 @@ ___
 {% include media.html content=spot_1 caption="Non-Stop-Pop FM" %}
 
 That's it! Happy blogging!
-
----
-Footnote:
 
 [^1]: Footnote number one yeah baby!
 [^2]: A footnote you can link to - [click here!](#)
