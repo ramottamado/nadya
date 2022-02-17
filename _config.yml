@@ -12,6 +12,16 @@ nadya:
   disable_attribution: false
   disable_social: false
 
+# Giscus
+giscus:
+  repo: "ramottamado/nadya"
+  repo_id: "R_kgDOGxYEvA"
+  category: "Announcements"
+  category_id: "DIC_kwDOGxYEvM4CBNDK"
+  mapping: "og:title"
+  reactions: 1
+  input: "top"
+
 # Default
 # defaults:
 #   - scope:
