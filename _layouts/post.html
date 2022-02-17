@@ -68,7 +68,7 @@ layout: default
     {{ content }}
 
     {% if site.giscus %}
-    <script src="https://giscus.app/client.js" data-repo="{{ site.giscus.repo }}"
+    <script defer src="https://giscus.app/client.js" data-repo="{{ site.giscus.repo }}"
       data-repo-id="{{ site.giscus.repo_id }}" data-category="{{ site.giscus.category }}"
       data-category-id="{{ site.giscus.category_id }}" data-mapping="{{ site.giscus.mapping }}"
       data-reactions-enabled="{{ site.giscus.reactions }}" data-emit-metadata="0"

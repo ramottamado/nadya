@@ -19,7 +19,7 @@ giscus:
   category: "Announcements"
   category_id: "DIC_kwDOGxYEvM4CBNDK"
   mapping: "og:title"
-  reactions: 1
+  reactions: 0
   input: "top"
 
 # Default
