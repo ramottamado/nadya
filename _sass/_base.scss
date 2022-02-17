@@ -270,18 +270,12 @@ h6 {
  * Wrapper
  */
 .wrapper {
-  max-width: calc(#{$content-width} + (2 * var(--spacing-spacer-5)));
-  max-width: -webkit-calc(#{$content-width} + (2 * var(--spacing-spacer-5)));
+  max-width: $content-width;
   margin-right: auto;
   margin-left: auto;
   padding-right: var(--spacing-spacer-3);
   padding-left: var(--spacing-spacer-3);
   @extend %clearfix;
-
-  @media screen and (min-width: $on-large) {
-    padding-right: var(--spacing-spacer-5);
-    padding-left: var(--spacing-spacer-5);
-  }
 }
 
 /**
