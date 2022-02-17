@@ -21,14 +21,14 @@ layout: default
   <ul class="post-list">
     {%- for post in site.posts limit: 20 -%}
     <li class="post-list">
-      <span class="post-meta" datetime="{{ post.date | date: '%Y-%m-%d' }} data-nosnippet">
+      <time class="post-meta" datetime="{{ post.date | date: '%Y-%m-%d' }}" data-nosnippet>
         {{ post.date | date: "%b %d, %Y" }}
-      </span>
-      <article class="post-list-heading">
+      </time>
+      <h2 class="post-list-heading">
         <a class="nontext post-link-heading" href="{{ post.url }}">
           {{ post.title | markdownify | strip_html }}
         </a>
-      </article>
+      </h2>
       <p class="post-meta">
         {% if post.description %}
         {{ post.description | markdownify | strip_html }}

@@ -21,13 +21,13 @@ layout: page
 <hr />
 {% for cat in cats %}
 <h3 class="post-link" id="{{ cat[0] | slugify }}">{{ cat[0] | capitalize }}</h3>
-<ul class="post-list-minimal">
+<ul class="post-list">
   {% for post in cat[1] %}
-  <li class="post-list">
-    <span class="info" data-nosnippet>
+  <li class="post-list-minimal">
+    <time class="info" datetime="{{ post.date | date: '%Y-%m-%d' }}" data-nosnippet>
       {{ post.date | date: "%b %d, %Y" }}
-    </span>
-    <article class="post-list-heading">
+    </time>
+    <h5 class="post-list-heading">
       <a class="nontext post-list-heading" href="{{ post.url }}">
         {% if post.title != "" %}
         {{ post.title | markdownify | strip_html }}
@@ -35,21 +35,21 @@ layout: page
         {{ post.slug }}
         {% endif %}
       </a>
-    </article>
+    </h5>
   </li>
   {% endfor %}
 </ul>
 {% endfor %}
 {% if uncategorized_exists %}
 <h3 class="post-link" id="uncategorized">Uncategorized</h3>
-<ul class="post-list-minimal">
+<ul class="post-list">
   {% for post in site.posts %}
   {%- if post.categories.size == 0 %}
-  <li class="post-list">
-    <span data-nosnippet>
+  <li class="post-list-minimal">
+    <time class="info" datetime="{{ post.date | date: '%Y-%m-%d' }}" data-nosnippet>
       {{ post.date | date: "%b %d, %Y" }}
-    </span>
-    <article class="post-list-heading">
+    </time>
+    <h5 class="post-list-heading">
       <a class="nontext post-list-heading" href="{{ post.url }}">
         {% if post.title != "" %}
         {{ post.title | markdownify | strip_html }}
@@ -57,7 +57,7 @@ layout: page
         {{ post.slug }}
         {% endif %}
       </a>
-    </article>
+    </h5>
   </li>
   {% endif -%}
   {% endfor %}

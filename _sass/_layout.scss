@@ -115,8 +115,9 @@
     display: grid;
     background: transparent;
 
-    > div {
+    > span {
       margin: auto;
+      display: block;
 
       > .hamburger {
         display: block;
@@ -148,7 +149,7 @@
     display: block;
     float: right;
     width: var(--typography-font-size-4);
-    z-index: 32;
+    z-index: 24;
     cursor: pointer;
   }
 
@@ -422,12 +423,9 @@ a {
 }
 
 .post-list-heading {
-  text-align: left !important;
+  text-align: left;
   margin-bottom: 0.25em;
-
-  article & {
-    margin-bottom: unset;
-  }
+  line-height: 1em;
 }
 
 .post-link-heading {
@@ -441,29 +439,32 @@ a {
   margin-left: 0;
   list-style: none;
 
-  > li {
+  > .post-list {
     margin-bottom: var(--spacing-spacer-5);
   }
 
-  > span {
+  time {
     color: var(--color-fg-muted);
     font-size: var(--typography-font-size-1);
     float: inherit;
-    padding-top: calc(var(--typography-font-size-2) - var(--typography-font-size-1));
-    padding-top: -webkit-calc(var(--typography-font-size-2) - var(--typography-font-size-1));
+    line-height: var(--typography-font-size-5);
 
     @media (min-width: $on-medium) {
       float: right;
     }
+  }
 
-    &.post-meta {
-      padding-top: calc(var(--typography-font-size-3) - var(--typography-font-size-1));
-      padding-top: -webkit-calc(var(--typography-font-size-3) - var(--typography-font-size-1));
-      float: inherit;
+  .post-list-minimal {
+    margin-left: 0;
+    list-style: none;
 
-      @media (min-width: $on-medium) {
-        float: right;
-      }
+    > .post-list-heading {
+      margin: unset;
+      line-height: 1.5em;
+    }
+
+    > time {
+      line-height: var(--typography-font-size-3);
     }
   }
 }
@@ -525,14 +526,10 @@ a {
   h4 {
     font-size: var(--typography-font-size-3);
   }
-}
 
-/**
- * Archive
- */
-.post-list-minimal {
-  list-style: none;
-  margin-left: 0;
+  h5 {
+    font-size: var(--typography-font-size-2);
+  }
 }
 
 /**
