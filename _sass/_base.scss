@@ -296,6 +296,11 @@ table {
   color: var(--color-fg-default);
   border-collapse: collapse;
 
+  caption {
+    margin-bottom: var(--spacing-spacer-2);
+    font-size: var(--typography-font-size-3);
+  }
+
   tr {
     &:nth-child(even) {
       background-color: var(--color-canvas-subtle);
@@ -329,8 +334,13 @@ table {
 /**
  * Iframes
  */
-iframe {
+iframe,
+audio,
+video {
   max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /**
