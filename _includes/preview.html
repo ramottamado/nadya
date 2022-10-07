@@ -3,9 +3,9 @@
   {%- assign preview = page.preview | relative_url %}
   <img class="preview" src="{{ preview }}" alt="{{ caption }}" height="450" width="800" itemprop="image">
   <figcaption>
-    <span class="media-type">Preview</span>
-    <span>/</span>
-    <span>
+    <span class="media-type" data-nosnippet>Preview</span>
+    <span data-nosnippet>/</span>
+    <span data-nosnippet>
       {{ caption }}
     </span>
   </figcaption>
