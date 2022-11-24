@@ -52,7 +52,7 @@ linkedin:
   # username: ""
 twitter:
   card: summary
-  username: "theramottamado"
+  username: "github"
 facebook:
   # publisher: ""
   # author: ""
@@ -70,7 +70,7 @@ feed:
 
 # Jekyll
 excerpt_separator: <!--more-->
-permalink: /:title/
+permalink: /:title
 
 # Build settings
 markdown: kramdown

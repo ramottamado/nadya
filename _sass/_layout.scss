@@ -12,7 +12,7 @@
   fill: currentColor;
   white-space: nowrap;
 
-  > svg {
+  >svg {
     width: 1em !important;
     height: 1em !important;
 
@@ -40,7 +40,7 @@
   height: var(--typography-font-size-7);
   cursor: default;
 
-  > .logo-text {
+  >.logo-text {
     font-size: var(--typography-font-size-5);
   }
 }
@@ -57,7 +57,7 @@
     position: absolute;
     font-size: var(--typography-font-size-3);
 
-    > .logo-image {
+    >.logo-image {
       width: var(--typography-font-size-5);
       height: var(--typography-font-size-5);
       transform: translate3d(0, 0, 0) rotate(0);
@@ -90,7 +90,7 @@
   .nav-trigger {
     display: none;
 
-    & ~ .nav-drawer {
+    &~.nav-drawer {
       clear: both;
       display: none;
 
@@ -100,7 +100,7 @@
     }
 
     &:checked {
-      ~ .nav-drawer {
+      ~.nav-drawer {
         display: block;
         padding-bottom: var(--spacing-spacer-1);
         text-align: right;
@@ -115,11 +115,11 @@
     display: grid;
     background: transparent;
 
-    > span {
+    >span {
       margin: auto;
       display: block;
 
-      > .hamburger {
+      >.hamburger {
         display: block;
         width: var(--typography-font-size-4);
         height: var(--spacing-spacer-1);
@@ -210,7 +210,7 @@
   .footer-logo {
     font-size: 2em;
 
-    > .footer-logo-image {
+    >.footer-logo-image {
       height: 1em;
       width: 1em;
       vertical-align: -0.15em;
@@ -230,13 +230,13 @@
   margin-left: 0;
   margin-bottom: 0;
 
-  > li:not(:last-child) {
-    @extend %vertical-rhythm;
+  >li:not(:last-child) {
+    margin-bottom: var(--spacing-spacer-1);
   }
 }
 
 .footer-link {
-  > span {
+  >span {
     display: inline-block;
   }
 }
@@ -381,6 +381,7 @@
  * Special links
  */
 a {
+
   &.nontext,
   &.nontext:visited {
     color: var(--color-fg-default);
@@ -439,7 +440,7 @@ a {
   margin-left: 0;
   list-style: none;
 
-  > .post-list {
+  >.post-list {
     margin-bottom: var(--spacing-spacer-5);
   }
 
@@ -458,12 +459,12 @@ a {
     margin-left: 0;
     list-style: none;
 
-    > .post-list-heading {
+    >.post-list-heading {
       margin: unset;
       line-height: 1.5em;
     }
 
-    > time {
+    >time {
       line-height: var(--typography-font-size-3);
     }
   }
@@ -568,7 +569,7 @@ a {
  * Media
  */
 .media-container {
-  > iframe {
+  >iframe {
     aspect-ratio: 16/10;
     display: block;
     width: 100%;
@@ -595,7 +596,7 @@ pre {
   overflow-x: auto;
   margin-bottom: unset;
 
-  > p {
+  >p {
     margin: 0;
   }
 }
@@ -614,7 +615,7 @@ pre {
     border-bottom: unset !important;
     padding: unset;
 
-    > pre.lineno {
+    >pre.lineno {
       padding: 0;
       padding-right: var(--spacing-spacer-2) !important;
     }
@@ -626,7 +627,7 @@ pre {
     &.code {
       width: $content-width;
 
-      > pre {
+      >pre {
         padding: 0;
         padding-left: var(--spacing-spacer-2) !important;
       }
