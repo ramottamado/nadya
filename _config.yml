@@ -29,7 +29,6 @@ github:
   username: "ramottamado"
 twitter:
   card: summary
-  username: "theramottamado"
 facebook:
   publisher: 103250301049786
   author: 100000091609630
@@ -37,7 +36,6 @@ social:
   name: "Tamado Ramot Sitohang"
   links:
     - "https://ramottamado.dev"
-    - "https://twitter.com/theramottamado"
 
 # Plugin
 sitemap:
