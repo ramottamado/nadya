@@ -108,7 +108,8 @@ header {
  * `main` element
  */
 main {
-  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  display: block;
+  /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
 /**
@@ -119,7 +120,7 @@ img {
   vertical-align: middle;
 }
 
-p > img {
+p>img {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -135,7 +136,7 @@ figure {
     margin-bottom: unset !important;
   }
 
-  > img {
+  >img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -164,8 +165,9 @@ ol {
 }
 
 li {
-  > ul,
-  > ol {
+
+  >ul,
+  >ol {
     margin-bottom: 0;
   }
 }
@@ -186,6 +188,7 @@ h6 {
  * Links
  */
 a {
+
   &,
   &:visited {
     color: var(--color-accent-fg);
@@ -259,6 +262,7 @@ h3,
 h4,
 h5,
 h6 {
+
   code,
   tt,
   pre {
@@ -324,7 +328,7 @@ table {
   }
 }
 
-.post-content > table {
+.post-content>table {
   margin-bottom: var(--spacing-spacer-5);
   width: 100%;
   max-width: 100%;
@@ -363,7 +367,7 @@ div.footnotes {
     margin-left: var(--spacing-spacer-3);
   }
 
-  li > p {
+  li>p {
     margin: var(--spacing-spacer-2) 0;
   }
 }

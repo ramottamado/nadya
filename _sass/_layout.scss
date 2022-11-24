@@ -220,7 +220,7 @@
   .social-list {
     font-size: 1em;
     font-weight: 600;
-    @extend %vertical-rhythm;
+    margin-bottom: var(--spacing-spacer-2) !important;
   }
 }
 
@@ -231,7 +231,7 @@
   margin-bottom: 0;
 
   >li:not(:last-child) {
-    margin-bottom: var(--spacing-spacer-1);
+    margin-bottom: var(--spacing-spacer-2);
   }
 }
 
