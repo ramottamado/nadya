@@ -287,6 +287,14 @@
   width: 100%;
 }
 
+.footer-col-logo {
+  margin-bottom: var(--spacing-spacer-5);
+
+  @media (min-width: $on-medium) {
+    margin-bottom: var(--spacing-spacer-3);
+  }
+}
+
 .footer-col-no-margin {
   margin-bottom: unset;
 }
