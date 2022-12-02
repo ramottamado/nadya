@@ -224,7 +224,8 @@
   }
 
   ul.social-list-horiz {
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 1em;
     list-style: none;
 
@@ -282,12 +283,8 @@
 }
 
 .footer-col {
-  margin-bottom: var(--spacing-spacer-5);
+  margin-bottom: var(--spacing-spacer-3);
   width: 100%;
-
-  @media (min-width: $on-medium) {
-    margin-bottom: var(--spacing-spacer-3);
-  }
 }
 
 .footer-col-no-margin {
