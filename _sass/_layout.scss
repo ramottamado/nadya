@@ -208,7 +208,7 @@
   font-size: 0.875rem;
 
   .footer-logo {
-    font-size: 2em;
+    font-size: var(--typography-font-size-4);
 
     >.footer-logo-image {
       height: 1em;
@@ -221,6 +221,22 @@
     font-size: 1em;
     font-weight: 600;
     margin-bottom: var(--spacing-spacer-2) !important;
+  }
+
+  ul.social-list-horiz {
+    margin: 0;
+    font-size: 1em;
+    list-style: none;
+
+    >li {
+      @media (min-width: $on-medium) {
+        float: right;
+        padding-left: var(--spacing-spacer-3);
+      }
+
+      float: left;
+      padding-right: var(--spacing-spacer-3);
+    }
   }
 }
 
