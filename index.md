@@ -6,6 +6,6 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: home
-lastmod: 2020-06-20 23:30 +0700
+last_modified_at: 2020-06-20 23:30 +0700
 ---
 {{ site.description | strip_html }}
