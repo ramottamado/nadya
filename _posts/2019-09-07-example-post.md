@@ -13,7 +13,7 @@ categories:
   - example
 tags:
   - markdown
-lastmod: '2022-02-09 01:53 +0700'
+last_modified_at: '2022-02-09 01:53 +0700'
 ---
 
 ## Typography Elements in One
