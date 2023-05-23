@@ -7,7 +7,7 @@ keywords:
   - typography
   - components
   - dummy content
-preview: https://octodex.github.com/images/minion.png
+image: https://octodex.github.com/images/minion.png
 meta: Minion Octocat
 categories:
   - example
