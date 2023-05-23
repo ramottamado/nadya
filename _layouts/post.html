@@ -58,7 +58,7 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {%- if page.preview %}
+    {%- if page.image %}
     {%- include preview.html %}
     {%- elsif site.icon or site.logo %}
     {% assign icon = site.icon | default: site.logo %}

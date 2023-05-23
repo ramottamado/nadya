@@ -5,12 +5,12 @@
   {% assign author = page.author | default: site.author | xml_escape -%}
   {% assign excerpt = page.excerpt | markdownify | strip_html | strip_newlines | truncate: 160 -%}
   {% assign description = page.description | default: excerpt | default: site.description -%}
-  {% assign preview = page.preview | default: site.icon | absolute_url -%}
+  {% assign image = page.image | default: site.icon | absolute_url -%}
   {% assign rel_icon = site.icon | relative_url -%}
   {% assign rel_alt_icon = site.alt_icon | relative_url -%}
   {% assign rel_favicon = site.favicon | relative_url -%}
   {% assign twitter_card = site.twitter.card | default: "summary" -%}
-  {% if page.preview -%}
+  {% if page.image -%}
   {% assign twitter_card = 'summary_large_image' -%}
   {% if page.twitter.card -%}
   {% assign twitter_card = page.twitter.card -%}
@@ -44,11 +44,11 @@
   <meta name="twitter:title" content="{{ title }}" />
   <meta name="twitter:description" content="{{ description }}" />
   <meta name="twitter:card" content="{{ twitter_card }}" />
-  <meta name="twitter:image" content="{{ preview}}" />
+  <meta name="twitter:image" content="{{ image}}" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{ title }}" />
   <meta property="og:description" content="{{ description }}" />
-  <meta property="og:image" content="{{ preview }}" />
+  <meta property="og:image" content="{{ image }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
   {% if site.facebook.author and author == site.author -%}
