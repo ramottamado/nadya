@@ -2,7 +2,7 @@
   <section class="wrapper">
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-wrapper footer-col-no-margin">
-        <div class="footer-col footer-col-50 footer-col-logo">
+        <div class="footer-col footer-col-50">
           <h1 class="footer-logo">
             {%- if site.logo %}
             <img alt="logo" class="footer-logo-image" src="{{ site.logo | relative_url }}" />
@@ -12,8 +12,6 @@
           </h1>
           <span class="footer-description">{{ site.description }}</span>
         </div>
-        <!-- <div
-          class="footer-col footer-col-wrapper-social footer-col-wrapper footer-col-wrapper-reverse footer-col-50 footer-col-no-margin"> -->
         <ul class="social-list-horiz footer-col footer-col-50">
           {%- if site.github.username or site.email or site.linkedin.username %}
           {%- if site.email %}
@@ -39,7 +37,7 @@
           </li>
           {%- endif %}
           {%- endif -%}
-          {%- unless site.nadya.disable_social %}
+          {%- if site.nadya.social %}
           {%- if site.facebook.username or site.twitter.username or site.instagram.username %}
           {%- if site.facebook.username %}
           <li>
@@ -66,19 +64,18 @@
           </li>
           {%- endif %}
           {%- endif %}
-          {%- endunless %}
+          {%- endif %}
         </ul>
       </div>
-      <div class="footer-col footer-col-wrapper footer-col-divider-desktop"></div>
       {%- include custom-footer.html %}
-      {%- unless site.nadya.disable_attribution %}
+      {%- if site.nadya.attribution %}
       <div class="footer-col footer-col-100 footer-col-center footer-col-attribution">
         <small class="footer-meta-attribution">
           <a class="nontext" href="https://github.com/ramottamado/nadya">nadya</a> &mdash; theme by
-          <a class="nontext" href="https://ramottamado.dev">ramottamado</a>
+          <a class="nontext" href="https://tamado.codes">ramottamado</a>
         </small>
       </div>
-      {%- endunless %}
+      {%- endif %}
     </div>
   </section>
 </footer>

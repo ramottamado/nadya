@@ -229,6 +229,7 @@
   }
 
   ul.social-list-horiz {
+    display: inline;
     margin-left: 0;
     margin-right: 0;
     font-size: 1em;
@@ -237,11 +238,12 @@
     >li {
       @media (min-width: $on-medium) {
         float: right;
-        padding-left: var(--spacing-spacer-3);
+        padding-left: var(--spacing-spacer-4);
+        padding-right: var(--spacing-spacer-0);
       }
 
-      float: left;
-      padding-right: var(--spacing-spacer-3);
+      display: inline;
+      padding-right: var(--spacing-spacer-2);
     }
   }
 }
@@ -290,14 +292,6 @@
 .footer-col {
   margin-bottom: var(--spacing-spacer-3);
   width: 100%;
-}
-
-.footer-col-logo {
-  margin-bottom: var(--spacing-spacer-4);
-
-  @media (min-width: $on-medium) {
-    margin-bottom: var(--spacing-spacer-3);
-  }
 }
 
 .footer-col-no-margin {

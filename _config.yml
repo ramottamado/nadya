@@ -9,8 +9,8 @@ description: >- # this means to ignore newlines and trim last newline
 # Theme
 nadya:
   date_format: "%b %d, %Y"
-  disable_attribution: false
-  disable_social: false
+  attribution: true
+  social: true
 
 # Giscus
 giscus:
