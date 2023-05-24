@@ -294,7 +294,7 @@ h6 {
 /**
  * Tables
  */
-table {
+table:not([class]) {
   width: 100%;
   text-align: left;
   color: var(--color-fg-default);
