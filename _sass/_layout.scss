@@ -209,7 +209,7 @@
 
   .footer-logo {
     font-size: var(--typography-font-size-4);
-    margin-bottom: var(--typography-font-size-1) !important;
+    margin-bottom: var(--spacing-spacer-1) !important;
 
     >.footer-logo-image {
       height: 1em;
@@ -230,9 +230,10 @@
 
   ul.social-list-horiz {
     display: inline;
+    text-align: center;
     margin-left: 0;
     margin-right: 0;
-    font-size: 1em;
+    font-size: var(--typography-font-size-1);
     list-style: none;
 
     >li {
@@ -292,6 +293,10 @@
 .footer-col {
   margin-bottom: var(--spacing-spacer-3);
   width: 100%;
+}
+
+.footer-col-logo {
+  margin-bottom: var(--spacing-spacer-4);
 }
 
 .footer-col-no-margin {

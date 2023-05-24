@@ -1,8 +1,8 @@
 <footer class="site-footer">
   <section class="wrapper">
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-wrapper footer-col-no-margin">
-        <div class="footer-col footer-col-50">
+      <nav class="footer-col footer-col-wrapper footer-col-no-margin">
+        <div class="footer-col-logo footer-col footer-col-50">
           <h1 class="footer-logo">
             {%- if site.logo %}
             <img alt="logo" class="footer-logo-image" src="{{ site.logo | relative_url }}" />
@@ -66,7 +66,7 @@
           {%- endif %}
           {%- endif %}
         </ul>
-      </div>
+      </nav>
       {%- include custom-footer.html %}
       {%- if site.nadya.attribution %}
       <div class="footer-col footer-col-100 footer-col-center footer-col-attribution">
