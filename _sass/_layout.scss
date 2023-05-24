@@ -230,7 +230,6 @@
 
   ul.social-list-horiz {
     display: inline;
-    text-align: center;
     margin-left: 0;
     margin-right: 0;
     font-size: var(--typography-font-size-1);
@@ -293,10 +292,6 @@
 .footer-col {
   margin-bottom: var(--spacing-spacer-3);
   width: 100%;
-}
-
-.footer-col-logo {
-  margin-bottom: var(--spacing-spacer-4);
 }
 
 .footer-col-no-margin {
