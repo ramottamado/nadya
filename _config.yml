@@ -55,6 +55,7 @@ kramdown:
 remote_theme: ramottamado/nadya
 
 plugins:
+  - jekyll-feed
   - jekyll-sitemap
   - jekyll-remote-theme
   - jemoji
