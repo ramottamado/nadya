@@ -13,6 +13,11 @@
           <span class="footer-description">{{ site.description }}</span>
         </div>
         <ul class="social-list-horiz footer-col footer-col-50">
+          <li>
+            <a class="nontext footer-link" href="{{ site.feed.path | default: '/feed.xml' }}">
+              <span>RSS</span>
+            </a>
+          </li>
           {%- if site.github.username or site.email or site.linkedin.username %}
           {%- if site.email %}
           <li>
