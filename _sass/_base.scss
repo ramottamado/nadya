@@ -121,8 +121,8 @@ img {
 }
 
 p>img {
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   display: block;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -309,6 +309,10 @@ table:not([class]) {
     &:nth-child(even) {
       background-color: var(--color-canvas-subtle);
     }
+
+    &:last-child > td {
+      border-bottom: none;
+    }
   }
 
   th,
@@ -343,8 +347,8 @@ audio,
 video {
   max-width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
 }
 
 /**
