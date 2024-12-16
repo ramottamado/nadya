@@ -2,7 +2,7 @@
 title: "nadya"
 email: "hello@tamado.codes"
 author: "Tamado Ramot Sitohang"
-url: "https://nadya.ramottamado.dev"
+url: "https://nadya.tamado.codes"
 description: >- # this means to ignore newlines and trim last newline
   Jekyll theme.
   Made with ❤️.
@@ -35,7 +35,7 @@ facebook:
 social:
   name: "Tamado Ramot Sitohang"
   links:
-    - "https://ramottamado.dev"
+    - "https://tamado.codes"
 
 # Plugin
 sitemap:
