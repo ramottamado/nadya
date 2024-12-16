@@ -1,6 +1,6 @@
 # Site settings
 title: "nadya"
-email: "hello@ramottamado.dev"
+email: "tamado@tamado.codes"
 author: "Tamado Ramot Sitohang"
 description: >- # this means to ignore newlines and trim last newline
   Jekyll theme.
@@ -60,7 +60,7 @@ facebook:
 social:
   # name: "Tamado Ramot Sitohang"
   # links:
-  #   - "https://ramottamado.dev"
+  #   - "https://tamado.codes"
 
 # Plugin Settings
 # sitemap:
