@@ -51,15 +51,10 @@
   <meta property="og:image" content="{{ image }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
-  {% if site.facebook.author and author == site.author -%}
-  <meta property="article:author" content="https://www.facebook.com/{{ site.facebook.author }}" />
-  {% endif -%}
-  {% for tags in page.tags %}
-  <meta property="article:tags" content="{{ tags }}" />{% endfor %}
-  {% if site.facebook.publisher -%}
-  <meta property="article:publisher" content="https://www.facebook.com/{{ site.facebook.publisher }}" />
-  <meta property="fb:pages" content="{{ site.facebook.publisher }}" />
-  {% endif -%}
+  <meta property="article:author" content="{{ author | join: ', ' }}" />
+  {%- for tag in page.tags %}
+  <meta property="article:tag" content="{{ tag }}" />
+  {%- endfor %}
   <link rel="stylesheet" href="{{ '/assets/css/modern-normalize.css' }}" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' }}" />
   {% if site.icon -%}
