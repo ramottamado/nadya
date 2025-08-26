@@ -1,3 +1,5 @@
+@use "vars";
+
 /**
  * Creative Commons
  */
@@ -94,7 +96,7 @@
       clear: both;
       display: none;
 
-      @media (min-width: $on-medium) {
+      @media (min-width: vars.$on-medium) {
         display: inline !important;
       }
     }
@@ -163,7 +165,7 @@
       border-bottom: 1px solid var(--color-fg-muted);
     }
 
-    @media (min-width: $on-medium) {
+    @media (min-width: vars.$on-medium) {
       border-bottom: none;
 
       &:hover {
@@ -172,7 +174,7 @@
     }
   }
 
-  @media (min-width: $on-medium) {
+  @media (min-width: vars.$on-medium) {
     & {
       float: right;
       border: none;
@@ -236,14 +238,14 @@
     list-style: none;
 
     >li {
-      @media (min-width: $on-medium) {
+      display: inline;
+      padding-right: var(--spacing-spacer-2);
+
+      @media (min-width: vars.$on-medium) {
         float: right;
         padding-left: var(--spacing-spacer-4);
         padding-right: var(--spacing-spacer-0);
       }
-
-      display: inline;
-      padding-right: var(--spacing-spacer-2);
     }
   }
 }
@@ -271,7 +273,8 @@
   display: flex;
   justify-content: space-between;
   color: var(--color-fg-default);
-  @extend %clearfix;
+
+  @include vars.clearfix;
 
   .footer-col-wrapper-reverse {
     flex-direction: row-reverse;
@@ -301,12 +304,12 @@
 .footer-col-divider-desktop {
   display: none;
 
-  @media (min-width: $on-medium) {
+  @media (min-width: vars.$on-medium) {
     display: flex;
   }
 }
 
-@media (min-width: $on-medium) {
+@media (min-width: vars.$on-medium) {
   .footer-col-10 {
     width: 10%;
   }
@@ -470,7 +473,7 @@ a {
     float: inherit;
     line-height: var(--typography-font-size-5);
 
-    @media (min-width: $on-medium) {
+    @media (min-width: vars.$on-medium) {
       float: right;
     }
   }
@@ -645,7 +648,7 @@ pre {
     }
 
     &.code {
-      width: $content-width;
+      width: vars.$content-width;
 
       >pre {
         padding: 0;

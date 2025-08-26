@@ -1,3 +1,5 @@
+@use "vars";
+
 /**
  * Reset some basic elements
  */
@@ -33,7 +35,7 @@ figure {
  * Basic styling
  */
 body {
-  font-family: $body-font;
+  font-family: vars.$body-font;
   font-size: var(--typography-font-size-2);
   font-weight: 400;
   line-height: var(--typography-line-height-default);
@@ -74,9 +76,8 @@ pre,
 ul,
 ol,
 dl,
-figure,
-%vertical-rhythm {
-  margin-bottom: var(--spacing-spacer-3);
+figure {
+  @include vars.vertical-rhythm;
 }
 
 h1,
@@ -100,7 +101,7 @@ small {
  * Header
  */
 header {
-  font-family: $body-font;
+  font-family: vars.$body-font;
   color: var(--color-fg-default);
 }
 
@@ -150,7 +151,7 @@ figcaption {
   border-bottom: 1px solid var(--color-fg-muted);
   color: var(--color-fg-muted);
   font-size: var(--typography-font-size-1);
-  font-family: $body-font;
+  font-family: vars.$body-font;
   font-style: normal;
   text-align: left;
   padding: var(--spacing-spacer-2) 0;
@@ -211,7 +212,7 @@ a {
  * Blockquotes
  */
 blockquote {
-  font-family: $body-font;
+  font-family: vars.$body-font;
   color: var(--color-fg-muted);
   border-left: 0.25em solid var(--color-border-default);
   padding: 0 1em;
@@ -230,7 +231,7 @@ code,
 tt,
 samp,
 kbd {
-  font-family: $mono-font;
+  font-family: vars.$mono-font;
 }
 
 pre,
@@ -274,21 +275,13 @@ h6 {
  * Wrapper
  */
 .wrapper {
-  max-width: $content-width;
+  max-width: vars.$content-width;
   margin-right: auto;
   margin-left: auto;
   padding-right: var(--spacing-spacer-3);
   padding-left: var(--spacing-spacer-3);
-  @extend %clearfix;
-}
-
-/**
- * Clearfix
- */
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+  
+  @include vars.clearfix;
 }
 
 /**

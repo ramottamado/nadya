@@ -3,34 +3,23 @@
 
 @charset "utf-8";
 
-// Font stacks
-$body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji" !default;
-
-// Monospace font stack
-// Note: SFMono-Regular needs to come before SF Mono to fix an older version of the font in Chrome
-$mono-font: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !default;
-
-// Width of the content area
-$content-width: 800px !default;
-
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
-
-$on-medium: $on-palm !default;
-$on-large: $on-laptop !default;
-
 // Import partials.
-@import "primer/colors/light", "primer/spacing/normal", "primer/typography/normal";
-@import "base", "layout", "highlight";
+@use "primer/colors/light" as colors;
+@use "primer/spacing/normal" as spacing;
+@use "primer/typography/normal" as typography;
+
+@use "vars" as vars;
+@use "base";
+@use "layout";
+@use "highlight";
 
 /**
  * Primer Color System
  */
 :root {
-  @include primer-colors-light;
-  @include primer-spacing-normal;
-  @include primer-typography-normal;
-
   --brand-color: #1f1b24;
+
+  @include colors.light;
+  @include spacing.normal;
+  @include typography.normal;
 }

@@ -1,5 +1,7 @@
+@use "vars";
+
 .highlight {
-  @extend %vertical-rhythm;
+  @include vars.vertical-rhythm;
 }
 
 .highlight,
